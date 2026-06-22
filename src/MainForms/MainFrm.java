@@ -17,7 +17,7 @@ import javax.swing.UIManager;
 public class MainFrm extends javax.swing.JFrame {
     
     private int contador;
-    NuevoUser usuarios[];
+    NuevoUser usuarios[] = new NuevoUser[4];
     /**
      * Creates new form MainFrm
      */
@@ -255,6 +255,8 @@ public class MainFrm extends javax.swing.JFrame {
 
     private void menuButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButton3MouseClicked
         FrmNuevoUsuario frm = new FrmNuevoUsuario(this, true);
+        frm.contador = this.contador;
+        frm.user = this.usuarios;
         frm.setLocationRelativeTo(this);
         frm.setVisible(true);
         this.contador = frm.contador;

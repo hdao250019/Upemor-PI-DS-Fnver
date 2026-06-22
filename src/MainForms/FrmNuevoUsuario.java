@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 public class FrmNuevoUsuario extends javax.swing.JDialog {
     
     // arreglo de objetos 
-    NuevoUser user[] = new NuevoUser[4];
+    NuevoUser user[];
     int contador = 0;
 
     /**
@@ -30,6 +30,8 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         super(parent, modal);
          // Evitar que el usuario use pantalla completa 
         initComponents();
+        
+        //
         //Ajustar Apariencia Visual
         FlatLightLaf.setup();
         FlatLaf.updateUI();
