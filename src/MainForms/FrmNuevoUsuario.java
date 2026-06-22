@@ -157,7 +157,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         jLabel3.setText("Correo:");
 
         txtNombre.setBackground(new java.awt.Color(201, 214, 229));
-        txtNombre.setBorder(null);
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -168,7 +168,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         jLabel5.setText("Usuario:");
 
         txtCorreo.setBackground(new java.awt.Color(201, 214, 229));
-        txtCorreo.setBorder(null);
+        txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoActionPerformed(evt);
@@ -181,7 +181,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         jLabel6.setText("Contraseña:");
 
         txtPass.setBackground(new java.awt.Color(201, 214, 229));
-        txtPass.setBorder(null);
+        txtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
         txtPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPassActionPerformed(evt);
@@ -278,7 +278,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(btnNuevacuenta)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -294,7 +294,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -340,6 +340,8 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
                 txtPass.setText("");
 
             }
+        }else{
+            JOptionPane.showMessageDialog(this, "Se alcanzo la cantidad maxima de " + user.length+ " usuarios locales", "", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_btnNuevacuentaActionPerformed

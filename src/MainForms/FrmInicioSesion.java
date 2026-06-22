@@ -104,7 +104,12 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         jLabel3.setText("Contraseña:");
 
         txtUsuario.setBackground(new java.awt.Color(201, 214, 229));
-        txtUsuario.setBorder(null);
+        txtUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        txtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
+        txtUsuario.setCaretColor(null);
+        txtUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        txtUsuario.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtUsuario.setSelectionColor(null);
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -124,7 +129,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         });
 
         txtPass.setBackground(new java.awt.Color(201, 214, 229));
-        txtPass.setBorder(null);
+        txtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
+        txtPass.setSelectionColor(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -176,7 +182,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(btnIni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
