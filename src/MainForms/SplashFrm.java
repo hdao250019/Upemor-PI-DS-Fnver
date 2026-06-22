@@ -22,7 +22,7 @@ public class SplashFrm extends javax.swing.JFrame {
             Thread.sleep(2000); // Esperar 3 segundos para cargar
 
             java.awt.EventQueue.invokeLater(() -> {
-                new LoginFrm().setVisible(true);
+                new MainForms.FrmInicioSesion().setVisible(true);
                 dispose();
             });
 
@@ -48,7 +48,7 @@ public class SplashFrm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(63, 72, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));

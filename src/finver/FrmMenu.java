@@ -4,6 +4,9 @@
  */
 package finver;
 
+import MainForms.FrmConsultarUsuarios;
+import MainForms.FrmNuevoUsuario;
+
 /**
  *
  * @author Jared
@@ -41,6 +44,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(201, 214, 229));
 
@@ -196,21 +200,13 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void BTN_IngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_IngActionPerformed
 
-    FrmNuevoUsuario ventana = new FrmNuevoUsuario();
-    ventana.setLocationRelativeTo(null);
-    ventana.setVisible(true);
-    // cerrar la ventana actual 
-    this.dispose();
+   
         
     }//GEN-LAST:event_BTN_IngActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   
-    FrmNuevoUsuario ventana = new FrmNuevoUsuario();
-    ventana.setLocationRelativeTo(null);
-    ventana.setVisible(true);
-    // cerrar la ventana actual 
-    this.dispose();
+   ;
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

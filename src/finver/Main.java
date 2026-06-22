@@ -4,13 +4,15 @@
  */
 package finver;
 
+import MainForms.SplashFrm;
+
 /**
  *
  * @author rousc
  */
 public class Main {
      public static void main(String[] args) {
-        FrmInicioSesion ventana = new FrmInicioSesion();
+        SplashFrm ventana = new SplashFrm();
         
         ventana.setLocationRelativeTo(null);
         

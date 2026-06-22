@@ -1,11 +1,11 @@
-package finver;
+package Clases;
 /**
  *
  * @author rousc
  */
 public class NuevoUser {
-    String nombre, correo, contrasenia;
-int edad;
+    public String nombre, correo, contrasenia;
+    public int edad;
 
 //crear constructir de la clase
     public NuevoUser(String nombre, String correo, int edad, String contrasenia) {

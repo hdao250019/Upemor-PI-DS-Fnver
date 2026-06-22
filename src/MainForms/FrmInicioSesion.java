@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package finver;
+package MainForms;
 
+import com.formdev.flatlaf.FlatLaf;
+import com.formdev.flatlaf.FlatLightLaf;
+import Clases.Usuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,8 +20,12 @@ public class FrmInicioSesion extends javax.swing.JFrame {
      */
     public FrmInicioSesion() {
         initComponents();
-                // Evitar que el usuario use pantalla completa 
+        // Evitar que el usuario use pantalla completa 
         setResizable(false);
+        //Ajustar Apariencia Visual
+        FlatLightLaf.setup();
+        FlatLaf.updateUI();
+        getRootPane().putClientProperty("FlatLaf.fullWindowContent", true); //Extender elementos a toda la ventana
     }
 
     /**
@@ -63,7 +70,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +84,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
+                .addGap(184, 184, 184)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
@@ -109,7 +116,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         btnIni.setBackground(new java.awt.Color(201, 214, 229));
         btnIni.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         btnIni.setText("Iniciar Sesión");
-        btnIni.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnIni.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnIni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniActionPerformed(evt);
@@ -131,9 +138,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                                .addComponent(jSeparator1))
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                            .addComponent(jSeparator1)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addComponent(jSeparator2)
@@ -143,11 +149,11 @@ public class FrmInicioSesion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnIni)
-                        .addGap(141, 141, 141))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(127, 127, 127))))
+                        .addGap(127, 127, 127))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnIni, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(124, 124, 124))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,8 +175,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
-                .addComponent(btnIni)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addComponent(btnIni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,20 +190,17 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniActionPerformed
         // TODO add your handling code here:
-         Usuario usuarioAdmin = new Usuario("GabrielTc","gabo123");
+        Usuario usuarioAdmin = new Usuario("GabrielTc","gabo123");
         
         String usuarioIngresado = txtUsuario.getText();        
 
@@ -207,21 +210,18 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         if(usuarioIngresado.isEmpty() || passIngresado.isEmpty()){
             JOptionPane.showMessageDialog(null, "COMPLETA TODOS LOS CAMPOS");
             return;
-}
-if(usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)){
-    // Abrir nueva ventana del menu
-    FrmMenu ventana = new FrmMenu();
-    ventana.setLocationRelativeTo(null);
-    ventana.setVisible(true);
-    // cerrar la ventana actual 
-    this.dispose();
-    
-                
-    
-    
+        }
+        if(usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)){
+            // Abrir nueva ventana del menu
+            MainForms.MainFrm ventana = new MainForms.MainFrm();
+            ventana.setLocationRelativeTo(null);
+            ventana.setVisible(true);
+            // cerrar la ventana actual 
+            this.dispose();
+
         }else{
-                JOptionPane.showMessageDialog(null, "Credenciales Incorrectas ");
-            }
+            JOptionPane.showMessageDialog(null, "Credenciales Incorrectas ");
+        }
     }//GEN-LAST:event_btnIniActionPerformed
 
     /**

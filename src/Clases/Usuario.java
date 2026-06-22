@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package finver;
+package Clases;
 
 /**
  *
@@ -20,7 +20,7 @@ public class Usuario {
     }
     
     //validar el inicio de sesion
-    boolean validarLogin(String usuarioLogin, String passLogin){
+    public boolean validarLogin(String usuarioLogin, String passLogin){
         return usuario.equals(usuarioLogin) && pass.equals(passLogin);
     }
 }
