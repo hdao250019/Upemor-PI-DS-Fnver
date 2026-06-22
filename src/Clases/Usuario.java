@@ -19,6 +19,10 @@ public class Usuario {
         
     }
     
+    public void hola(){
+        
+    }
+    
     //validar el inicio de sesion
     public boolean validarLogin(String usuarioLogin, String passLogin){
         return usuario.equals(usuarioLogin) && pass.equals(passLogin);
