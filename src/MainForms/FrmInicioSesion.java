@@ -206,6 +206,9 @@ public class FrmInicioSesion extends javax.swing.JFrame {
 
     private void btnIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniActionPerformed
         // TODO add your handling code here:
+        //crear contador de intentos
+        int contadorLogin = 0;
+        
         Usuario usuarioAdmin = new Usuario("GabrielTc","gabo123");
         
         String usuarioIngresado = txtUsuario.getText();        
@@ -217,8 +220,10 @@ public class FrmInicioSesion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "COMPLETA TODOS LOS CAMPOS");
             return;
         }
+        if(contadorLogin !=3 ){
         if(usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)){
             // Abrir nueva ventana del menu
+            
             MainForms.MainFrm ventana = new MainForms.MainFrm();
             ventana.setLocationRelativeTo(null);
             ventana.setVisible(true);
@@ -227,6 +232,10 @@ public class FrmInicioSesion extends javax.swing.JFrame {
 
         }else{
             JOptionPane.showMessageDialog(null, "Credenciales Incorrectas ");
+            contadorLogin ++;
+        }
+    }else{
+            JOptionPane.showMessageDialog(this, "Se alcanzo la cantidad maxima de intentos", "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnIniActionPerformed
 
