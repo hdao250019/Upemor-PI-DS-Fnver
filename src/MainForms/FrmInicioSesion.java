@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class FrmInicioSesion extends javax.swing.JFrame {
 
     int contadorLogin = 0;
+
     /**
      * Creates new form FrmInicioSesion
      */
@@ -207,37 +208,34 @@ public class FrmInicioSesion extends javax.swing.JFrame {
 
     private void btnIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniActionPerformed
         // TODO add your handling code here:
-        Usuario usuarioAdmin = new Usuario("GabrielTc","gabo123");
-        
-        String usuarioIngresado = txtUsuario.getText();        
-
+        Usuario usuarioAdmin = new Usuario("GabrielTc", "gabo123");
+        String usuarioIngresado = txtUsuario.getText();
         String passIngresado = new String(txtPass.getPassword());
-        
+
         // validar que los campos no esten vacios
-        if(usuarioIngresado.isEmpty() || passIngresado.isEmpty()){
+        if (usuarioIngresado.isEmpty() || passIngresado.isEmpty()) {
             JOptionPane.showMessageDialog(null, "COMPLETA TODOS LOS CAMPOS");
             return;
         }
-        
-        if(usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)){
+        if (usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)) {
             // Abrir nueva ventana del menu
-            
             MainForms.MainFrm ventana = new MainForms.MainFrm();
             ventana.setLocationRelativeTo(null);
             ventana.setVisible(true);
             // cerrar la ventana actual 
             this.dispose();
 
-        }else{
+        } else {
             contadorLogin++; // Incrementar antes de mostrar
             JOptionPane.showMessageDialog(null, "Credenciales Incorrectas");
 
-            if(contadorLogin >= 3){
-            JOptionPane.showMessageDialog(this, "Se alcanzó la cantidad máxima de intentos", "Error", JOptionPane.ERROR_MESSAGE);
-            this.dispose(); // opcional: cerrar la ventana de login
-    }
+            if (contadorLogin >= 3) {
+                JOptionPane.showMessageDialog(this, "Se alcanzó la cantidad máxima de intentos", 
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                this.dispose(); // opcional: cerrar la ventana de login
+            }
         }
-    
+
     }//GEN-LAST:event_btnIniActionPerformed
 
     /**
