@@ -207,9 +207,6 @@ public class FrmInicioSesion extends javax.swing.JFrame {
 
     private void btnIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniActionPerformed
         // TODO add your handling code here:
-        //crear contador de intentos
-        
-        
         Usuario usuarioAdmin = new Usuario("GabrielTc","gabo123");
         
         String usuarioIngresado = txtUsuario.getText();        
