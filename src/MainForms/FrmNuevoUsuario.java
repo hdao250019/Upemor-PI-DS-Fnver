@@ -331,8 +331,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
                 //guardar objeto en el arreglo
                 user[contador] = users;
                 contador++;
-                
-                JOptionPane.showConfirmDialog(null, "Registro Exitoso");
+                JOptionPane.showMessageDialog(null, "Registro Exitoso");
                 // limpiar formularios
                 txtNombre.setText("");
                 txtCorreo.setText("");
