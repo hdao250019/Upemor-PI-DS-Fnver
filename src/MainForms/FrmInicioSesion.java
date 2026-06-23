@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class FrmInicioSesion extends javax.swing.JFrame {
 
+    int contadorLogin = 0;
     /**
      * Creates new form FrmInicioSesion
      */
@@ -207,7 +208,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
     private void btnIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniActionPerformed
         // TODO add your handling code here:
         //crear contador de intentos
-        int contadorLogin = 0;
+        
         
         Usuario usuarioAdmin = new Usuario("GabrielTc","gabo123");
         
@@ -220,7 +221,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "COMPLETA TODOS LOS CAMPOS");
             return;
         }
-        if(contadorLogin !=3 ){
+        
         if(usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)){
             // Abrir nueva ventana del menu
             
@@ -231,12 +232,15 @@ public class FrmInicioSesion extends javax.swing.JFrame {
             this.dispose();
 
         }else{
-            JOptionPane.showMessageDialog(null, "Credenciales Incorrectas ");
-            contadorLogin ++;
+            contadorLogin++; // Incrementar antes de mostrar
+            JOptionPane.showMessageDialog(null, "Credenciales Incorrectas");
+
+            if(contadorLogin >= 3){
+            JOptionPane.showMessageDialog(this, "Se alcanzó la cantidad máxima de intentos", "Error", JOptionPane.ERROR_MESSAGE);
+            this.dispose(); // opcional: cerrar la ventana de login
+    }
         }
-    }else{
-            JOptionPane.showMessageDialog(this, "Se alcanzo la cantidad maxima de intentos", "", JOptionPane.ERROR_MESSAGE);
-        }
+    
     }//GEN-LAST:event_btnIniActionPerformed
 
     /**
