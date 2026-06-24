@@ -1,23 +1,30 @@
 package Clases;
-
 /**
  *
  * @author rousc
  */
 public class Usuario {
-    String usuario,pass;
-    
-    // crear constructor
-    public Usuario(String usuario, String pass){
-        //Inicializar los Atributos de los objetos
-        this.usuario = usuario;
-        this.pass = pass;
-        
+    public String nombre, correo, contrasenia;
+    public int edad;
+
+//crear constructir de la clase
+    public Usuario(String nombre, String correo, int edad, String contrasenia) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasenia = contrasenia;
+        this.edad = edad;
     }
-    
-    //validar el inicio de sesion
-    public boolean validarLogin(String usuarioLogin, String passLogin){
-        return usuario.equals(usuarioLogin) && pass.equals(passLogin);
+
+  
+
+    // metodo para mostrar información
+    public String mostrarDatos(){
+        return"Nombre: "  + nombre + 
+               "\nCorreo: " + correo +
+               "\nEdad: " + edad +
+                "\nContraseña: " + contrasenia;
+               
     }
 }
+    
 

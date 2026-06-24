@@ -4,7 +4,8 @@
  */
 package MainForms;
 
-import Clases.NuevoUser;
+import Clases.Admin;
+import Clases.Usuario;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
@@ -16,7 +17,9 @@ import javax.swing.table.DefaultTableModel;
  * @author Jared
  */
 public class FrmConsultarUsuarios extends javax.swing.JFrame {
-    NuevoUser usuarios[];
+
+    Admin administrador;
+    Usuario usuarios[];
     int contador = 0;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmConsultarUsuarios.class.getName());
@@ -24,7 +27,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     /**
      * Creates new form FrmConsultarUsuarios
      */
-    public FrmConsultarUsuarios(NuevoUser usr[], int count) {
+    public FrmConsultarUsuarios(Usuario usr[], int count) {
         initComponents();
         usuarios = usr;
         contador = count;
@@ -52,6 +55,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
+        btnAdmins = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -94,19 +98,25 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
             .addGap(0, 35, Short.MAX_VALUE)
         );
 
+        btnAdmins.setText("Mostrar Administradores");
+        btnAdmins.addActionListener(this::btnAdminsActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(222, 222, 222))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jButton4)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnAdmins)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +125,9 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(btnAdmins))
                 .addGap(25, 25, 25))
         );
 
@@ -220,9 +232,15 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    public void viewAll(){
-        //JOptionPane.showMessageDialog(this, usuarios[0].nombre);
-         
+    private void btnAdminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminsActionPerformed
+        JOptionPane.showMessageDialog(this, "Para fines prácticos la contraseña sera visible :D", "Aviso", JOptionPane.WARNING_MESSAGE);
+        DefaultTableModel modeloTabla = (DefaultTableModel)tbl.getModel();
+        //Establecer el contador de filas en la tabla
+        modeloTabla.setRowCount(0);
+        modeloTabla.addRow(new Object[]{"", administrador.ObtenerNombre(), "", administrador.ObtenerPass()});           //Simular Contrasena oculta
+    }//GEN-LAST:event_btnAdminsActionPerformed
+
+    public void viewAll(){         
         DefaultTableModel modeloTabla = (DefaultTableModel)tbl.getModel();
         //Establecer el contador de filas en la tabla
         modeloTabla.setRowCount(0);
@@ -231,7 +249,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                 usuarios[i].correo,
                 usuarios[i].nombre,
                 usuarios[i].edad,
-                "***********"
+                "***********"           //Simular Contrasena oculta
             });
         }
     }
@@ -264,6 +282,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdmins;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

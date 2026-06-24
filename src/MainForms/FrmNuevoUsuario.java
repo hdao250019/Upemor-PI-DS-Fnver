@@ -6,7 +6,7 @@ package MainForms;
 
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import Clases.NuevoUser;
+import Clases.Usuario;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 public class FrmNuevoUsuario extends javax.swing.JDialog {
     
     // arreglo de objetos 
-    NuevoUser user[];
+    Usuario user[];
     int contador = 0;
 
     /**
@@ -326,7 +326,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
             }else {
                 
                 // crear objeto individual con los datos de la ventana 
-                NuevoUser users = new NuevoUser(nombre,correo,edad,contra);
+                Usuario users = new Usuario(nombre,correo,edad,contra);
                 
                 //guardar objeto en el arreglo
                 user[contador] = users;
@@ -353,35 +353,6 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
     public JSpinner getSpnEdad() {
         return spnEdad;
     }
-
-    public void setSpnEdad(JSpinner spnEdad) {
-        this.spnEdad = spnEdad;
-    }
-
-    public JTextField getTxtCorreo() {
-        return txtCorreo;
-    }
-
-    public void setTxtCorreo(JTextField txtCorreo) {
-        this.txtCorreo = txtCorreo;
-    }
-
-    public JTextField getTxtNombre() {
-        return txtNombre;
-    }
-
-    public void setTxtNombre(JTextField txtNombre) {
-        this.txtNombre = txtNombre;
-    }
-
-    public JTextField getTxtPass() {
-        return txtPass;
-    }
-
-    public void setTxtPass(JTextField txtPass) {
-        this.txtPass = txtPass;
-    }
-    
     
     /**
      * @param args the command line arguments

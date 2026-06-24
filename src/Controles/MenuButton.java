@@ -8,7 +8,7 @@ package Controles;
  *
  * @author Angel H
  */
-public class MenuButton extends javax.swing.JPanel {
+public class MenuButton extends Controles.RoundPanel {
     
     private String aTextoIcono;
     public String getATextoIcono(){
@@ -67,6 +67,7 @@ public class MenuButton extends javax.swing.JPanel {
      */
     public MenuButton() {
         initComponents();
+        this.setACornerRadius(20);
     }
 
     /**

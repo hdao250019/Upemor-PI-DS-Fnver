@@ -6,7 +6,7 @@ package MainForms;
 
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import Clases.Usuario;
+import Clases.Admin;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmInicioSesion extends javax.swing.JFrame {
 
+    Admin usuarioAdmin;
+    
     int contadorLogin = 0;
 
     /**
@@ -28,6 +30,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         FlatLightLaf.setup();
         FlatLaf.updateUI();
         getRootPane().putClientProperty("FlatLaf.fullWindowContent", true); //Extender elementos a toda la ventana
+        
+         usuarioAdmin = new Admin("GabrielTc", "gabo123");
     }
 
     /**
@@ -208,7 +212,6 @@ public class FrmInicioSesion extends javax.swing.JFrame {
 
     private void btnIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniActionPerformed
         // TODO add your handling code here:
-        Usuario usuarioAdmin = new Usuario("GabrielTc", "gabo123");
         String usuarioIngresado = txtUsuario.getText();
         String passIngresado = new String(txtPass.getPassword());
 
@@ -220,6 +223,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         if (usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)) {
             // Abrir nueva ventana del menu
             MainForms.MainFrm ventana = new MainForms.MainFrm();
+            ventana.adm = this.usuarioAdmin;
             ventana.setLocationRelativeTo(null);
             ventana.setVisible(true);
             // cerrar la ventana actual 
