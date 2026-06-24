@@ -197,17 +197,22 @@ public class MainFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAgregarMouseClicked
+        //Generar Ventana
         FrmNuevoUsuario frm = new FrmNuevoUsuario(this, true);
+        //Pasar valores actuales del contador y el arreglo de usuarios
         frm.contador = this.contadorUsuarios;
         frm.user = this.usuarios;
+        //Hacer visible
         frm.setLocationRelativeTo(this);
         frm.setVisible(true);
+        //Al cerrar recibir los nuevos valores
         this.contadorUsuarios = frm.contador;
         this.usuarios = frm.user;
     }//GEN-LAST:event_menuAgregarMouseClicked
 
     private void menuConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultasMouseClicked
         MainForms.FrmConsultarUsuarios frm = new MainForms.FrmConsultarUsuarios();
+        //Pasar valores actuales del contador y el arreglo de usuarios
         frm.administrador = this.adm;
         frm.contador = this.contadorUsuarios;
         frm.usuarios = this.usuarios;

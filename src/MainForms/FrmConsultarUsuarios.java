@@ -21,14 +21,16 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     Admin administrador;
     Usuario usuarios[];
     int contador = 0;
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmConsultarUsuarios.class.getName());
 
     /**
      * Creates new form FrmConsultarUsuarios
      */
+    
+    //Modificado para la ventana Modal
     public FrmConsultarUsuarios(Usuario usr[], int count) {
         initComponents();
+        
+        //Recibir variables para usuarios
         usuarios = usr;
         contador = count;
         JOptionPane.showMessageDialog(this, usuarios[0].nombre);
@@ -51,7 +53,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        btnUsuarios = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -69,8 +71,8 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(201, 214, 229));
 
-        jButton4.setText("Mostrar Usuarios");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
+        btnUsuarios.setText("Mostrar Usuarios");
+        btnUsuarios.addActionListener(this::btnUsuariosActionPerformed);
 
         tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,7 +115,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(127, 127, 127)
-                        .addComponent(jButton4)
+                        .addComponent(btnUsuarios)
                         .addGap(31, 31, 31)
                         .addComponent(btnAdmins)))
                 .addContainerGap(53, Short.MAX_VALUE))
@@ -126,7 +128,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
+                    .addComponent(btnUsuarios)
                     .addComponent(btnAdmins))
                 .addGap(25, 25, 25))
         );
@@ -223,24 +225,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        viewAll();
-        try{
-            viewAll();
-        }catch(NullPointerException e){
-            System.out.println("ARREGLO VACIO");
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void btnAdminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminsActionPerformed
-        JOptionPane.showMessageDialog(this, "Para fines prácticos la contraseña sera visible :D", "Aviso", JOptionPane.WARNING_MESSAGE);
-        DefaultTableModel modeloTabla = (DefaultTableModel)tbl.getModel();
-        //Establecer el contador de filas en la tabla
-        modeloTabla.setRowCount(0);
-        modeloTabla.addRow(new Object[]{"", administrador.ObtenerNombre(), "", administrador.ObtenerPass()});           //Simular Contrasena oculta
-    }//GEN-LAST:event_btnAdminsActionPerformed
-
-    public void viewAll(){         
+    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
         DefaultTableModel modeloTabla = (DefaultTableModel)tbl.getModel();
         //Establecer el contador de filas en la tabla
         modeloTabla.setRowCount(0);
@@ -252,8 +237,18 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                 "***********"           //Simular Contrasena oculta
             });
         }
-    }
-    
+    }//GEN-LAST:event_btnUsuariosActionPerformed
+
+    private void btnAdminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminsActionPerformed
+        JOptionPane.showMessageDialog(this, "Para fines prácticos la contraseña sera visible :D", "Aviso", JOptionPane.WARNING_MESSAGE);
+        DefaultTableModel modeloTabla = (DefaultTableModel)tbl.getModel();
+        //Establecer el contador de filas en la tabla
+        modeloTabla.setRowCount(0);
+        //Mostrar el Administrador
+        modeloTabla.addRow(new Object[]{"", administrador.ObtenerNombre(), "", administrador.ObtenerPass()});           //Simular Contrasena oculta
+    }//GEN-LAST:event_btnAdminsActionPerformed
+
+
     
     
     /**
@@ -261,21 +256,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new FrmConsultarUsuarios().setVisible(true));
@@ -283,7 +264,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmins;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnUsuarios;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel8;

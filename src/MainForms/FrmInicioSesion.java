@@ -223,6 +223,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         if (usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)) {
             // Abrir nueva ventana del menu
             MainForms.MainFrm ventana = new MainForms.MainFrm();
+            //Enviar claves de Administrador
             ventana.adm = this.usuarioAdmin;
             ventana.setLocationRelativeTo(null);
             ventana.setVisible(true);
