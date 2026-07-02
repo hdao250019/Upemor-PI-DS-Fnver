@@ -1,4 +1,4 @@
-package Clases;
+package Controller;
 /**
  *
  * @author rousc
@@ -14,9 +14,7 @@ public class Usuario {
         this.contrasenia = contrasenia;
         this.edad = edad;
     }
-
-  
-
+ 
     // metodo para mostrar información
     public String mostrarDatos(){
         return"Nombre: "  + nombre + 
@@ -25,6 +23,42 @@ public class Usuario {
                 "\nContraseña: " + contrasenia;
                
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+  
+    
 }
+
     
 

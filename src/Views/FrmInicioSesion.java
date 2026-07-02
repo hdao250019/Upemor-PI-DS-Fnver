@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MainForms;
+package Views;
 
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import Clases.Admin;
+import Controller.Admin;
 import javax.swing.JOptionPane;
 
 /**
@@ -110,7 +110,6 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         jLabel3.setText("Contraseña:");
 
         txtUsuario.setBackground(new java.awt.Color(201, 214, 229));
-        txtUsuario.setForeground(new java.awt.Color(0, 0, 0));
         txtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
         txtUsuario.setCaretColor(null);
         txtUsuario.setDisabledTextColor(new java.awt.Color(255, 255, 255));
@@ -222,7 +221,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         }
         if (usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)) {
             // Abrir nueva ventana del menu
-            MainForms.MainFrm ventana = new MainForms.MainFrm();
+            Views.MainFrm ventana = new Views.MainFrm();
             //Enviar claves de Administrador
             ventana.adm = this.usuarioAdmin;
             ventana.setLocationRelativeTo(null);

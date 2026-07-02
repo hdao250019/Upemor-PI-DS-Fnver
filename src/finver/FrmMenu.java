@@ -4,8 +4,8 @@
  */
 package finver;
 
-import MainForms.FrmConsultarUsuarios;
-import MainForms.FrmNuevoUsuario;
+import Views.FrmConsultarUsuarios;
+import Views.FrmNuevoUsuario;
 
 /**
  *

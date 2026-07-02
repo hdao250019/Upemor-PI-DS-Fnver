@@ -4,7 +4,7 @@
  */
 package finver;
 
-import MainForms.SplashFrm;
+import Views.SplashFrm;
 
 /**
  *

@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MainForms;
+package Views;
 
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import Clases.Usuario;
+import Controller.Usuario;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;

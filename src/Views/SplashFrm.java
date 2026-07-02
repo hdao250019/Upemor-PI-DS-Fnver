@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MainForms;
+package Views;
 
 /**
  *
@@ -22,7 +22,7 @@ public class SplashFrm extends javax.swing.JFrame {
             Thread.sleep(2000); // Esperar 3 segundos para cargar
 
             java.awt.EventQueue.invokeLater(() -> {
-                new MainForms.FrmInicioSesion().setVisible(true);
+                new Views.FrmInicioSesion().setVisible(true);
                 dispose();
             });
 

@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MainForms;
+package Views;
 
-import Clases.Admin;
-import Clases.Usuario;
+import Controller.Admin;
+import Controller.Usuario;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
@@ -245,7 +245,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         //Establecer el contador de filas en la tabla
         modeloTabla.setRowCount(0);
         //Mostrar el Administrador
-        modeloTabla.addRow(new Object[]{"", administrador.ObtenerNombre(), "", administrador.ObtenerPass()});           //Simular Contrasena oculta
+        modeloTabla.addRow(new Object[]{"", administrador.ObtenerNombre() + " (admin)", "", administrador.ObtenerPass()});           //Simular Contrasena oculta
     }//GEN-LAST:event_btnAdminsActionPerformed
 
 

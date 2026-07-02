@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MainForms;
+package Views;
 
-import Clases.Admin;
-import Clases.Usuario;
+import Controller.Admin;
+import Controller.Usuario;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
@@ -49,12 +49,12 @@ public class MainFrm extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        menuConsultas = new Controles.MenuButton();
-        menuAgregar = new Controles.MenuButton();
+        menuConsultas = new FinverUI.MenuButton();
+        menuAgregar = new FinverUI.MenuButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        roundPanel2 = new Controles.RoundPanel();
+        roundPanel2 = new FinverUI.RoundPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,7 +104,7 @@ public class MainFrm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(2, 2, 2))
+                .addGap(3, 3, 3))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,11 +151,11 @@ public class MainFrm extends javax.swing.JFrame {
         roundPanel2.setLayout(roundPanel2Layout);
         roundPanel2Layout.setHorizontalGroup(
             roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 851, Short.MAX_VALUE)
         );
         roundPanel2Layout.setVerticalGroup(
             roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 573, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -211,7 +211,7 @@ public class MainFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_menuAgregarMouseClicked
 
     private void menuConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultasMouseClicked
-        MainForms.FrmConsultarUsuarios frm = new MainForms.FrmConsultarUsuarios();
+        Views.FrmConsultarUsuarios frm = new Views.FrmConsultarUsuarios();
         //Pasar valores actuales del contador y el arreglo de usuarios
         frm.administrador = this.adm;
         frm.contador = this.contadorUsuarios;
@@ -241,8 +241,8 @@ public class MainFrm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
-    private Controles.MenuButton menuAgregar;
-    private Controles.MenuButton menuConsultas;
-    private Controles.RoundPanel roundPanel2;
+    private FinverUI.MenuButton menuAgregar;
+    private FinverUI.MenuButton menuConsultas;
+    private FinverUI.RoundPanel roundPanel2;
     // End of variables declaration//GEN-END:variables
 }
