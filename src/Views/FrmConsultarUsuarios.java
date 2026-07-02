@@ -4,8 +4,8 @@
  */
 package Views;
 
-import Controller.Admin;
-import Controller.Usuario;
+import Models.Admin;
+import Models.Usuario;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;

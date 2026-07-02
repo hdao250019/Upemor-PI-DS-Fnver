@@ -1,4 +1,6 @@
-package Controller;
+package Models;
+
+
 /**
  *
  * @author rousc

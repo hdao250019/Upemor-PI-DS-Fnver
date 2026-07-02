@@ -4,9 +4,9 @@
  */
 package Views;
 
+import Models.Admin;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import Controller.Admin;
 import javax.swing.JOptionPane;
 
 /**

@@ -4,9 +4,9 @@
  */
 package Views;
 
+import Models.Usuario;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import Controller.Usuario;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
