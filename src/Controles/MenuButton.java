@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package FinverUI;
+package Controles;
 
 /**
  *
  * @author Angel H
  */
-public class MenuButton extends FinverUI.RoundPanel {
+public class MenuButton extends Controles.RoundPanel {
     
     private String aTextoIcono;
     public String getATextoIcono(){

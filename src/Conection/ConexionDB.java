@@ -15,7 +15,6 @@ public class ConexionDB {
         Connection conn = null;
         // Manejar el error en la conexion con la base de datos
         try{
-            
             //Guardar conexion en el objeto connection
             conn = DriverManager.getConnection(URL, USER, PASS);
             System.out.println("Conexion exitosa");
