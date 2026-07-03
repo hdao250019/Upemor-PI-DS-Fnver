@@ -47,7 +47,8 @@ public class MainFrm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         menuAgregar = new Controles.MenuButton();
-        menuConsultas = new Controles.MenuButton();
+        menuIngresarDinero = new Controles.MenuButton();
+        menuConsultas1 = new Controles.MenuButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
 
@@ -81,11 +82,19 @@ public class MainFrm extends javax.swing.JFrame {
             }
         });
 
-        menuConsultas.setAMouseEnter(new java.awt.Color(104, 123, 255));
-        menuConsultas.setATexto("Ver Cuentas Locales");
-        menuConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuIngresarDinero.setAMouseEnter(new java.awt.Color(104, 123, 255));
+        menuIngresarDinero.setATexto("Ingresar Dinero");
+        menuIngresarDinero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuConsultasMouseClicked(evt);
+                menuIngresarDineroMouseClicked(evt);
+            }
+        });
+
+        menuConsultas1.setAMouseEnter(new java.awt.Color(104, 123, 255));
+        menuConsultas1.setATexto("Ver Cuentas Locales");
+        menuConsultas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuConsultas1MouseClicked(evt);
             }
         });
 
@@ -106,7 +115,10 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menuConsultas1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(menuIngresarDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,8 +134,10 @@ public class MainFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(374, Short.MAX_VALUE))
+                .addComponent(menuConsultas1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menuIngresarDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(340, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(63, 72, 255));
@@ -143,11 +157,11 @@ public class MainFrm extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 836, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 561, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -158,9 +172,9 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         MainPanelLayout.setVerticalGroup(
@@ -168,8 +182,8 @@ public class MainFrm extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(MainPanelLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -197,24 +211,36 @@ public class MainFrm extends javax.swing.JFrame {
         Models.UsuarioBD bd = new Models.UsuarioBD();
 
         // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
-        Controller.UserController miControlador = new Controller.UserController(ventana, bd, null);
+        Controller.UserController miControlador = new Controller.UserController(ventana, bd, null, null);
 
         // Mostramos la ventana en pantalla
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
     }//GEN-LAST:event_menuAgregarMouseClicked
 
-    private void menuConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultasMouseClicked
-        Views.FrmConsultarUsuarios ventana = new Views.FrmConsultarUsuarios();
+    private void menuIngresarDineroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuIngresarDineroMouseClicked
+        Views.FrmIngresarDinero ventana = new Views.FrmIngresarDinero();
 
         //inyectamos esta ventana al controlador para que se use el paneUsuarios
         Models.UsuarioBD bd = new Models.UsuarioBD();
-        Controller.UserController miControlador = new Controller.UserController(null, bd, ventana);
+        Controller.UserController miControlador = new Controller.UserController(null, bd, null, ventana);
 
         // Mostramos la ventana guardada en pantalla
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
-    }//GEN-LAST:event_menuConsultasMouseClicked
+    }//GEN-LAST:event_menuIngresarDineroMouseClicked
+
+    private void menuConsultas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultas1MouseClicked
+        Views.FrmConsultarUsuarios ventana = new Views.FrmConsultarUsuarios();
+
+        //inyectamos esta ventana al controlador para que se use el paneUsuarios
+        Models.UsuarioBD bd = new Models.UsuarioBD();
+        Controller.UserController miControlador = new Controller.UserController(null, bd, ventana, null);
+
+        // Mostramos la ventana guardada en pantalla
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_menuConsultas1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -235,6 +261,7 @@ public class MainFrm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     public Controles.MenuButton menuAgregar;
-    public Controles.MenuButton menuConsultas;
+    public Controles.MenuButton menuConsultas1;
+    public Controles.MenuButton menuIngresarDinero;
     // End of variables declaration//GEN-END:variables
 }
