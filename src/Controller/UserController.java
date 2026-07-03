@@ -1,7 +1,7 @@
 package Controller;
 
-import MainForms.FrmConsultarUsuarios;
-import MainForms.FrmNuevoUsuario;
+import Views.FrmConsultarUsuarios;
+import Views.FrmNuevoUsuario;
 import Models.UsuarioBD;
 import Models.Usuario;
 import java.awt.event.ActionEvent;
