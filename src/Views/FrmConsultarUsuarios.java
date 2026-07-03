@@ -4,6 +4,7 @@
  */
 package Views;
 
+import Views.MainFrm;
 import Models.Admin;
 import Models.Usuario;
 import com.formdev.flatlaf.FlatLaf;
@@ -18,6 +19,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrmConsultarUsuarios extends javax.swing.JFrame {
 
+    // Variable para guardar la ventana original real
+    private MainFrm ventanaPrincipal; 
+
+    // Modificamos el constructor para recibirla
+    public FrmConsultarUsuarios(MainFrm ventanaOriginal) {
+        initComponents();
+        this.ventanaPrincipal = ventanaOriginal; //Guardamos la ventana original
+    }
     Admin administrador;
     Usuario usuarios[];
     int contador = 0;
@@ -30,10 +39,6 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     public FrmConsultarUsuarios(Usuario usr[], int count) {
         initComponents();
         
-        //Recibir variables para usuarios
-        usuarios = usr;
-        contador = count;
-        JOptionPane.showMessageDialog(this, usuarios[0].nombre);
     }
     public FrmConsultarUsuarios(){
         initComponents();
@@ -54,10 +59,8 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnUsuarios = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbl = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        btnAdmins = new javax.swing.JButton();
+        paneUsuarios = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -74,19 +77,6 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         btnUsuarios.setText("Mostrar Usuarios");
         btnUsuarios.addActionListener(this::btnUsuariosActionPerformed);
 
-        tbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Correo", "Usuario", "Edad", "Contraseña"
-            }
-        ));
-        jScrollPane1.setViewportView(tbl);
-
         jPanel3.setBackground(new java.awt.Color(11, 31, 59));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -100,9 +90,6 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
             .addGap(0, 35, Short.MAX_VALUE)
         );
 
-        btnAdmins.setText("Mostrar Administradores");
-        btnAdmins.addActionListener(this::btnAdminsActionPerformed);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -111,25 +98,21 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(paneUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(btnUsuarios)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnAdmins)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGap(200, 200, 200)
+                        .addComponent(btnUsuarios)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUsuarios)
-                    .addComponent(btnAdmins))
+                .addGap(28, 28, 28)
+                .addComponent(paneUsuarios)
+                .addGap(18, 18, 18)
+                .addComponent(btnUsuarios)
                 .addGap(25, 25, 25))
         );
 
@@ -203,7 +186,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,27 +209,8 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
-        DefaultTableModel modeloTabla = (DefaultTableModel)tbl.getModel();
-        //Establecer el contador de filas en la tabla
-        modeloTabla.setRowCount(0);
-        for(int i=0; i<contador;i++){
-            modeloTabla.addRow(new Object[]{
-                usuarios[i].correo,
-                usuarios[i].nombre,
-                usuarios[i].edad,
-                "***********"           //Simular Contrasena oculta
-            });
-        }
+        
     }//GEN-LAST:event_btnUsuariosActionPerformed
-
-    private void btnAdminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminsActionPerformed
-        JOptionPane.showMessageDialog(this, "Para fines prácticos la contraseña sera visible :D", "Aviso", JOptionPane.WARNING_MESSAGE);
-        DefaultTableModel modeloTabla = (DefaultTableModel)tbl.getModel();
-        //Establecer el contador de filas en la tabla
-        modeloTabla.setRowCount(0);
-        //Mostrar el Administrador
-        modeloTabla.addRow(new Object[]{"", administrador.ObtenerNombre() + " (admin)", "", administrador.ObtenerPass()});           //Simular Contrasena oculta
-    }//GEN-LAST:event_btnAdminsActionPerformed
 
 
     
@@ -259,12 +223,10 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmConsultarUsuarios().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdmins;
-    private javax.swing.JButton btnUsuarios;
+    public javax.swing.JButton btnUsuarios;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel8;
@@ -273,8 +235,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTable tbl;
+    public javax.swing.JScrollPane paneUsuarios;
     // End of variables declaration//GEN-END:variables
 }

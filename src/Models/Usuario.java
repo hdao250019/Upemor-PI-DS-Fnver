@@ -1,29 +1,50 @@
 package Models;
-
-
 /**
  *
  * @author rousc
  */
 public class Usuario {
-    public String nombre, correo, contrasenia;
-    public int edad;
+    private int id;
+    private int edad;
+    private String nombre;
+    private String correo;
+    private String contrasenia;
+    
+    public Usuario() {
+    }
 
 //crear constructir de la clase
-    public Usuario(String nombre, String correo, int edad, String contrasenia) {
+    public Usuario(int edad, String nombre, String correo, String contrasenia) {
+        this.edad = edad;
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
-        this.edad = edad;
     }
- 
-    // metodo para mostrar información
-    public String mostrarDatos(){
-        return"Nombre: "  + nombre + 
-               "\nCorreo: " + correo +
-               "\nEdad: " + edad +
-                "\nContraseña: " + contrasenia;
-               
+    
+    //crear constructir de la clase a la BD
+
+    public Usuario(int id, int edad, String nombre, String correo, String contrasenia) {
+        this.id = id;
+        this.edad = edad;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasenia = contrasenia;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public String getNombre() {
@@ -49,18 +70,6 @@ public class Usuario {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-  
-    
+   
 }
-
     
-

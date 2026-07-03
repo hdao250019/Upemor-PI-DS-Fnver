@@ -4,14 +4,9 @@
  */
 package Views;
 
-import Models.Usuario;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
-import javax.swing.JOptionPane;
-import javax.swing.JSpinner;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,15 +14,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrmNuevoUsuario extends javax.swing.JDialog {
     
-    // arreglo de objetos 
-    Usuario user[];
-    int contador = 0;
 
     /**
      * Creates new form FrmNuevoUsuario
      */
-    public FrmNuevoUsuario(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public FrmNuevoUsuario() {
          // Evitar que el usuario use pantalla completa 
         initComponents();
         
@@ -68,7 +59,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         txtPass = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         spnEdad = new javax.swing.JSpinner();
-        btnNuevacuenta = new javax.swing.JButton();
+        BTNCrear = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -165,7 +156,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         jLabel4.setText("Edad:");
 
         jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
-        jLabel5.setText("Usuario:");
+        jLabel5.setText("Nombre (será tu usuario):");
 
         txtCorreo.setBackground(new java.awt.Color(201, 214, 229));
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
@@ -190,13 +181,13 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnNuevacuenta.setBackground(new java.awt.Color(201, 214, 229));
-        btnNuevacuenta.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
-        btnNuevacuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/crearcuenta_logo.png"))); // NOI18N
-        btnNuevacuenta.setText("Crear Cuenta");
-        btnNuevacuenta.addActionListener(new java.awt.event.ActionListener() {
+        BTNCrear.setBackground(new java.awt.Color(201, 214, 229));
+        BTNCrear.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        BTNCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/crearcuenta_logo.png"))); // NOI18N
+        BTNCrear.setText("Crear Cuenta");
+        BTNCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevacuentaActionPerformed(evt);
+                BTNCrearActionPerformed(evt);
             }
         });
 
@@ -245,7 +236,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(113, 113, 113)
-                .addComponent(btnNuevacuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BTNCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -277,7 +268,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(btnNuevacuenta)
+                .addComponent(BTNCrear)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -309,51 +300,15 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassActionPerformed
 
-    private void btnNuevacuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevacuentaActionPerformed
+    private void BTNCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNCrearActionPerformed
         // TODO add your handling code here:
-         // validar si todavia hay espacio en el arreglo
-        if(contador < user.length){
-            
-            String nombre = txtNombre.getText();
-            String correo = txtCorreo.getText();
-            int edad = (int) spnEdad.getValue();
-            String contra =  txtPass.getText();
-            
-            // validar si los campos estan vacios 
-            if(nombre.isEmpty() || contra.isEmpty()){
-                JOptionPane.showMessageDialog(null, "Completa todos los campos");
-                return;
-            }else {
-                
-                // crear objeto individual con los datos de la ventana 
-                Usuario users = new Usuario(nombre,correo,edad,contra);
-                
-                //guardar objeto en el arreglo
-                user[contador] = users;
-                contador++;
-                JOptionPane.showMessageDialog(null, "Registro Exitoso");
-                // limpiar formularios
-                txtNombre.setText("");
-                txtCorreo.setText("");
-                spnEdad.setValue(0);
-                txtPass.setText("");
-
-            }
-        }else{
-            JOptionPane.showMessageDialog(this, "Se alcanzo la cantidad maxima de " + user.length+ " usuarios locales", "", JOptionPane.ERROR_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_btnNuevacuentaActionPerformed
+    }//GEN-LAST:event_BTNCrearActionPerformed
 
     
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.dispose();
+      
     }//GEN-LAST:event_formWindowClosing
 
-    public JSpinner getSpnEdad() {
-        return spnEdad;
-    }
-    
     /**
      * @param args the command line arguments
      */
@@ -384,13 +339,13 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmNuevoUsuario(new javax.swing.JFrame(), true).setVisible(true);
+                new FrmNuevoUsuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnNuevacuenta;
+    public javax.swing.JButton BTNCrear;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -408,9 +363,9 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSpinner spnEdad;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtPass;
+    public javax.swing.JSpinner spnEdad;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtPass;
     // End of variables declaration//GEN-END:variables
 }

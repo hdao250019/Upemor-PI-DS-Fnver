@@ -4,7 +4,6 @@
  */
 package Views;
 
-import Models.Usuario;
 import Models.Admin;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
@@ -16,26 +15,22 @@ import javax.swing.UIManager;
  * @author Angel H
  */
 public class MainFrm extends javax.swing.JFrame {
-    
+
     Admin adm;
-    private int contadorUsuarios;
-    Usuario usuarios[] = new Usuario[4];
-    /**
-     * Creates new form MainFrm
-     */
+
     public MainFrm() {
         initComponents();
         
-        //Ajustar Apariencia Visual
+
+
         FlatLightLaf.setup();
-        getRootPane().putClientProperty("FlatLaf.fullWindowContent", true); //Extender elementos a toda la ventana
-       
+        getRootPane().putClientProperty("FlatLaf.fullWindowContent", true);
+
         UIManager.put("TitlePane.buttonForeground", Color.WHITE);
         UIManager.put("TitlePane.buttonHoverForeground", Color.BLACK);
-        FlatLaf.updateUI();
-        
-    }
 
+        FlatLaf.updateUI();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,12 +44,12 @@ public class MainFrm extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        menuConsultas = new FinverUI.MenuButton();
-        menuAgregar = new FinverUI.MenuButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        menuAgregar = new Controles.MenuButton();
+        menuConsultas = new Controles.MenuButton();
         jPanel4 = new javax.swing.JPanel();
-        roundPanel2 = new FinverUI.RoundPanel();
+        roundPanel2 = new Controles.RoundPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,14 +64,13 @@ public class MainFrm extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
-        menuConsultas.setAMouseEnter(new java.awt.Color(104, 123, 255));
-        menuConsultas.setATexto("Ver Cuentas Locales");
-        menuConsultas.setATextoIcono("");
-        menuConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuConsultasMouseClicked(evt);
-            }
-        });
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("FINVER");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Gestion de Ahorros");
 
         menuAgregar.setAMouseEnter(new java.awt.Color(104, 123, 255));
         menuAgregar.setATexto("Agregar Cuenta");
@@ -87,24 +81,18 @@ public class MainFrm extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("FINVER");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Gestion de Ahorros");
+        menuConsultas.setAMouseEnter(new java.awt.Color(104, 123, 255));
+        menuConsultas.setATexto("Ver Cuentas Locales");
+        menuConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuConsultasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(3, 3, 3)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(3, 3, 3))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,6 +101,12 @@ public class MainFrm extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menuAgregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(menuConsultas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,11 +119,11 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(3, 3, 3)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(63, 72, 255));
@@ -151,11 +145,11 @@ public class MainFrm extends javax.swing.JFrame {
         roundPanel2.setLayout(roundPanel2Layout);
         roundPanel2Layout.setHorizontalGroup(
             roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 851, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         roundPanel2Layout.setVerticalGroup(
             roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 573, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -166,10 +160,10 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(roundPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(3, 3, 3))))
+                        .addContainerGap())))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +172,7 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(roundPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(3, 3, 3))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,27 +191,29 @@ public class MainFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAgregarMouseClicked
-        //Generar Ventana
-        FrmNuevoUsuario frm = new FrmNuevoUsuario(this, true);
-        //Pasar valores actuales del contador y el arreglo de usuarios
-        frm.contador = this.contadorUsuarios;
-        frm.user = this.usuarios;
-        //Hacer visible
-        frm.setLocationRelativeTo(this);
-        frm.setVisible(true);
-        //Al cerrar recibir los nuevos valores
-        this.contadorUsuarios = frm.contador;
-        this.usuarios = frm.user;
+        Views.FrmNuevoUsuario ventana = new Views.FrmNuevoUsuario();
+
+        // Instanciamos la base de datos
+        Models.UsuarioBD bd = new Models.UsuarioBD();
+
+        // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
+        Controller.UserController miControlador = new Controller.UserController(ventana, bd, null);
+
+        // Mostramos la ventana en pantalla
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }//GEN-LAST:event_menuAgregarMouseClicked
 
     private void menuConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultasMouseClicked
-        Views.FrmConsultarUsuarios frm = new Views.FrmConsultarUsuarios();
-        //Pasar valores actuales del contador y el arreglo de usuarios
-        frm.administrador = this.adm;
-        frm.contador = this.contadorUsuarios;
-        frm.usuarios = this.usuarios;
-        frm.setVisible(true);
-        
+        Views.FrmConsultarUsuarios ventana = new Views.FrmConsultarUsuarios();
+
+        //inyectamos esta ventana al controlador para que se use el paneUsuarios
+        Models.UsuarioBD bd = new Models.UsuarioBD();
+        Controller.UserController miControlador = new Controller.UserController(null, bd, ventana);
+
+        // Mostramos la ventana guardada en pantalla
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }//GEN-LAST:event_menuConsultasMouseClicked
 
     /**
@@ -226,11 +222,7 @@ public class MainFrm extends javax.swing.JFrame {
     public static void main(String args[]) {
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainFrm().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -241,8 +233,8 @@ public class MainFrm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
-    private FinverUI.MenuButton menuAgregar;
-    private FinverUI.MenuButton menuConsultas;
-    private FinverUI.RoundPanel roundPanel2;
+    public Controles.MenuButton menuAgregar;
+    public Controles.MenuButton menuConsultas;
+    private Controles.RoundPanel roundPanel2;
     // End of variables declaration//GEN-END:variables
 }
