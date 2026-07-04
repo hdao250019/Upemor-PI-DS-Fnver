@@ -341,6 +341,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
             public void run() {
                 new FrmNuevoUsuario().setVisible(true);
             }
+            
         });
     }
 

@@ -100,7 +100,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="menuConsultas1" alignment="1" pref="0" max="32767" attributes="0"/>
-                          <Component id="menuIngresarDinero" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="menuIngresarCategoria" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -122,7 +122,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="menuConsultas1" min="-2" pref="59" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="menuIngresarDinero" min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="menuIngresarCategoria" min="-2" pref="59" max="-2" attributes="0"/>
                       <EmptySpace pref="340" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -188,15 +188,15 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="Controles.MenuButton" name="menuIngresarDinero">
+            <Component class="Controles.MenuButton" name="menuIngresarCategoria">
               <Properties>
                 <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="7b" red="68" type="rgb"/>
                 </Property>
-                <Property name="ATexto" type="java.lang.String" value="Ingresar Dinero"/>
+                <Property name="ATexto" type="java.lang.String" value="Ingresar Categoria"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuIngresarDineroMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuIngresarCategoriaMouseClicked"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

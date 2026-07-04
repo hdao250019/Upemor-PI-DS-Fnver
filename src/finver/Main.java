@@ -5,7 +5,7 @@ import Views.FrmConsultarUsuarios;
 import Views.FrmNuevoUsuario;
 import Views.SplashFrm;
 import Models.UsuarioBD;
-import Views.FrmIngresarDinero;
+import Views.FrmIngresarCategoria;
 
 /**
  *
@@ -17,9 +17,9 @@ public class Main {
         UsuarioBD usuariobd = new UsuarioBD();
         SplashFrm inicio = new SplashFrm();
         FrmConsultarUsuarios verUsuarios = new FrmConsultarUsuarios();
-        FrmIngresarDinero ingresarDinero = new FrmIngresarDinero();
+        FrmIngresarCategoria ingresarCategoria = new FrmIngresarCategoria();
         
-        UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarDinero);
+        UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria);
         
         inicio.setLocationRelativeTo(null);
         inicio.setVisible(true);

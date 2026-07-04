@@ -47,7 +47,7 @@ public class MainFrm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         menuAgregar = new Controles.MenuButton();
-        menuIngresarDinero = new Controles.MenuButton();
+        menuIngresarCategoria = new Controles.MenuButton();
         menuConsultas1 = new Controles.MenuButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -82,11 +82,11 @@ public class MainFrm extends javax.swing.JFrame {
             }
         });
 
-        menuIngresarDinero.setAMouseEnter(new java.awt.Color(104, 123, 255));
-        menuIngresarDinero.setATexto("Ingresar Dinero");
-        menuIngresarDinero.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuIngresarCategoria.setAMouseEnter(new java.awt.Color(104, 123, 255));
+        menuIngresarCategoria.setATexto("Ingresar Categoria");
+        menuIngresarCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuIngresarDineroMouseClicked(evt);
+                menuIngresarCategoriaMouseClicked(evt);
             }
         });
 
@@ -117,7 +117,7 @@ public class MainFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(menuConsultas1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(menuIngresarDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(menuIngresarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -136,7 +136,7 @@ public class MainFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuConsultas1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuIngresarDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuIngresarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(340, Short.MAX_VALUE))
         );
 
@@ -218,8 +218,8 @@ public class MainFrm extends javax.swing.JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_menuAgregarMouseClicked
 
-    private void menuIngresarDineroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuIngresarDineroMouseClicked
-        Views.FrmIngresarDinero ventana = new Views.FrmIngresarDinero();
+    private void menuIngresarCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuIngresarCategoriaMouseClicked
+        Views.FrmIngresarCategoria ventana = new Views.FrmIngresarCategoria();
 
         //inyectamos esta ventana al controlador para que se use el paneUsuarios
         Models.UsuarioBD bd = new Models.UsuarioBD();
@@ -228,7 +228,7 @@ public class MainFrm extends javax.swing.JFrame {
         // Mostramos la ventana guardada en pantalla
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
-    }//GEN-LAST:event_menuIngresarDineroMouseClicked
+    }//GEN-LAST:event_menuIngresarCategoriaMouseClicked
 
     private void menuConsultas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultas1MouseClicked
         Views.FrmConsultarUsuarios ventana = new Views.FrmConsultarUsuarios();
@@ -262,6 +262,6 @@ public class MainFrm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     public Controles.MenuButton menuAgregar;
     public Controles.MenuButton menuConsultas1;
-    public Controles.MenuButton menuIngresarDinero;
+    public Controles.MenuButton menuIngresarCategoria;
     // End of variables declaration//GEN-END:variables
 }
