@@ -4,7 +4,7 @@ import Views.FrmConsultarUsuarios;
 import Views.FrmNuevoUsuario;
 import Models.UsuarioBD;
 import Models.Usuario;
-import Views.FrmIngresarDinero;
+import Views.FrmIngresarCategoria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -22,14 +22,14 @@ public class UserController implements ActionListener{
     private FrmNuevoUsuario ventana;
     private UsuarioBD usuariobd;
     private FrmConsultarUsuarios verUsuarios;
-    private FrmIngresarDinero ingresarDinero;
+    private FrmIngresarCategoria ingresarCategoria;
     
     // Constructor para iniciazar los ojetos}
-    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarDinero ingresarDinero) {
+    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria) {
         this.ventana = ventana;
         this.usuariobd = usuariobd;
         this.verUsuarios = verUsuarios;
-        this.ingresarDinero = ingresarDinero;
+        this.ingresarCategoria = ingresarCategoria;
         
         // Verifica si el objeto de la ventana de registro existe
         if (this.ventana != null) {
@@ -48,10 +48,10 @@ public class UserController implements ActionListener{
         }
         
         // Verifica si el objeto de la ventana de registro existe
-        if (this.ingresarDinero != null) {
+        if (this.ingresarCategoria != null) {
             // Verifica si el botón Crear Cuenta ya fue inicializado en los componentes
-            if (this.ventana.BTNCrear != null) {
-                this.ventana.BTNCrear.addActionListener(this);
+            if (this.ingresarCategoria.BTN_CAT != null) {
+                this.ingresarCategoria.BTN_CAT.addActionListener(this);
             }
         }
     }
@@ -150,6 +150,8 @@ public class UserController implements ActionListener{
         
     }
         
+    
+    // Metodo para guardar la categoria
     
     
     
