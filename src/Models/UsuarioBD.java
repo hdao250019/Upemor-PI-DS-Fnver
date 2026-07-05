@@ -98,9 +98,7 @@ public class UsuarioBD {
         }catch(SQLException e){
             System.out.println("Error al insertar: "+e.getMessage());
             return false;
-    }
-        
-        
+    } 
     }
     
     

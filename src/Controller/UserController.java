@@ -84,7 +84,7 @@ public class UserController implements ActionListener{
                 guardarUsuario();
             }
         }
-
+        
         // Validamos que verUsuarios exista antes de preguntar por su botón
         if (this.verUsuarios != null && this.verUsuarios.btnUsuarios != null) {
             if (e.getSource() == this.verUsuarios.btnUsuarios) {
@@ -99,7 +99,12 @@ public class UserController implements ActionListener{
             }
         }
         
-        
+        // Validamos que verUsuarios exista antes de preguntar por su botón
+        if (this.consultarCat != null && this.consultarCat.btnCategorias != null) {
+            if (e.getSource() == this.consultarCat.btnCategorias) {
+                mostrarCtegorias();
+            }
+        }
 }
     
     // Metodo para guardar estudiantes
@@ -178,7 +183,6 @@ public class UserController implements ActionListener{
     
     // Metodo para guardar la categoria
     private void guardarCategoria(){
-        
     // Obtener los datos desde la ventana
         String categoria = ingresarCategoria.TXT_Cat.getText().trim();
         String descripcion = ingresarCategoria.TXA_Desc.getText().trim();
@@ -191,9 +195,6 @@ public class UserController implements ActionListener{
             return;
         }
             Double total = Double.parseDouble(totalStr);
- 
-        
-        
         Categoria cat = new Categoria(categoria, descripcion, total);
         // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
         boolean resultado = usuariobd.categorias(cat);
@@ -251,7 +252,6 @@ public class UserController implements ActionListener{
         ventana.txtNombre.setText("");
         ventana.txtCorreo.setText("");
         ventana.spnEdad.setValue(0);
-        ventana.txtCorreo.setText("");
         ventana.txtPass.setText("");
         
         
@@ -265,3 +265,4 @@ public class UserController implements ActionListener{
         
     }
 }
+
