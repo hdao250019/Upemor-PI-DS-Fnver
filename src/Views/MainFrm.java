@@ -47,10 +47,11 @@ public class MainFrm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         menuAgregar = new Controles.MenuButton();
-        menuIngresarCategoria = new Controles.MenuButton();
         menuConsultas1 = new Controles.MenuButton();
+        menuMostrarCat = new Controles.MenuButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        MenuIngresarCategorias = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,19 +83,19 @@ public class MainFrm extends javax.swing.JFrame {
             }
         });
 
-        menuIngresarCategoria.setAMouseEnter(new java.awt.Color(104, 123, 255));
-        menuIngresarCategoria.setATexto("Ingresar Categoria");
-        menuIngresarCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuIngresarCategoriaMouseClicked(evt);
-            }
-        });
-
         menuConsultas1.setAMouseEnter(new java.awt.Color(104, 123, 255));
         menuConsultas1.setATexto("Ver Cuentas Locales");
         menuConsultas1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuConsultas1MouseClicked(evt);
+            }
+        });
+
+        menuMostrarCat.setAMouseEnter(new java.awt.Color(104, 123, 255));
+        menuMostrarCat.setATexto("Mostrar Categorias");
+        menuMostrarCat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuMostrarCatMouseClicked(evt);
             }
         });
 
@@ -116,8 +117,8 @@ public class MainFrm extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuConsultas1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(menuIngresarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(menuConsultas1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(menuMostrarCat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -136,8 +137,8 @@ public class MainFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuConsultas1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuIngresarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addComponent(menuMostrarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(63, 72, 255));
@@ -153,15 +154,31 @@ public class MainFrm extends javax.swing.JFrame {
             .addGap(0, 67, Short.MAX_VALUE)
         );
 
+        MenuIngresarCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-category-94.png"))); // NOI18N
+        MenuIngresarCategorias.setText("Ingresar Categorias");
+        MenuIngresarCategorias.setBorder(new javax.swing.border.MatteBorder(null));
+        MenuIngresarCategorias.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        MenuIngresarCategorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuIngresarCategoriasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 836, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(MenuIngresarCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(601, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 561, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(MenuIngresarCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(346, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -182,7 +199,7 @@ public class MainFrm extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(MainPanelLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -211,36 +228,52 @@ public class MainFrm extends javax.swing.JFrame {
         Models.UsuarioBD bd = new Models.UsuarioBD();
 
         // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
-        Controller.UserController miControlador = new Controller.UserController(ventana, bd, null, null);
+        Controller.UserController miControlador = new Controller.UserController(ventana, bd, null, null, null);
 
         // Mostramos la ventana en pantalla
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
     }//GEN-LAST:event_menuAgregarMouseClicked
 
-    private void menuIngresarCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuIngresarCategoriaMouseClicked
-        Views.FrmIngresarCategoria ventana = new Views.FrmIngresarCategoria();
-
-        //inyectamos esta ventana al controlador para que se use el paneUsuarios
-        Models.UsuarioBD bd = new Models.UsuarioBD();
-        Controller.UserController miControlador = new Controller.UserController(null, bd, null, ventana);
-
-        // Mostramos la ventana guardada en pantalla
-        ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);
-    }//GEN-LAST:event_menuIngresarCategoriaMouseClicked
-
     private void menuConsultas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultas1MouseClicked
         Views.FrmConsultarUsuarios ventana = new Views.FrmConsultarUsuarios();
 
         //inyectamos esta ventana al controlador para que se use el paneUsuarios
         Models.UsuarioBD bd = new Models.UsuarioBD();
-        Controller.UserController miControlador = new Controller.UserController(null, bd, ventana, null);
+        Controller.UserController miControlador = new Controller.UserController(null, bd, ventana, null, null);
 
         // Mostramos la ventana guardada en pantalla
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
     }//GEN-LAST:event_menuConsultas1MouseClicked
+
+    private void menuMostrarCatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMostrarCatMouseClicked
+        Views.FrmConsultarCategorias ventana = new Views.FrmConsultarCategorias();
+
+        // Instanciamos la base de datos
+        Models.UsuarioBD bd = new Models.UsuarioBD();
+
+        // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
+        Controller.UserController miControlador = new Controller.UserController(null, bd, null, null, ventana);
+
+        // Mostramos la ventana en pantalla
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_menuMostrarCatMouseClicked
+
+    private void MenuIngresarCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuIngresarCategoriasActionPerformed
+        Views.FrmIngresarCategoria ventana = new Views.FrmIngresarCategoria();
+
+        // Instanciamos la base de datos
+        Models.UsuarioBD bd = new Models.UsuarioBD();
+
+        // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
+        Controller.UserController miControlador = new Controller.UserController(null, bd, null, ventana, null);
+
+        // Mostramos la ventana en pantalla
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_MenuIngresarCategoriasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,6 +286,7 @@ public class MainFrm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
+    public javax.swing.JButton MenuIngresarCategorias;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -262,6 +296,6 @@ public class MainFrm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     public Controles.MenuButton menuAgregar;
     public Controles.MenuButton menuConsultas1;
-    public Controles.MenuButton menuIngresarCategoria;
+    public Controles.MenuButton menuMostrarCat;
     // End of variables declaration//GEN-END:variables
 }

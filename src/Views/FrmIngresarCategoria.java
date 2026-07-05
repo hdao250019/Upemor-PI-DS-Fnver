@@ -129,7 +129,7 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         jLabel2.setText("Ingresa cantidad a depositar:");
 
         jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
-        jLabel3.setText("Hola GabrielTc");
+        jLabel3.setText("Hola Usuario");
 
         TXT_Cat.addActionListener(this::TXT_CatActionPerformed);
 
@@ -141,7 +141,7 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         jScrollPane1.setViewportView(TXA_Desc);
 
         jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
-        jLabel5.setText("Tienes un saldo de $2500");
+        jLabel5.setText("Tienes un saldo de $1500");
 
         jLabel6.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel6.setText("Ingresa una nueva Categoria:");

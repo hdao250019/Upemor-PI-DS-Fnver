@@ -8,6 +8,8 @@ import java.util.List;
  * @author Jared
  */
 public class UsuarioBD {
+    
+    
     // Metodo para registrar en la base de datos
     public boolean insertar(Usuario usuarios){
         // CREAR SENTENCIA SQL
@@ -67,6 +69,68 @@ public class UsuarioBD {
             System.out.println("Error en consulta: " + e.getMessage());
         }
         return listaUsuario;
+    }
+    
+    
+    //Metodo para registrar categorias en la BD
+    public boolean categorias(Categoria categoria){
+         // CREAR SENTENCIA SQL
+        String sql_query = "INSERT INTO categoria(categoria, descripcion, total_ing) VALUES(?, ?, ?)";
+        
+        try{
+            //Conexion a la BD
+            Connection conn = ConexionDB.conexion();
+            //Crear el preparedstatement para mandarlo a la DB
+            PreparedStatement stmt = conn.prepareStatement(sql_query);
+            // Enviar los datos del modelo
+            stmt.setString(1, categoria.getCategoria());
+            stmt.setString(2, categoria.getDescripcion());
+            stmt.setDouble(3, categoria.getTotal());
+            
+            //Ejecutar el query en la DB
+            stmt.executeUpdate();
+            
+            // Cerrar Statement y la conexion a la DB
+            stmt.close();
+            conn.close();
+            
+            return true;
+        }catch(SQLException e){
+            System.out.println("Error al insertar: "+e.getMessage());
+            return false;
+    }
+        
+        
+    }
+    
+    
+    //Metodo para consultar todos los usuarios
+    public List<Categoria> consultarCategorias(){
+        List<Categoria> listaCat = new ArrayList<>();
+        String query_sql = "SELECT * FROM categoria";
+        try{
+            //Conexion a la BD
+            Connection conn = ConexionDB.conexion();
+            //Crear el preparedstatement para mandarlo a la DB
+            PreparedStatement stmt = conn.prepareStatement(query_sql);
+            
+            ResultSet result = stmt.executeQuery();
+            
+            // Ciclo para obtener todos los resgistros
+            while(result.next()){
+                int id = result.getInt("id_cat");
+                String categoria = result.getString("categoria");
+                String desc = result.getString("descripcion");
+                Double total = result.getDouble("total_ing");
+                
+                // crear objeto usuario y guardarlos en la lista
+                Categoria cat = new Categoria(id, categoria, desc, total);
+                listaCat.add(cat);
+            }
+        }catch(SQLException e){
+            System.out.println("Error en consulta: " + e.getMessage());
+        }
+        return listaCat;
     }
 }
 

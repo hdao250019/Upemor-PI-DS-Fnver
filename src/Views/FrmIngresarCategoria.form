@@ -231,7 +231,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Hola GabrielTc"/>
+            <Property name="text" type="java.lang.String" value="Hola Usuario"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TXT_Cat">
@@ -273,7 +273,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Tienes un saldo de $2500"/>
+            <Property name="text" type="java.lang.String" value="Tienes un saldo de $1500"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">

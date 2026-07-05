@@ -1,8 +1,10 @@
+package Views;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Views;
+
 
 import Views.MainFrm;
 import Models.Admin;
@@ -15,13 +17,13 @@ import java.awt.Color;
  *
  * @author Jared
  */
-public class FrmConsultarUsuarios extends javax.swing.JFrame {
+public class FrmConsultarCategorias extends javax.swing.JFrame {
 
     // Variable para guardar la ventana original real
     private MainFrm ventanaPrincipal; 
 
     // Modificamos el constructor para recibirla
-    public FrmConsultarUsuarios(MainFrm ventanaOriginal) {
+    public FrmConsultarCategorias(MainFrm ventanaOriginal) {
         initComponents();
         this.ventanaPrincipal = ventanaOriginal; //Guardamos la ventana original
     }
@@ -34,11 +36,11 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
      */
     
     //Modificado para la ventana Modal
-    public FrmConsultarUsuarios(Usuario usr[], int count) {
+    public FrmConsultarCategorias(Usuario usr[], int count) {
         initComponents();
         
     }
-    public FrmConsultarUsuarios(){
+    public FrmConsultarCategorias(){
         initComponents();
         FlatLightLaf.setup();
         FlatLaf.updateUI();
@@ -56,9 +58,9 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnUsuarios = new javax.swing.JButton();
+        btnCategorias = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        paneUsuarios = new javax.swing.JScrollPane();
+        paneCategorias = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -72,8 +74,8 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(201, 214, 229));
 
-        btnUsuarios.setText("Mostrar Usuarios");
-        btnUsuarios.addActionListener(this::btnUsuariosActionPerformed);
+        btnCategorias.setText("Mostrar Categorias");
+        btnCategorias.addActionListener(this::btnCategoriasActionPerformed);
 
         jPanel3.setBackground(new java.awt.Color(11, 31, 59));
 
@@ -97,20 +99,20 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(paneUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(paneCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(200, 200, 200)
-                        .addComponent(btnUsuarios)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addComponent(btnCategorias)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(paneUsuarios)
+                .addComponent(paneCategorias)
                 .addGap(18, 18, 18)
-                .addComponent(btnUsuarios)
+                .addComponent(btnCategorias)
                 .addGap(25, 25, 25))
         );
 
@@ -128,7 +130,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Consulta de Usuarios");
+        jLabel11.setText("Consulta de Categorias");
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo_grupo.png"))); // NOI18N
 
@@ -137,7 +139,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
@@ -161,7 +163,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,9 +208,9 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
+    private void btnCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriasActionPerformed
         
-    }//GEN-LAST:event_btnUsuariosActionPerformed
+    }//GEN-LAST:event_btnCategoriasActionPerformed
 
 
     
@@ -224,7 +226,7 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnUsuarios;
+    public javax.swing.JButton btnCategorias;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel8;
@@ -234,6 +236,6 @@ public class FrmConsultarUsuarios extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator4;
-    public javax.swing.JScrollPane paneUsuarios;
+    public javax.swing.JScrollPane paneCategorias;
     // End of variables declaration//GEN-END:variables
 }
