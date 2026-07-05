@@ -1,9 +1,11 @@
 package Controller;
 
+import Models.Categoria;
 import Views.FrmConsultarUsuarios;
 import Views.FrmNuevoUsuario;
 import Models.UsuarioBD;
 import Models.Usuario;
+import Views.FrmConsultarCategorias;
 import Views.FrmIngresarCategoria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,13 +25,15 @@ public class UserController implements ActionListener{
     private UsuarioBD usuariobd;
     private FrmConsultarUsuarios verUsuarios;
     private FrmIngresarCategoria ingresarCategoria;
+    private FrmConsultarCategorias consultarCat;
     
     // Constructor para iniciazar los ojetos}
-    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria) {
+    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat) {
         this.ventana = ventana;
         this.usuariobd = usuariobd;
         this.verUsuarios = verUsuarios;
         this.ingresarCategoria = ingresarCategoria;
+        this.consultarCat = consultarCat;
         
         // Verifica si el objeto de la ventana de registro existe
         if (this.ventana != null) {
@@ -54,7 +58,18 @@ public class UserController implements ActionListener{
                 this.ingresarCategoria.BTN_CAT.addActionListener(this);
             }
         }
+        
+        // Verifica si el objeto de la ventana de registro existe
+        if (this.consultarCat != null) {
+            // Verifica si el botón mostrar Categorias ya fue inicializado en los componentes
+            if (this.consultarCat.btnCategorias != null) {
+                this.consultarCat.btnCategorias.addActionListener(this);
+            }
+            mostrarCtegorias();
+        }
     }
+    
+    
     
     //Metodo obligatorio para la clase abstracta
     //Override es sobreescribir el código de un metodo existente (actionPerformed)
@@ -76,6 +91,15 @@ public class UserController implements ActionListener{
                 mostrarUsuarios();
             }
         }
+        
+        // Validamos que verUsuarios exista antes de preguntar por su botón
+        if (this.ingresarCategoria != null && this.ingresarCategoria.BTN_CAT != null) {
+            if (e.getSource() == this.ingresarCategoria.BTN_CAT) {
+                guardarCategoria();
+            }
+        }
+        
+        
 }
     
     // Metodo para guardar estudiantes
@@ -91,6 +115,7 @@ public class UserController implements ActionListener{
             // Mostrar un mensaje de advertencia al usuario
             JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
                     "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
+            return;
         }
         
         
@@ -101,7 +126,7 @@ public class UserController implements ActionListener{
         // Evaluar si el resultado de la insercion fue exitoso
         if (resultado) {
             JOptionPane.showMessageDialog(ventana, "Registro exitoso");
-            LimpiarCampos();
+            LimpiarCamposUser();
             
             // Solo actualiza la tabla si la ventana existe
             if (this.verUsuarios != null) {
@@ -114,7 +139,7 @@ public class UserController implements ActionListener{
     
     
     
-    // Metodo para crear la tabla
+    // Metodo para crear la tabla mostrarUsuarios
     private void mostrarUsuarios(){
     
         DefaultTableModel modelo = new DefaultTableModel();
@@ -152,15 +177,90 @@ public class UserController implements ActionListener{
         
     
     // Metodo para guardar la categoria
+    private void guardarCategoria(){
+        
+    // Obtener los datos desde la ventana
+        String categoria = ingresarCategoria.TXT_Cat.getText().trim();
+        String descripcion = ingresarCategoria.TXA_Desc.getText().trim();
+        String totalStr = ingresarCategoria.TXT_Cant.getText().trim();
+        
+        if (totalStr.isEmpty() || categoria.isEmpty() || descripcion.isEmpty()) {
+            // Mostrar un mensaje de advertencia al usuario
+            JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
+                    "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+            Double total = Double.parseDouble(totalStr);
+ 
+        
+        
+        Categoria cat = new Categoria(categoria, descripcion, total);
+        // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
+        boolean resultado = usuariobd.categorias(cat);
+        
+        // Evaluar si el resultado de la insercion fue exitoso
+        if (resultado) {
+            JOptionPane.showMessageDialog(ventana, "Registro exitoso");
+            LimpiarCamposCat();
+            
+            // Solo actualiza la tabla si la ventana existe
+            if (this.verUsuarios != null) {
+                mostrarUsuarios();
+            }
+        } else {
+            JOptionPane.showMessageDialog(ventana, "Error al registrar");
+        }
+    }
+    
+    // Metodo para crear la tabla mostrarCategorias
+    private void mostrarCtegorias(){
+    
+        DefaultTableModel modelo = new DefaultTableModel();
+        
+        // Añadir columnas de la tabla
+        modelo.addColumn("ID");
+        modelo.addColumn("Categoria");
+        modelo.addColumn("Descripción");
+        modelo.addColumn("Dinero Ingresado");
+        
+        List<Categoria> listaCat = usuariobd.consultarCategorias();
+        
+        // Ciclo para recorrer la lista de usuarios
+        for(Categoria categoria : listaCat){
+            
+            // Guardar los objetos en un arreglo para usarlos en la tabla
+            Object[] fila = {
+                categoria.getId(),
+                categoria.getCategoria(),
+                categoria.getDescripcion(),
+                categoria.getTotal()
+                    
+            };
+            
+            modelo.addRow(fila);
+        }
+        //Crear tabla
+        JTable tablaUser = new JTable(modelo);
+        // Usar JScrollpane para mostrar la tabla
+        consultarCat.paneCategorias.setViewportView(tablaUser);
+        
+    }
     
     
-    
-    private void LimpiarCampos(){
+    private void LimpiarCamposUser(){
         ventana.txtNombre.setText("");
         ventana.txtCorreo.setText("");
         ventana.spnEdad.setValue(0);
         ventana.txtCorreo.setText("");
         ventana.txtPass.setText("");
+        
+        
+    }
+    
+    private void LimpiarCamposCat(){
+        ingresarCategoria.TXT_Cat.setText("");
+        ingresarCategoria.TXA_Desc.setText("");
+        ingresarCategoria.TXT_Cant.setText("");
         
         
     }
