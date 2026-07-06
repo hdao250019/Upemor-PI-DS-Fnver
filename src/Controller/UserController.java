@@ -34,7 +34,6 @@ public class UserController implements ActionListener{
     
     
     
-    
     // Constructor para iniciazar los ojetos}
     public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat) {
         this.ventana = ventana;
@@ -116,9 +115,12 @@ public class UserController implements ActionListener{
                 mostrarCtegorias();
             }
         }
-         
+        
+        
+        
+        
 }
-
+    
     // Metodo para guardar Usuarios
     private void guardarUsuario(){
         
@@ -295,4 +297,3 @@ public class UserController implements ActionListener{
         
     }
 }
-

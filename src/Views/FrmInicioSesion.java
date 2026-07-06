@@ -221,11 +221,15 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         }
         if (usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)) {
             // Abrir nueva ventana del menu
-            Views.MainFrm ventana = new Views.MainFrm();
-            //Enviar claves de Administrador
-            ventana.adm = this.usuarioAdmin;
-            ventana.setLocationRelativeTo(null);
-            ventana.setVisible(true);
+            Models.UsuarioBD usuariobd = new Models.UsuarioBD();
+            Views.MainFrm menu = new Views.MainFrm();
+        
+        // 3. ¡LE CONECTAMOS SU CONTROLADOR JUSTO ANTES DE MOSTRARLO!
+            Controller.MenuController controlmenu = new Controller.MenuController(menu, usuariobd);
+        
+        // 4. Mostramos el menú y cerramos el login
+            menu.setLocationRelativeTo(null);
+            menu.setVisible(true);
             // cerrar la ventana actual 
             this.dispose();
 

@@ -4,14 +4,11 @@
  */
 package Views;
 
-import Controller.MenuController;
 import Models.Admin;
-import Models.UsuarioBD;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import javax.swing.UIManager;
-
 /**
  *
  * @author Angel H
@@ -284,16 +281,7 @@ public class MainFrm extends javax.swing.JFrame {
     public static void main(String args[]) {
 
         /* Create and display the form */
-        MainFrm vistaMenu = new MainFrm();
-        UsuarioBD modeloBD = new UsuarioBD();
-    
-        // Con esta línea el MenuController empieza a escuchar los clics desde el segundo 1
-        MenuController controlMenu = new MenuController(vistaMenu, modeloBD);
-    
-        vistaMenu.setLocationRelativeTo(null);
-        vistaMenu.setVisible(true);
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     public javax.swing.JButton MenuIngresarCategorias;

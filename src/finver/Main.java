@@ -9,7 +9,6 @@ import Models.UsuarioBD;
 import Views.FrmConsultarCategorias;
 import Views.FrmIngresarCategoria;
 import Views.MainFrm;
-
 /**
  *
  * @author rousc
@@ -21,13 +20,12 @@ public class Main {
         FrmNuevoUsuario ventana = new FrmNuevoUsuario();
         UsuarioBD usuariobd = new UsuarioBD();
         SplashFrm inicio = new SplashFrm();
+        MainFrm menu = new MainFrm();
         FrmConsultarUsuarios verUsuarios = new FrmConsultarUsuarios();
         FrmIngresarCategoria ingresarCategoria = new FrmIngresarCategoria();
         FrmConsultarCategorias consultarCat = new FrmConsultarCategorias();
-        MainFrm vistaMenu = new MainFrm();
-        UsuarioBD modeloBD = new UsuarioBD();
-    
-        MenuController controlMenu = new MenuController(vistaMenu, modeloBD);
+        
+        MenuController controlmenu = new MenuController(menu, usuariobd);
         UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat);
         
         inicio.setLocationRelativeTo(null);
