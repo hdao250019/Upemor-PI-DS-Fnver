@@ -16,16 +16,13 @@ public class MenuController implements ActionListener, MouseListener {
         this.menu = menu;
         this.usuariobd = usuariobd;
         
-        // PANELES: Se escuchan con MouseListener
         this.menu.menuAgregar.addMouseListener(this);
         this.menu.menuConsultas.addMouseListener(this);
-        this.menu.menuMostrarCat.addMouseListener(this);
-        
-        // BOTÓN: Se escucha con ActionListener
         this.menu.MenuIngresarCategorias.addActionListener(this);
+        this.menu.menuMostrarCat.addMouseListener(this);
     }
     
-    // 1. CAPTURA EXCLUSIVA PARA EL BOTÓN REAL
+    // Captura para el button ingresar categoria
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.menu.MenuIngresarCategorias) {
@@ -33,7 +30,7 @@ public class MenuController implements ActionListener, MouseListener {
         }
     }
     
-    // 2. CAPTURA EXCLUSIVA PARA LOS PANELES-BOTÓN
+    // Captura para los botones-panel de crear cuenta, mostrar usuarios y motrar categorias
     @Override
     public void mouseClicked(MouseEvent e) {
         if (this.menu != null && this.menu.menuAgregar != null) {
@@ -60,6 +57,8 @@ public class MenuController implements ActionListener, MouseListener {
     @Override public void mouseReleased(MouseEvent e) {}
     @Override public void mouseEntered(MouseEvent e) {}
     @Override public void mouseExited(MouseEvent e) {}
+    
+    
     
      private void irCrearCuenta(){
         FrmNuevoUsuario NewUsuario = new FrmNuevoUsuario();
@@ -95,7 +94,7 @@ public class MenuController implements ActionListener, MouseListener {
         vercat.setVisible(true);
     }
     
-    // AGREGADO: Método para ir a mostrar categorías
+    // Método para ir a mostrar categorías
     private void irMostrarCategorias() {
         FrmConsultarCategorias ConsCat = new FrmConsultarCategorias();
         UsuarioBD usuariobd = new UsuarioBD();
