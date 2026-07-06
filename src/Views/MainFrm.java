@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Views;
 
 import Models.Admin;
@@ -222,57 +218,19 @@ public class MainFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAgregarMouseClicked
-        /*Views.FrmNuevoUsuario ventana = new Views.FrmNuevoUsuario();
-
-        // Instanciamos la base de datos
-        Models.UsuarioBD bd = new Models.UsuarioBD();
-
-        // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
-        Controller.UserController miControlador = new Controller.UserController(ventana, bd, null, null, null);
-
-        // Mostramos la ventana en pantalla
-        ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);*/
+        
     }//GEN-LAST:event_menuAgregarMouseClicked
 
     private void menuConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultasMouseClicked
-        /*Views.FrmConsultarUsuarios ventana = new Views.FrmConsultarUsuarios();
-
-        //inyectamos esta ventana al controlador para que se use el paneUsuarios
-        Models.UsuarioBD bd = new Models.UsuarioBD();
-        Controller.UserController miControlador = new Controller.UserController(null, bd, ventana, null, null);
-
-        // Mostramos la ventana guardada en pantalla
-        ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);*/
+        
     }//GEN-LAST:event_menuConsultasMouseClicked
 
     private void menuMostrarCatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMostrarCatMouseClicked
-        /*Views.FrmConsultarCategorias ventana = new Views.FrmConsultarCategorias();
-
-        // Instanciamos la base de datos
-        Models.UsuarioBD bd = new Models.UsuarioBD();
-
-        // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
-        Controller.UserController miControlador = new Controller.UserController(null, bd, null, null, ventana);
-
-        // Mostramos la ventana en pantalla
-        ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);*/
+       
     }//GEN-LAST:event_menuMostrarCatMouseClicked
 
     private void MenuIngresarCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuIngresarCategoriasActionPerformed
-        /*Views.FrmIngresarCategoria ventana = new Views.FrmIngresarCategoria();
-
-        // Instanciamos la base de datos
-        Models.UsuarioBD bd = new Models.UsuarioBD();
-
-        // Le pasamos 'ventana' en el primer parámetro (registro) y 'null' en el tercero (consultas)
-        Controller.UserController miControlador = new Controller.UserController(null, bd, null, ventana, null);
-
-        // Mostramos la ventana en pantalla
-        ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);*/
+        
     }//GEN-LAST:event_MenuIngresarCategoriasActionPerformed
 
     /**
