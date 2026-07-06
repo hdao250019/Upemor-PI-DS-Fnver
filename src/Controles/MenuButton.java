@@ -4,6 +4,8 @@
  */
 package Controles;
 
+import Controller.UserController;
+
 /**
  *
  * @author Angel H
@@ -135,4 +137,6 @@ public class MenuButton extends Controles.RoundPanel {
     private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblInfo;
     // End of variables declaration//GEN-END:variables
+
+    
 }

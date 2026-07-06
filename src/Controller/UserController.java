@@ -6,9 +6,13 @@ import Views.FrmNuevoUsuario;
 import Models.UsuarioBD;
 import Models.Usuario;
 import Views.FrmConsultarCategorias;
+import Views.FrmGestionUsuarios;
 import Views.FrmIngresarCategoria;
+import Views.MainFrm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -21,11 +25,15 @@ import javax.swing.table.DefaultTableModel;
 public class UserController implements ActionListener{
     
     //crear objetos para el modelo y la vista
+    private MainFrm menu;
     private FrmNuevoUsuario ventana;
     private UsuarioBD usuariobd;
     private FrmConsultarUsuarios verUsuarios;
     private FrmIngresarCategoria ingresarCategoria;
     private FrmConsultarCategorias consultarCat;
+    
+    
+    
     
     // Constructor para iniciazar los ojetos}
     public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat) {
@@ -34,6 +42,8 @@ public class UserController implements ActionListener{
         this.verUsuarios = verUsuarios;
         this.ingresarCategoria = ingresarCategoria;
         this.consultarCat = consultarCat;
+        
+        
         
         // Verifica si el objeto de la ventana de registro existe
         if (this.ventana != null) {
@@ -67,14 +77,15 @@ public class UserController implements ActionListener{
             }
             mostrarCtegorias();
         }
+        
     }
-    
     
     
     //Metodo obligatorio para la clase abstracta
     //Override es sobreescribir el código de un metodo existente (actionPerformed)
     @Override
     public void actionPerformed(ActionEvent e){
+        
         
     // Validamos que ventana exista antes de preguntar por su botón
     // Sin esta validacion java no encuentra la ventana por lo que marca error
@@ -105,9 +116,10 @@ public class UserController implements ActionListener{
                 mostrarCtegorias();
             }
         }
+         
 }
-    
-    // Metodo para guardar estudiantes
+
+    // Metodo para guardar Usuarios
     private void guardarUsuario(){
         
         // Obtener los datos desde la ventana
@@ -141,7 +153,6 @@ public class UserController implements ActionListener{
             JOptionPane.showMessageDialog(ventana, "Error al registrar");
         }
     }
-    
     
     
     // Metodo para crear la tabla mostrarUsuarios
@@ -213,6 +224,7 @@ public class UserController implements ActionListener{
         }
     }
     
+    
     // Metodo para crear la tabla mostrarCategorias
     private void mostrarCtegorias(){
     
@@ -248,6 +260,22 @@ public class UserController implements ActionListener{
     }
     
     
+    // Metodo para ir a la gestion de Usuarios
+    private void irGestionUsuarios(){
+        
+        FrmGestionUsuarios ventanaGestion = new FrmGestionUsuarios();
+        UsuarioBD usuariobd = new UsuarioBD();
+        
+        GestionUsuarioController controladorGestion =
+                new GestionUsuarioController(ventanaGestion, usuariobd);
+        
+        ventanaGestion.setLocationRelativeTo(null);
+        ventanaGestion.setVisible(true);
+        
+    }
+    
+    
+    // Metodo para limpiar campos de Usuarios
     private void LimpiarCamposUser(){
         ventana.txtNombre.setText("");
         ventana.txtCorreo.setText("");
@@ -257,6 +285,8 @@ public class UserController implements ActionListener{
         
     }
     
+    
+    // Metodo para limpiar campos de Categoria
     private void LimpiarCamposCat(){
         ingresarCategoria.TXT_Cat.setText("");
         ingresarCategoria.TXA_Desc.setText("");
