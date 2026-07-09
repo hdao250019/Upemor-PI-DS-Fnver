@@ -180,10 +180,8 @@ public class UserController implements ActionListener{
                 usuario.getNombre(),
                 usuario.getEdad(),
                 usuario.getCorreo(),
-                usuario.getContrasenia()
-                    
+                "**********"
             };
-            
             modelo.addRow(fila);
         }
         //Crear tabla
