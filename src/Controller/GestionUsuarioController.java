@@ -1,9 +1,11 @@
 package Controller;
 
+import Models.Usuario;
 import Models.UsuarioBD;
 import Views.FrmGestionUsuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 /**
@@ -69,12 +71,42 @@ public class GestionUsuarioController implements ActionListener {
         int edad = Integer.parseInt(tabla.getValueAt(fila, 3).toString());
         String Pass = tabla.getValueAt(fila, 4).toString();
         
+        if (nombre.isEmpty() || correo.isEmpty() || Pass.isEmpty() || edad <= 0) {
+            // Mostrar un mensaje de advertencia al usuario
+            JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
+                    "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        
+        Usuario user = new Usuario(edad, nombre, correo, Pass);
+        // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
+        boolean resultado = usuariobd.insertar(user);
+        
+        // Evaluar si el resultado de la insercion fue exitoso
+        if (resultado) {
+            JOptionPane.showMessageDialog(ventana, "Registro exitoso");
+            
+        } else {
+            JOptionPane.showMessageDialog(ventana, "Error al registrar");
+        }
+        
+        
         //Mostrar los datos del usuario
-        ventana.txtNombre.setText(nombre);
-        ventana.txtCorreo.setText(correo);
-        ventana.spnEdad.setValue(edad);
-        ventana.txtPass.setText(Pass);
+        ventana.txtNombreAct.setText(nombre);
+        ventana.txtCorreoAct.setText(correo);
+        ventana.spnEdadAct.setValue(edad);
+        ventana.txtPassAct.setText(Pass);
         
     }
     
+    // Metodo para limpiar campos de Usuarios
+    private void LimpiarCamposUser(){
+        ventana.txtNombreAct.setText("");
+        ventana.txtCorreoAct.setText("");
+        ventana.spnEdadAct.setValue(0);
+        ventana.txtPassAct.setText("");
+        
+        
+    }
 }
