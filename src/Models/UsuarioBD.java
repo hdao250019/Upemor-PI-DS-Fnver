@@ -78,7 +78,7 @@ public class UsuarioBD {
         String sql_query = "INSERT INTO categoria(categoria, descripcion, total_ing) VALUES(?, ?, ?)";
         
         try{
-            //Conexion a la BD
+             //Conexion a la BD
             Connection conn = ConexionDB.conexion();
             //Crear el preparedstatement para mandarlo a la DB
             PreparedStatement stmt = conn.prepareStatement(sql_query);
@@ -86,7 +86,6 @@ public class UsuarioBD {
             stmt.setString(1, categoria.getCategoria());
             stmt.setString(2, categoria.getDescripcion());
             stmt.setDouble(3, categoria.getTotal());
-            
             //Ejecutar el query en la DB
             stmt.executeUpdate();
             
@@ -130,5 +129,59 @@ public class UsuarioBD {
         }
         return listaCat;
     }
+    
+        // METODO PARA ACTUALIZAR ESTUDIAMTES
+        public boolean actualizar(Usuario usuario){
+        
+        String query_sql = "UPDATE usuarios SET * nombre = ?, edad = ?, correo = ?, contraseña = ? WHERE id = ?";
+        
+        try{
+             //Conexion a la BD
+            Connection conn = ConexionDB.conexion();
+            //Crear el preparedstatement para mandarlo a la DB
+            PreparedStatement stmt = conn.prepareStatement(query_sql);
+            // Enviar los datos del modelo
+            stmt.setString(1, usuario.getNombre());
+            stmt.setString(2, usuario.getCorreo());
+            stmt.setInt(3, usuario.getEdad());
+            stmt.setString(4, usuario.getContrasenia());
+              
+              // Verificar el numero de filas que cambiaron 
+              int filas_cambiadas = stmt.executeUpdate();
+              
+              // Cuando es booean no es necesario aplicar un if
+              return filas_cambiadas > 0;
+              
+            
+            
+        }catch(SQLException e){
+            System.out.println("ERROR AL ACTUALIZAR EN LA BD" + e.getMessage());
+            return false;
+            
+        }
+    }
+        
+    public boolean eliminar(int idUsuario){
+            
+        String query_sql = "DELETE FROM usuarios WHERE id = ?";
+            
+        try{
+            //Conexion a la BD
+            Connection conn = ConexionDB.conexion();
+            //Crear el preparedstatement para mandarlo a la DB
+            PreparedStatement stmt = conn.prepareStatement(query_sql); 
+                
+            stmt.setInt(1, idUsuario);
+            
+            // Valor de las filas afectadas
+            int filas_cambiadas = stmt.executeUpdate();
+            return filas_cambiadas > 0; 
+           
+        }catch(SQLException e){
+            System.out.println("ERROR AL BORRAR USUARIO EN LA BD: " + e.getMessage());
+            return false;
+        }
+            
+        }
 }
 
