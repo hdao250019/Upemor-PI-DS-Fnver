@@ -5,8 +5,10 @@ import Models.UsuarioBD;
 import Views.FrmGestionUsuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,15 +34,15 @@ public class GestionUsuarioController implements ActionListener {
     public void actionPerformed(ActionEvent e){
         
         if(e.getSource() == ventana.BTN_Act){
-            
+            actuaizarUsuario();
         }
         
         if(e.getSource() == ventana.BTN_Eli){
-            
+            eliminarUsuario();
         }
         
         if(e.getSource() == ventana.BTN_Lim){
-            
+            limpiarCampos();
         }
         
     }
@@ -71,26 +73,6 @@ public class GestionUsuarioController implements ActionListener {
         int edad = Integer.parseInt(tabla.getValueAt(fila, 3).toString());
         String Pass = tabla.getValueAt(fila, 4).toString();
         
-        if (nombre.isEmpty() || correo.isEmpty() || Pass.isEmpty() || edad <= 0) {
-            // Mostrar un mensaje de advertencia al usuario
-            JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
-                    "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        
-        Usuario user = new Usuario(edad, nombre, correo, Pass);
-        // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
-        boolean resultado = usuariobd.insertar(user);
-        
-        // Evaluar si el resultado de la insercion fue exitoso
-        if (resultado) {
-            JOptionPane.showMessageDialog(ventana, "Registro exitoso");
-            
-        } else {
-            JOptionPane.showMessageDialog(ventana, "Error al registrar");
-        }
-        
         
         //Mostrar los datos del usuario
         ventana.txtNombreAct.setText(nombre);
@@ -100,8 +82,103 @@ public class GestionUsuarioController implements ActionListener {
         
     }
     
-    // Metodo para limpiar campos de Usuarios
-    private void LimpiarCamposUser(){
+     // METODO CREAR TABLA
+        private void mostrarUsuarios(){
+        DefaultTableModel modelo = new DefaultTableModel();
+        
+        // Añadir columnas en tablas
+        modelo.addColumn("ID");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Matricula");
+        modelo.addColumn("Edad");
+        modelo.addColumn("Carrera");
+        List<Usuario> listaUsuarios = usuariobd.consultarUsuarios();
+        
+        // Ciclo para recorrer la lista de usuarios
+        for(Usuario usuario : listaUsuarios){
+            // Guardar os objetos en un arreglo para usarlo en la tabla s
+            Object[] fila = {
+
+            usuario.getId(),
+            usuario.getNombre(),
+            usuario.getEdad(),
+            usuario.getCorreo(),
+            usuario.getContrasenia()
+        };
+            modelo.addRow(fila);
+        }
+        //Crear tabla
+        JTable tablaUser = new JTable(modelo);
+        // Usar JScrollpane para mostrar la tabla
+        ventana.paneUsuarios.setViewportView(tablaUser);
+        }
+
+         // METODO PARA ACTUALIZAR UN REGISTRO
+        private void actuaizarUsuario(){
+             
+            // Validar si un ID fue seleccionado
+            if(idSeleccionado == -1){
+                JOptionPane.showMessageDialog(ventana, "SELECCIONA UN REGISTRO");
+                return;
+            }
+            
+            String nombre = ventana.txtNombreAct.getText().trim();
+            int edad = Integer.parseInt(ventana.spnEdadAct.getValue().toString());
+            String correo = ventana.txtCorreoAct.getText().trim();
+            String contrasenia = ventana.txtPassAct.getText().trim();
+            
+            if (nombre.isEmpty() || correo.isEmpty() || contrasenia.isEmpty() || edad <= 0) {
+            // Mostrar un mensaje de advertencia al usuario
+            JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
+                    "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+            // OBTENER LOS NOMBRES DESDE LA VENTANA
+            Usuario usuario = new Usuario(idSeleccionado,edad, nombre, correo, contrasenia);
+            
+        // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
+            boolean actualizar = usuariobd.actualizar(usuario);
+        
+            if(actualizar){
+                JOptionPane.showMessageDialog(ventana, "Actualizacion exitosa");
+            }else{
+                JOptionPane.showMessageDialog(ventana, "Error al actualizar los Datos");
+            }
+        }
+        
+        //Metodo para eliminar usuarios
+        public void eliminarUsuario(){
+            
+            // Validar si hay un id seleccionado
+            if(idSeleccionado == -1){
+                JOptionPane.showMessageDialog(ventana, "Selecciona un registro");
+                return;
+            }
+            
+            // Hacer confirmacion de la eliminacion del registro
+            int confirmacion = JOptionPane.showConfirmDialog(ventana, 
+                    "Estas seguro de querer eliminar a este usuario? ",
+                    "Confirmar Eliminacion",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.WARNING_MESSAGE);
+            
+            if(confirmacion != JOptionPane.YES_NO_OPTION){
+                return;
+            }
+            boolean eliminacion = usuariobd.eliminar(idSeleccionado);
+            if(eliminacion){
+                JOptionPane.showMessageDialog(ventana,"Eliminacion exitosa");
+                mostrarUsuarios();
+                limpiarCampos();
+            }
+        
+        }
+        
+        // Metodo para limpiar campos
+        private void limpiarCampos(){
+        
+        idSeleccionado = -1;
+
         ventana.txtNombreAct.setText("");
         ventana.txtCorreoAct.setText("");
         ventana.spnEdadAct.setValue(0);
