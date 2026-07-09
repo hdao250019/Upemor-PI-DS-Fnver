@@ -38,16 +38,16 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtNombreAct = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtCorreo = new javax.swing.JTextField();
+        txtCorreoAct = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        txtPass = new javax.swing.JTextField();
+        txtPassAct = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        spnEdad = new javax.swing.JSpinner();
+        spnEdadAct = new javax.swing.JSpinner();
         BTN_Lim = new javax.swing.JButton();
         BTN_Act = new javax.swing.JButton();
         BTN_Eli = new javax.swing.JButton();
@@ -132,8 +132,8 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         jLabel3.setText("Correo:");
 
-        txtNombre.setBackground(new java.awt.Color(201, 214, 229));
-        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
+        txtNombreAct.setBackground(new java.awt.Color(201, 214, 229));
+        txtNombreAct.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -143,18 +143,18 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         jLabel5.setText("Usuario:");
 
-        txtCorreo.setBackground(new java.awt.Color(201, 214, 229));
-        txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
-        txtCorreo.addActionListener(this::txtCorreoActionPerformed);
+        txtCorreoAct.setBackground(new java.awt.Color(201, 214, 229));
+        txtCorreoAct.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
+        txtCorreoAct.addActionListener(this::txtCorreoActActionPerformed);
 
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel6.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         jLabel6.setText("Contraseña:");
 
-        txtPass.setBackground(new java.awt.Color(201, 214, 229));
-        txtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
-        txtPass.addActionListener(this::txtPassActionPerformed);
+        txtPassAct.setBackground(new java.awt.Color(201, 214, 229));
+        txtPassAct.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
+        txtPassAct.addActionListener(this::txtPassActActionPerformed);
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -194,19 +194,19 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                            .addComponent(txtPassAct, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
                             .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel3)
                             .addComponent(jLabel6)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator4)
-                            .addComponent(txtCorreo)
-                            .addComponent(txtNombre)
+                            .addComponent(txtCorreoAct)
+                            .addComponent(txtNombreAct)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(spnEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(spnEdadAct, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addComponent(jLabel2)))
@@ -220,23 +220,23 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombreAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(spnEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnEdadAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCorreoAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPassAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -285,13 +285,13 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+    private void txtCorreoActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCorreoActionPerformed
+    }//GEN-LAST:event_txtCorreoActActionPerformed
 
-    private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
+    private void txtPassActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPassActionPerformed
+    }//GEN-LAST:event_txtPassActActionPerformed
 
     private void BTN_LimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_LimActionPerformed
         // TODO add your handling code here:
@@ -351,9 +351,9 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    public javax.swing.JSpinner spnEdad;
-    public javax.swing.JTextField txtCorreo;
-    public javax.swing.JTextField txtNombre;
-    public javax.swing.JTextField txtPass;
+    public javax.swing.JSpinner spnEdadAct;
+    public javax.swing.JTextField txtCorreoAct;
+    public javax.swing.JTextField txtNombreAct;
+    public javax.swing.JTextField txtPassAct;
     // End of variables declaration//GEN-END:variables
 }
