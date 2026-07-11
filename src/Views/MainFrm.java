@@ -44,6 +44,7 @@ public class MainFrm extends javax.swing.JFrame {
         menuAgregar = new Controles.MenuButton();
         menuConsultas = new Controles.MenuButton();
         menuMostrarCat = new Controles.MenuButton();
+        menuUsuarioMod = new Controles.MenuButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         MenuIngresarCategorias = new javax.swing.JButton();
@@ -94,6 +95,14 @@ public class MainFrm extends javax.swing.JFrame {
             }
         });
 
+        menuUsuarioMod.setAMouseEnter(new java.awt.Color(104, 123, 255));
+        menuUsuarioMod.setATexto("Gestion Usuarios");
+        menuUsuarioMod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuUsuarioModMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -111,10 +120,10 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(menuMostrarCat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(menuMostrarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(menuUsuarioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +142,8 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuMostrarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menuUsuarioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -167,7 +178,7 @@ public class MainFrm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addComponent(MenuIngresarCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(598, Short.MAX_VALUE))
+                .addContainerGap(604, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,6 +244,10 @@ public class MainFrm extends javax.swing.JFrame {
         
     }//GEN-LAST:event_MenuIngresarCategoriasActionPerformed
 
+    private void menuUsuarioModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuUsuarioModMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuUsuarioModMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -253,5 +268,6 @@ public class MainFrm extends javax.swing.JFrame {
     public Controles.MenuButton menuAgregar;
     public Controles.MenuButton menuConsultas;
     public Controles.MenuButton menuMostrarCat;
+    public Controles.MenuButton menuUsuarioMod;
     // End of variables declaration//GEN-END:variables
 }

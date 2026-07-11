@@ -31,17 +31,18 @@ public class UserController implements ActionListener{
     private FrmConsultarUsuarios verUsuarios;
     private FrmIngresarCategoria ingresarCategoria;
     private FrmConsultarCategorias consultarCat;
+    private FrmGestionUsuarios GesUs;
     
     
     
     // Constructor para iniciazar los ojetos}
-    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat) {
+    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat, FrmGestionUsuarios GesUs) {
         this.ventana = ventana;
         this.usuariobd = usuariobd;
         this.verUsuarios = verUsuarios;
         this.ingresarCategoria = ingresarCategoria;
         this.consultarCat = consultarCat;
-        
+        this.GesUs = GesUs;
         
         
         // Verifica si el objeto de la ventana de registro existe
@@ -77,6 +78,15 @@ public class UserController implements ActionListener{
             mostrarCtegorias();
         }
         
+        // Verifica si el objeto de la ventana de registro existe
+        if (this.GesUs != null) {
+            // Verifica si el botón mostrar Categorias ya fue inicializado en los componentes
+            if (this.GesUs.BTN_Act != null) {
+                this.GesUs.BTN_Act.addActionListener(this);
+            }
+            
+        }
+       
     }
     
     

@@ -28,70 +28,72 @@ public class GestionUsuarioController implements ActionListener {
         this.ventana.BTN_Act.addActionListener(this);
         this.ventana.BTN_Eli.addActionListener(this);
         this.ventana.BTN_Lim.addActionListener(this);
+        mostrarUsuarios();
     }
     
     @Override
     public void actionPerformed(ActionEvent e){
-        
-        if(e.getSource() == ventana.BTN_Act){
-            actuaizarUsuario();
+        if (this.ventana != null) {
+            // Verifica si el botón Crear Cuenta ya fue inicializado en los componentes
+            if (this.ventana.BTN_Act != null) {
+                if(e.getSource() == ventana.BTN_Act){
+                actuaizarUsuario();
+            }
         }
+    
         
-        if(e.getSource() == ventana.BTN_Eli){
-            eliminarUsuario();
+            if (this.ventana.BTN_Eli != null) {
+                if(e.getSource() == ventana.BTN_Eli){
+                eliminarUsuario();
+            }
         }
-        
         if(e.getSource() == ventana.BTN_Lim){
             limpiarCampos();
         }
-        
+    }
     }
 
     // Método para detectar el click en la tabla
-    private void seleccionTabla(){
-        tabla.getSelectionModel().addListSelectionListener(evento -> {
-    
-        if(evento.getValueIsAdjusting()){
-            //TODO: Agregar la carga de usuarios
-            
-            
-        }
-        
-    });
-        
+    private void seleccionTabla() {
+    // Verificamos si la tabla existe antes d ejecutarla
+    if (this.tabla != null) { 
+        this.tabla.getSelectionModel().addListSelectionListener(evento -> {
+            if (!evento.getValueIsAdjusting()) {
+                cargarUsuarios();
+            }
+        });
     }
+}
     private void cargarUsuarios(){
         int fila = tabla.getSelectedRow();
         if (fila == -1){
             return;
         }
         
-        // obtener los valores desde la tabla
+         // obtener los valores desde la tabla
         idSeleccionado = Integer.parseInt(tabla.getValueAt(fila, 0).toString());
         String nombre = tabla.getValueAt(fila, 1).toString();
-        String correo = tabla.getValueAt(fila, 2).toString();
-        int edad = Integer.parseInt(tabla.getValueAt(fila, 3).toString());
+        int edad = Integer.parseInt(tabla.getValueAt(fila, 2).toString());
+        String correo = tabla.getValueAt(fila, 3).toString();
         String Pass = tabla.getValueAt(fila, 4).toString();
-        
-        
+
         //Mostrar los datos del usuario
         ventana.txtNombreAct.setText(nombre);
         ventana.txtCorreoAct.setText(correo);
         ventana.spnEdadAct.setValue(edad);
         ventana.txtPassAct.setText(Pass);
-        
     }
     
      // METODO CREAR TABLA
         private void mostrarUsuarios(){
         DefaultTableModel modelo = new DefaultTableModel();
-        
+            
         // Añadir columnas en tablas
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
-        modelo.addColumn("Matricula");
         modelo.addColumn("Edad");
-        modelo.addColumn("Carrera");
+        modelo.addColumn("Correo");
+        modelo.addColumn("Contraseña");
         List<Usuario> listaUsuarios = usuariobd.consultarUsuarios();
         
         // Ciclo para recorrer la lista de usuarios
@@ -108,9 +110,10 @@ public class GestionUsuarioController implements ActionListener {
             modelo.addRow(fila);
         }
         //Crear tabla
-        JTable tablaUser = new JTable(modelo);
+        this.tabla = new JTable(modelo);
         // Usar JScrollpane para mostrar la tabla
-        ventana.paneUsuarios.setViewportView(tablaUser);
+        ventana.paneUsuarios.setViewportView(this.tabla);
+        seleccionTabla();
         }
 
          // METODO PARA ACTUALIZAR UN REGISTRO
@@ -144,6 +147,8 @@ public class GestionUsuarioController implements ActionListener {
             }else{
                 JOptionPane.showMessageDialog(ventana, "Error al actualizar los Datos");
             }
+            mostrarUsuarios();
+            limpiarCampos();
         }
         
         //Metodo para eliminar usuarios

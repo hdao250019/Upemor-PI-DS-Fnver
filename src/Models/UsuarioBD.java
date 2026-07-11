@@ -130,10 +130,10 @@ public class UsuarioBD {
         return listaCat;
     }
     
-        // METODO PARA ACTUALIZAR ESTUDIAMTES
+        // METODO PARA ACTUALIZAR Usuarios
         public boolean actualizar(Usuario usuario){
         
-        String query_sql = "UPDATE usuarios SET * nombre = ?, edad = ?, correo = ?, contraseña = ? WHERE id = ?";
+        String query_sql = "UPDATE usuarios SET nombre = ?, edad = ?, correo = ?, contraseña = ? WHERE id = ?";
         
         try{
              //Conexion a la BD
@@ -142,9 +142,10 @@ public class UsuarioBD {
             PreparedStatement stmt = conn.prepareStatement(query_sql);
             // Enviar los datos del modelo
             stmt.setString(1, usuario.getNombre());
-            stmt.setString(2, usuario.getCorreo());
-            stmt.setInt(3, usuario.getEdad());
+            stmt.setInt(2, usuario.getEdad());
+            stmt.setString(3, usuario.getCorreo());
             stmt.setString(4, usuario.getContrasenia());
+            stmt.setInt(5, usuario.getId());
               
               // Verificar el numero de filas que cambiaron 
               int filas_cambiadas = stmt.executeUpdate();
