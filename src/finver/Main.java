@@ -1,5 +1,6 @@
 package finver;
 
+import Controller.GestionCatController;
 import Controller.GestionUsuarioController;
 import Controller.LoginController;
 import Controller.MenuController;
@@ -10,6 +11,7 @@ import Views.SplashFrm;
 import Models.UsuarioBD;
 import Views.FrmConsultarCategorias;
 import Views.FrmGestionUsuarios;
+import Views.FrmGestionarCate;
 import Views.FrmIngresarCategoria;
 import Views.FrmInicioSesion;
 import Views.MainFrm;
@@ -30,11 +32,14 @@ public class Main {
         FrmIngresarCategoria ingresarCategoria = new FrmIngresarCategoria();
         FrmConsultarCategorias consultarCat = new FrmConsultarCategorias();
         FrmGestionUsuarios GesUs = new FrmGestionUsuarios();
+        FrmGestionarCate gesCat = new FrmGestionarCate();
         
         
         LoginController control = new LoginController(loginView, usuariobd, menu);
-        GestionUsuarioController controlGestion = new GestionUsuarioController(GesUs, usuariobd);
+        
         MenuController controlmenu = new MenuController(menu, usuariobd);
+        GestionUsuarioController controlGestionUs = new GestionUsuarioController(GesUs, usuariobd);
+        GestionCatController controlCat = new GestionCatController(gesCat, usuariobd);
         
         UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat);
         

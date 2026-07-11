@@ -40,7 +40,6 @@ public class GestionUsuarioController implements ActionListener {
                 actuaizarUsuario();
             }
         }
-    
         
             if (this.ventana.BTN_Eli != null) {
                 if(e.getSource() == ventana.BTN_Eli){

@@ -32,8 +32,6 @@ public class UserController implements ActionListener{
     private FrmConsultarUsuarios verUsuarios;
     private FrmIngresarCategoria ingresarCategoria;
     private FrmConsultarCategorias consultarCat;
-    private FrmGestionUsuarios GesUs;
-    private FrmGestionarCate gesCat;
     
     
     
@@ -80,23 +78,6 @@ public class UserController implements ActionListener{
             mostrarCtegorias();
         }
         
-        // Verifica si el objeto de la ventana de registro existe
-        if (this.GesUs != null) {
-            // Verifica si el botón mostrar Categorias ya fue inicializado en los componentes
-            if (this.GesUs.BTN_Act != null) {
-                this.GesUs.BTN_Act.addActionListener(this);
-            }
-            
-        }
-        
-        // Verifica si el objeto de la ventana de registro existe
-        if (this.gesCat != null) {
-            // Verifica si el botón mostrar Categorias ya fue inicializado en los componentes
-            if (this.gesCat.BTN_Act != null) {
-                this.gesCat.BTN_Act.addActionListener(this);
-            }
-            
-        }
        
     }
     
@@ -237,9 +218,9 @@ public class UserController implements ActionListener{
             LimpiarCamposCat();
             
             // Solo actualiza la tabla si la ventana existe
-            if (this.verUsuarios != null) {
-                mostrarUsuarios();
-            }
+            if (this.consultarCat != null) {
+            mostrarCtegorias();
+        }
         } else {
             JOptionPane.showMessageDialog(ventana, "Error al registrar");
         }
@@ -280,20 +261,6 @@ public class UserController implements ActionListener{
         
     }
     
-    
-    // Metodo para ir a la gestion de Usuarios
-    private void irGestionUsuarios(){
-        
-        FrmGestionUsuarios ventanaGestion = new FrmGestionUsuarios();
-        UsuarioBD usuariobd = new UsuarioBD();
-        
-        GestionUsuarioController controladorGestion =
-                new GestionUsuarioController(ventanaGestion, usuariobd);
-        
-        ventanaGestion.setLocationRelativeTo(null);
-        ventanaGestion.setVisible(true);
-        
-    }
     
     
     // Metodo para limpiar campos de Usuarios

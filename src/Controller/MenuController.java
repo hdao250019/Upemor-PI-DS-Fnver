@@ -22,6 +22,7 @@ public class MenuController implements ActionListener, MouseListener {
         this.menu.MenuIngresarCategorias.addActionListener(this);
         this.menu.menuMostrarCat.addMouseListener(this);
         this.menu.menuCatMod.addMouseListener(this);
+        this.menu.menuUsuarioMod.addMouseListener(this);
     }
     
     // Captura para el button ingresar categoria
@@ -135,7 +136,7 @@ public class MenuController implements ActionListener, MouseListener {
         FrmGestionarCate ConsCat = new FrmGestionarCate();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        GestionCatController controladorGestion = new GestionCatController(ConsCat, usuariobd);
+        GestionCatController controlCatGestion = new GestionCatController(ConsCat, usuariobd);
         
         ConsCat.setLocationRelativeTo(null);
         ConsCat.setVisible(true);
