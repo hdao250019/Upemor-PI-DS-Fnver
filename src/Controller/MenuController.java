@@ -16,6 +16,7 @@ public class MenuController implements ActionListener, MouseListener {
         this.menu = menu;
         this.usuariobd = usuariobd;
         
+        
         this.menu.menuAgregar.addMouseListener(this);
         this.menu.menuConsultas.addMouseListener(this);
         this.menu.MenuIngresarCategorias.addActionListener(this);

@@ -9,6 +9,37 @@ import java.util.List;
  */
 public class UsuarioBD {
     
+    // metodo para validar el login
+    public Usuario login(String usuario, String contrasenia) {
+        // Buscamos un registro que coincida con ambos datos
+        String query_sql = "SELECT * FROM usuarios WHERE nombre = ? AND contraseña = ?";
+    
+    try {
+        Connection conn = ConexionDB.conexion();
+        PreparedStatement stmt = conn.prepareStatement(query_sql);
+        
+        stmt.setString(1, usuario);
+        stmt.setString(2, contrasenia);
+        
+        ResultSet rs = stmt.executeQuery();
+        
+        if (rs.next()) {
+            Usuario usuarioLogueado = new Usuario(
+                rs.getInt("id"),
+                rs.getInt("edad"),
+                rs.getString("nombre"),
+                rs.getString("correo"),
+                rs.getString("contraseña")
+            );
+            return usuarioLogueado; 
+        }
+        
+    } catch (SQLException e) {
+        System.out.println("ERROR EN LOGIN BD: " + e.getMessage());
+    }
+    
+    return null;
+}
     
     // Metodo para registrar en la base de datos
     public boolean insertar(Usuario usuarios){

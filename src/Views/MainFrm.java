@@ -25,6 +25,7 @@ public class MainFrm extends javax.swing.JFrame {
         UIManager.put("TitlePane.buttonHoverForeground", Color.BLACK);
 
         FlatLaf.updateUI();
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.

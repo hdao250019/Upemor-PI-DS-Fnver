@@ -7,7 +7,6 @@ package Views;
 import Models.Admin;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,9 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class FrmInicioSesion extends javax.swing.JFrame {
 
-    Admin usuarioAdmin;
     
-    int contadorLogin = 0;
 
     /**
      * Creates new form FrmInicioSesion
@@ -31,7 +28,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         FlatLaf.updateUI();
         getRootPane().putClientProperty("FlatLaf.fullWindowContent", true); //Extender elementos a toda la ventana
         
-         usuarioAdmin = new Admin("GabrielTc", "gabo123");
+        
+        
     }
 
     /**
@@ -210,40 +208,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniActionPerformed
-        // TODO add your handling code here:
-        String usuarioIngresado = txtUsuario.getText();
-        String passIngresado = new String(txtPass.getPassword());
-
-        // validar que los campos no esten vacios
-        if (usuarioIngresado.isEmpty() || passIngresado.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "COMPLETA TODOS LOS CAMPOS");
-            return;
-        }
-        if (usuarioAdmin.validarLogin(usuarioIngresado, passIngresado)) {
-            // Abrir nueva ventana del menu
-            Models.UsuarioBD usuariobd = new Models.UsuarioBD();
-            Views.MainFrm menu = new Views.MainFrm();
-        
-        // 3. ¡LE CONECTAMOS SU CONTROLADOR JUSTO ANTES DE MOSTRARLO!
-            Controller.MenuController controlmenu = new Controller.MenuController(menu, usuariobd);
-        
-        // 4. Mostramos el menú y cerramos el login
-            menu.setLocationRelativeTo(null);
-            menu.setVisible(true);
-            // cerrar la ventana actual 
-            this.dispose();
-
-        } else {
-            contadorLogin++; // Incrementar antes de mostrar
-            JOptionPane.showMessageDialog(null, "Credenciales Incorrectas");
-
-            if (contadorLogin >= 3) {
-                JOptionPane.showMessageDialog(this, "Se alcanzó la cantidad máxima de intentos", 
-                        "Error", JOptionPane.ERROR_MESSAGE);
-                this.dispose(); // opcional: cerrar la ventana de login
-            }
-        }
-
+  
     }//GEN-LAST:event_btnIniActionPerformed
 
     /**
@@ -282,7 +247,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIni;
+    public javax.swing.JButton btnIni;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -295,7 +260,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JPasswordField txtPass;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JPasswordField txtPass;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

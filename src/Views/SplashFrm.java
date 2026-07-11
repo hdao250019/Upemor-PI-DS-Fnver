@@ -10,19 +10,23 @@ package Views;
  */
 public class SplashFrm extends javax.swing.JFrame {
 
+    private FrmInicioSesion login;
     /**
      * Creates new form SplashFrm
      */
-    public SplashFrm() {
+    public SplashFrm(FrmInicioSesion login) {
         initComponents();
         
         //Simulacion de tiempo de carga :D
+        this.login = login;
+
         new Thread(() -> {
         try {
-            Thread.sleep(2000); // Esperar 3 segundos para cargar
+            Thread.sleep(2000);
 
             java.awt.EventQueue.invokeLater(() -> {
-                new Views.FrmInicioSesion().setVisible(true);
+                login.setLocationRelativeTo(null);
+                login.setVisible(true);
                 dispose();
             });
 
@@ -128,7 +132,6 @@ public class SplashFrm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SplashFrm().setVisible(true);
             }
         });
     }
