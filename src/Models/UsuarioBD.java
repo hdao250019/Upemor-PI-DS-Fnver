@@ -43,7 +43,6 @@ public class UsuarioBD {
     
     // Metodo para registrar en la base de datos
     public boolean insertar(Usuario usuarios){
-        // CREAR SENTENCIA SQL
         String sql_query = "INSERT INTO usuarios(nombre, correo, edad, contraseña) VALUES(?, ?, ?, ?)";
         
         try{
