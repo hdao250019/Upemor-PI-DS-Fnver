@@ -36,7 +36,7 @@ public class Main {
         GestionUsuarioController controlGestion = new GestionUsuarioController(GesUs, usuariobd);
         MenuController controlmenu = new MenuController(menu, usuariobd);
         
-        UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat, GesUs);
+        UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat);
         
         inicio.setLocationRelativeTo(null);
         inicio.setVisible(true);

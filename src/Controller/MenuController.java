@@ -21,7 +21,7 @@ public class MenuController implements ActionListener, MouseListener {
         this.menu.menuConsultas.addMouseListener(this);
         this.menu.MenuIngresarCategorias.addActionListener(this);
         this.menu.menuMostrarCat.addMouseListener(this);
-        this.menu.menuUsuarioMod.addMouseListener(this);
+        this.menu.menuCatMod.addMouseListener(this);
     }
     
     // Captura para el button ingresar categoria
@@ -58,6 +58,12 @@ public class MenuController implements ActionListener, MouseListener {
                 irGestionUsuarios();
             }
         }
+        
+        if (this.menu != null && this.menu.menuCatMod != null) {
+            if (e.getSource() == this.menu.menuCatMod) {
+                irGestionCat();
+            }
+        }
     }
     
     // Métodos obligatorios de MouseListener (vacíos si no los usas)
@@ -72,7 +78,7 @@ public class MenuController implements ActionListener, MouseListener {
         FrmNuevoUsuario NewUsuario = new FrmNuevoUsuario();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(NewUsuario, usuariobd, null, null, null, null);
+        UserController miControlador = new UserController(NewUsuario, usuariobd, null, null, null);
         
         NewUsuario.setLocationRelativeTo(null);
         NewUsuario.setVisible(true);
@@ -84,7 +90,7 @@ public class MenuController implements ActionListener, MouseListener {
         FrmConsultarUsuarios verUsuarios = new FrmConsultarUsuarios();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(null, usuariobd, verUsuarios, null, null, null);
+        UserController miControlador = new UserController(null, usuariobd, verUsuarios, null, null);
         
         verUsuarios.setLocationRelativeTo(null);
         verUsuarios.setVisible(true);
@@ -96,7 +102,7 @@ public class MenuController implements ActionListener, MouseListener {
        FrmIngresarCategoria vercat = new FrmIngresarCategoria();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(null, usuariobd, null, vercat, null, null);
+        UserController miControlador = new UserController(null, usuariobd, null, vercat, null);
         
         vercat.setLocationRelativeTo(null);
         vercat.setVisible(true);
@@ -107,7 +113,7 @@ public class MenuController implements ActionListener, MouseListener {
         FrmConsultarCategorias ConsCat = new FrmConsultarCategorias();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(null, usuariobd, null, null, ConsCat, null);
+        UserController miControlador = new UserController(null, usuariobd, null, null, ConsCat);
         
         ConsCat.setLocationRelativeTo(null);
         ConsCat.setVisible(true);
@@ -122,5 +128,16 @@ public class MenuController implements ActionListener, MouseListener {
         
         ConsUs.setLocationRelativeTo(null);
         ConsUs.setVisible(true);
+    }
+    
+    // Método para ir a gestion usuario
+    private void irGestionCat() {
+        FrmGestionarCate ConsCat = new FrmGestionarCate();
+        UsuarioBD usuariobd = new UsuarioBD();
+        
+        GestionCatController controladorGestion = new GestionCatController(ConsCat, usuariobd);
+        
+        ConsCat.setLocationRelativeTo(null);
+        ConsCat.setVisible(true);
     }
 }

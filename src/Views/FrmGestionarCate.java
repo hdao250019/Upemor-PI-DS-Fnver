@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Views;
 
 import com.formdev.flatlaf.FlatLaf;
@@ -12,13 +8,13 @@ import java.awt.Color;
  *
  * @author Jared
  */
-public class FrmIngresarCategoria extends javax.swing.JDialog {
+public class FrmGestionarCate extends javax.swing.JDialog {
     
 
     /**
      * Creates new form FrmIngresarDinero
      */
-    public FrmIngresarCategoria() {
+    public FrmGestionarCate() {
         initComponents();
         
         FlatLightLaf.setup();
@@ -53,7 +49,10 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         TXT_Cant = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        BTN_CAT = new javax.swing.JButton();
+        BTN_Act = new javax.swing.JButton();
+        BTN_Eli = new javax.swing.JButton();
+        BTN_Lim = new javax.swing.JButton();
+        paneCat = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,10 +102,10 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(330, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 540));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 600));
 
         jPanel4.setBackground(new java.awt.Color(11, 31, 59));
 
@@ -114,14 +113,14 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 32, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 330, -1));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 350, -1));
 
         jPanel2.setBackground(new java.awt.Color(201, 214, 229));
 
@@ -151,12 +150,24 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         jLabel10.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel10.setText("CATEGORÍA");
 
-        BTN_CAT.setBackground(new java.awt.Color(201, 214, 229));
-        BTN_CAT.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
-        BTN_CAT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/crearcuenta_logo.png"))); // NOI18N
-        BTN_CAT.setText("Aceptar");
-        BTN_CAT.setToolTipText("");
-        BTN_CAT.addActionListener(this::BTN_CATActionPerformed);
+        BTN_Act.setBackground(new java.awt.Color(201, 214, 229));
+        BTN_Act.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        BTN_Act.setText("Actualizar");
+        BTN_Act.setToolTipText("");
+        BTN_Act.setMaximumSize(new java.awt.Dimension(110, 40));
+        BTN_Act.setMinimumSize(new java.awt.Dimension(110, 40));
+        BTN_Act.addActionListener(this::BTN_ActActionPerformed);
+
+        BTN_Eli.setBackground(new java.awt.Color(201, 214, 229));
+        BTN_Eli.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        BTN_Eli.setText("Eliminar");
+        BTN_Eli.setPreferredSize(new java.awt.Dimension(100, 40));
+        BTN_Eli.addActionListener(this::BTN_EliActionPerformed);
+
+        BTN_Lim.setBackground(new java.awt.Color(201, 214, 229));
+        BTN_Lim.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        BTN_Lim.setText("Limpiar");
+        BTN_Lim.addActionListener(this::BTN_LimActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -165,30 +176,39 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(TXT_Cat, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
-                            .addComponent(TXT_Cant, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TXT_Cant, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TXT_Cat, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel3))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel10))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(BTN_CAT)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(paneCat, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(BTN_Act, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BTN_Eli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BTN_Lim)))))
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(110, 110, 110))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(26, 26, 26)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
@@ -200,16 +220,21 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TXT_Cant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BTN_Act, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTN_Eli, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTN_Lim, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BTN_CAT, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addComponent(paneCat, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 330, 510));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 340, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -222,9 +247,17 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_TXT_CantActionPerformed
 
-    private void BTN_CATActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_CATActionPerformed
+    private void BTN_ActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ActActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BTN_CATActionPerformed
+    }//GEN-LAST:event_BTN_ActActionPerformed
+
+    private void BTN_EliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_EliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BTN_EliActionPerformed
+
+    private void BTN_LimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_LimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BTN_LimActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,14 +267,16 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmIngresarCategoria().setVisible(true);
+                new FrmGestionarCate().setVisible(true);
             }
         
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton BTN_CAT;
+    public javax.swing.JButton BTN_Act;
+    public javax.swing.JButton BTN_Eli;
+    public javax.swing.JButton BTN_Lim;
     public javax.swing.JTextArea TXA_Desc;
     public javax.swing.JTextField TXT_Cant;
     public javax.swing.JTextField TXT_Cat;
@@ -259,5 +294,6 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane paneCat;
     // End of variables declaration//GEN-END:variables
 }

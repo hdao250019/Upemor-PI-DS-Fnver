@@ -7,6 +7,7 @@ import Models.UsuarioBD;
 import Models.Usuario;
 import Views.FrmConsultarCategorias;
 import Views.FrmGestionUsuarios;
+import Views.FrmGestionarCate;
 import Views.FrmIngresarCategoria;
 import Views.MainFrm;
 import java.awt.event.ActionEvent;
@@ -32,17 +33,18 @@ public class UserController implements ActionListener{
     private FrmIngresarCategoria ingresarCategoria;
     private FrmConsultarCategorias consultarCat;
     private FrmGestionUsuarios GesUs;
+    private FrmGestionarCate gesCat;
     
     
     
     // Constructor para iniciazar los ojetos}
-    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat, FrmGestionUsuarios GesUs) {
+    public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, 
+            FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat) {
         this.ventana = ventana;
         this.usuariobd = usuariobd;
         this.verUsuarios = verUsuarios;
         this.ingresarCategoria = ingresarCategoria;
         this.consultarCat = consultarCat;
-        this.GesUs = GesUs;
         
         
         // Verifica si el objeto de la ventana de registro existe
@@ -83,6 +85,15 @@ public class UserController implements ActionListener{
             // Verifica si el botón mostrar Categorias ya fue inicializado en los componentes
             if (this.GesUs.BTN_Act != null) {
                 this.GesUs.BTN_Act.addActionListener(this);
+            }
+            
+        }
+        
+        // Verifica si el objeto de la ventana de registro existe
+        if (this.gesCat != null) {
+            // Verifica si el botón mostrar Categorias ya fue inicializado en los componentes
+            if (this.gesCat.BTN_Act != null) {
+                this.gesCat.BTN_Act.addActionListener(this);
             }
             
         }

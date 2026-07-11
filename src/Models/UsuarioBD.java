@@ -214,5 +214,59 @@ public class UsuarioBD {
         }
             
         }
+    
+    // METODO PARA ACTUALIZAR Usuarios
+        public boolean actualizarCat(Categoria categoria){
+        
+        String query_sql = "UPDATE categoria SET categoria = ?, descripcion = ?, total_ing = ? WHERE id_cat = ?";
+        
+        try{
+             //Conexion a la BD
+            Connection conn = ConexionDB.conexion();
+            //Crear el preparedstatement para mandarlo a la DB
+            PreparedStatement stmt = conn.prepareStatement(query_sql);
+            // Enviar los datos del modelo
+            stmt.setString(1, categoria.getCategoria());
+            stmt.setString(2, categoria.getDescripcion());
+            stmt.setDouble(3, categoria.getTotal());
+            stmt.setInt(4, categoria.getId());
+              
+              // Verificar el numero de filas que cambiaron 
+              int filas_cambiadas = stmt.executeUpdate();
+              
+              // Cuando es booean no es necesario aplicar un if
+              return filas_cambiadas > 0;
+              
+            
+            
+        }catch(SQLException e){
+            System.out.println("ERROR AL ACTUALIZAR EN LA BD" + e.getMessage());
+            return false;
+            
+        }
+    }
+        
+        public boolean eliminarCat(int idCat){
+            
+        String query_sql = "DELETE FROM categoria WHERE id_cat = ?";
+            
+        try{
+            //Conexion a la BD
+            Connection conn = ConexionDB.conexion();
+            //Crear el preparedstatement para mandarlo a la DB
+            PreparedStatement stmt = conn.prepareStatement(query_sql); 
+                
+            stmt.setInt(1, idCat);
+            
+            // Valor de las filas afectadas
+            int filas_cambiadas = stmt.executeUpdate();
+            return filas_cambiadas > 0; 
+           
+        }catch(SQLException e){
+            System.out.println("ERROR AL BORRAR USUARIO EN LA BD: " + e.getMessage());
+            return false;
+        }
+            
+        }
 }
 
