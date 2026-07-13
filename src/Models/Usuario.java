@@ -6,7 +6,7 @@ package Models;
 public class Usuario {
     private int id;
     private int edad;
-    private String nombre;
+    private String usuario;
     private String correo;
     private String contrasenia;
     
@@ -14,19 +14,19 @@ public class Usuario {
     }
 
 //crear constructir de la clase
-    public Usuario(int edad, String nombre, String correo, String contrasenia) {
+    public Usuario(int edad, String usuario, String correo, String contrasenia) {
         this.edad = edad;
-        this.nombre = nombre;
+        this.usuario = usuario;
         this.correo = correo;
         this.contrasenia = contrasenia;
     }
     
     //crear constructir de la clase a la BD
 
-    public Usuario(int id, int edad, String nombre, String correo, String contrasenia) {
+    public Usuario(int id, int edad, String usuario, String correo, String contrasenia) {
         this.id = id;
         this.edad = edad;
-        this.nombre = nombre;
+        this.usuario = usuario;
         this.correo = correo;
         this.contrasenia = contrasenia;
     }
@@ -47,12 +47,12 @@ public class Usuario {
         this.edad = edad;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setUsuario(String nombre) {
+        this.usuario = nombre;
     }
 
     public String getCorreo() {

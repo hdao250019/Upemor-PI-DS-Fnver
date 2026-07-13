@@ -89,7 +89,7 @@ public class GestionUsuarioController implements ActionListener {
             
         // Añadir columnas en tablas
         modelo.addColumn("ID");
-        modelo.addColumn("Nombre");
+        modelo.addColumn("Usuario");
         modelo.addColumn("Edad");
         modelo.addColumn("Correo");
         modelo.addColumn("Contraseña");
@@ -101,7 +101,7 @@ public class GestionUsuarioController implements ActionListener {
             Object[] fila = {
 
             usuario.getId(),
-            usuario.getNombre(),
+            usuario.getUsuario(),
             usuario.getEdad(),
             usuario.getCorreo(),
             usuario.getContrasenia()
@@ -124,21 +124,21 @@ public class GestionUsuarioController implements ActionListener {
                 return;
             }
             
-            String nombre = ventana.txtNombreAct.getText().trim();
+            String user = ventana.txtNombreAct.getText().trim();
             int edad = Integer.parseInt(ventana.spnEdadAct.getValue().toString());
             String correo = ventana.txtCorreoAct.getText().trim();
             String contrasenia = ventana.txtPassAct.getText().trim();
             
-            if (nombre.isEmpty() || correo.isEmpty() || contrasenia.isEmpty() || edad <= 0) {
+            if (user.isEmpty() || correo.isEmpty() || contrasenia.isEmpty() || edad <= 0) {
             // Mostrar un mensaje de advertencia al usuario
             JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
                     "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
             return;
         }
             // OBTENER LOS NOMBRES DESDE LA VENTANA
-            Usuario usuario = new Usuario(idSeleccionado,edad, nombre, correo, contrasenia);
+            Usuario usuario = new Usuario(idSeleccionado,edad, user, correo, contrasenia);
             
-        // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
+            // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
             boolean actualizar = usuariobd.actualizar(usuario);
         
             if(actualizar){

@@ -49,7 +49,7 @@ public class LoginController implements ActionListener {
         Usuario usuarioValidado = this.usuariobd.login(usuario, pass);
 
         if (usuarioValidado != null) {
-            JOptionPane.showMessageDialog(vistaLogin, "¡Bienvenido de nuevo, " + usuarioValidado.getNombre() + "!");
+            JOptionPane.showMessageDialog(vistaLogin, "¡Bienvenido de nuevo, " + usuarioValidado.getUsuario()+ "!");
 
             
             menu.setLocationRelativeTo(null);

@@ -179,7 +179,7 @@ public class UserController implements ActionListener{
             // Guardar los objetos en un arreglo para usarlos en la tabla
             Object[] fila = {
                 usuario.getId(),
-                usuario.getNombre(),
+                usuario.getUsuario(),
                 usuario.getEdad(),
                 usuario.getCorreo(),
                 "**********"

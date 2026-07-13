@@ -156,7 +156,7 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         jLabel4.setText("Edad:");
 
         jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
-        jLabel5.setText("Nombre (será tu usuario):");
+        jLabel5.setText("Usuario:");
 
         txtCorreo.setBackground(new java.awt.Color(201, 214, 229));
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(201, 214, 229)));
