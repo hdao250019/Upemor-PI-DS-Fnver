@@ -5,6 +5,7 @@ import Controller.GestionUsuarioController;
 import Controller.LoginController;
 import Controller.MenuController;
 import Controller.UserController;
+import Models.Usuario;
 import Views.FrmConsultarUsuarios;
 import Views.FrmNuevoUsuario;
 import Views.SplashFrm;
@@ -33,6 +34,7 @@ public class Main {
         FrmConsultarCategorias consultarCat = new FrmConsultarCategorias();
         FrmGestionUsuarios GesUs = new FrmGestionUsuarios();
         FrmGestionarCate gesCat = new FrmGestionarCate();
+        Usuario usuarioLogeado = new Usuario();
         
         
         LoginController control = new LoginController(loginView, usuariobd, menu);
@@ -41,7 +43,7 @@ public class Main {
         GestionUsuarioController controlGestionUs = new GestionUsuarioController(GesUs, usuariobd);
         GestionCatController controlCat = new GestionCatController(gesCat, usuariobd);
         
-        UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat);
+        UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat,usuarioLogeado);
         
         inicio.setLocationRelativeTo(null);
         inicio.setVisible(true);
