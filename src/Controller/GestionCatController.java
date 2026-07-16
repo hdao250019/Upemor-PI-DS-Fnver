@@ -1,6 +1,7 @@
 package Controller;
 
 import Models.Categoria;
+import Models.Usuario;
 import Models.UsuarioBD;
 import Views.FrmGestionarCate;
 import java.awt.event.ActionEvent;
@@ -112,7 +113,7 @@ public class GestionCatController implements ActionListener {
         seleccionTabla();
         }
 
-         // METODO PARA ACTUALIZAR UN REGISTRO
+        // METODO PARA ACTUALIZAR UN REGISTRO
         private void actuaizarCategoria(){
              
             // Validar si un ID fue seleccionado
@@ -124,6 +125,13 @@ public class GestionCatController implements ActionListener {
             String categoria = ventana.TXT_Cat.getText().trim();
             
             String descripcion = ventana.TXA_Desc.getText().trim();
+            Usuario usuarioLogueado = Models.SesionAct.getUsuarioActual();
+            if (usuarioLogueado == null) {
+            JOptionPane.showMessageDialog(ventana, "Error: No hay una sesión de usuario activa.", 
+                "Error de Sesión", JOptionPane.ERROR_MESSAGE);
+            return;
+            }
+            
             
             if (categoria.isEmpty() || descripcion.isEmpty()) {
             // Mostrar un mensaje de advertencia al usuario
@@ -133,7 +141,7 @@ public class GestionCatController implements ActionListener {
         }
             // OBTENER LOS NOMBRES DESDE LA VENTANA
             Categoria cat = new Categoria(idSeleccionado, categoria, descripcion);
-            
+            cat.setId_usuario(usuarioLogueado.getId());
         // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
             boolean actualizar = usuariobd.actualizarCat(cat);
         
@@ -145,6 +153,8 @@ public class GestionCatController implements ActionListener {
             mostrarCategorias();
             limpiarCampos();
         }
+
+
         
         //Metodo para eliminar usuarios
         public void eliminarCat(){

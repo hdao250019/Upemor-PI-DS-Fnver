@@ -21,7 +21,7 @@ public class MainFrm extends javax.swing.JFrame {
         FlatLightLaf.setup();
         getRootPane().putClientProperty("FlatLaf.fullWindowContent", true);
 
-        UIManager.put("TitlePane.buttonForeground", Color.WHITE);
+        UIManager.put("TitlePane.buttonForeground", Color.YELLOW);
         UIManager.put("TitlePane.buttonHoverForeground", Color.BLACK);
 
         FlatLaf.updateUI();
@@ -36,6 +36,7 @@ public class MainFrm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         MainPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -45,11 +46,14 @@ public class MainFrm extends javax.swing.JFrame {
         menuAgregar = new Controles.MenuButton();
         menuConsultas = new Controles.MenuButton();
         menuMostrarCat = new Controles.MenuButton();
-        menuCatMod = new Controles.MenuButton();
         menuUsuarioMod = new Controles.MenuButton();
+        menuCatMod = new Controles.MenuButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         MenuIngresarCategorias = new javax.swing.JButton();
+        MostrarMobimientos = new javax.swing.JButton();
+        IngresarDinero = new javax.swing.JButton();
+        GenerarReportes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +87,7 @@ public class MainFrm extends javax.swing.JFrame {
 
         menuConsultas.setAMouseEnter(new java.awt.Color(104, 123, 255));
         menuConsultas.setATexto("Ver Cuentas Locales");
+        menuConsultas.setATextoIcono("");
         menuConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuConsultasMouseClicked(evt);
@@ -91,25 +96,28 @@ public class MainFrm extends javax.swing.JFrame {
 
         menuMostrarCat.setAMouseEnter(new java.awt.Color(104, 123, 255));
         menuMostrarCat.setATexto("Mostrar Categorias");
+        menuMostrarCat.setATextoIcono("");
         menuMostrarCat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuMostrarCatMouseClicked(evt);
             }
         });
 
-        menuCatMod.setAMouseEnter(new java.awt.Color(104, 123, 255));
-        menuCatMod.setATexto("Gestion Categorias");
-        menuCatMod.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuCatModMouseClicked(evt);
-            }
-        });
-
         menuUsuarioMod.setAMouseEnter(new java.awt.Color(104, 123, 255));
         menuUsuarioMod.setATexto("Gestion Usuarios");
+        menuUsuarioMod.setATextoIcono("");
         menuUsuarioMod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuUsuarioModMouseClicked(evt);
+            }
+        });
+
+        menuCatMod.setAMouseEnter(new java.awt.Color(104, 123, 255));
+        menuCatMod.setATexto("Gestion Categorias");
+        menuCatMod.setATextoIcono("");
+        menuCatMod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCatModMouseClicked(evt);
             }
         });
 
@@ -128,13 +136,15 @@ public class MainFrm extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-            .addComponent(menuMostrarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(menuCatMod, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(menuUsuarioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(menuMostrarCat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(menuUsuarioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(menuCatMod, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -148,17 +158,17 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(3, 3, 3)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(menuAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(menuConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuMostrarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuUsuarioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(25, 25, 25)
                 .addComponent(menuCatMod, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(menuMostrarCat, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(menuUsuarioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(63, 72, 255));
@@ -167,17 +177,17 @@ public class MainFrm extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 855, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 67, Short.MAX_VALUE)
         );
 
-        MenuIngresarCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-category-94.png"))); // NOI18N
-        MenuIngresarCategorias.setText("Ingresar Categorias");
+        MenuIngresarCategorias.setBackground(new java.awt.Color(201, 214, 229));
+        MenuIngresarCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-abrir-carpeta-96.png"))); // NOI18N
         MenuIngresarCategorias.setBorder(new javax.swing.border.MatteBorder(null));
-        MenuIngresarCategorias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MenuIngresarCategorias.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuIngresarCategorias.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         MenuIngresarCategorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,21 +195,69 @@ public class MainFrm extends javax.swing.JFrame {
             }
         });
 
+        MostrarMobimientos.setBackground(new java.awt.Color(201, 214, 229));
+        MostrarMobimientos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-historial-de-pagos-96.png"))); // NOI18N
+        MostrarMobimientos.setBorder(new javax.swing.border.MatteBorder(null));
+        MostrarMobimientos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MostrarMobimientos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        MostrarMobimientos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MostrarMobimientosActionPerformed(evt);
+            }
+        });
+
+        IngresarDinero.setBackground(new java.awt.Color(11, 31, 59));
+        IngresarDinero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        IngresarDinero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-dinero-96.png"))); // NOI18N
+        IngresarDinero.setBorder(new javax.swing.border.MatteBorder(null));
+        IngresarDinero.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        IngresarDinero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        IngresarDinero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresarDineroActionPerformed(evt);
+            }
+        });
+
+        GenerarReportes.setBackground(new java.awt.Color(11, 31, 59));
+        GenerarReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-pie-chart-report-script-96.png"))); // NOI18N
+        GenerarReportes.setBorder(new javax.swing.border.MatteBorder(null));
+        GenerarReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        GenerarReportes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GenerarReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenerarReportesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(MenuIngresarCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(604, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MenuIngresarCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(IngresarDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(MostrarMobimientos, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                    .addComponent(GenerarReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(100, 100, 100))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(MenuIngresarCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(346, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(91, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IngresarDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MostrarMobimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(MenuIngresarCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(GenerarReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(51, 51, 51))
         );
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -210,8 +268,8 @@ public class MainFrm extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -220,9 +278,8 @@ public class MainFrm extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(MainPanelLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,20 +299,8 @@ public class MainFrm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAgregarMouseClicked
-        
-    }//GEN-LAST:event_menuAgregarMouseClicked
-
-    private void menuConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultasMouseClicked
-        
-    }//GEN-LAST:event_menuConsultasMouseClicked
-
-    private void menuMostrarCatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMostrarCatMouseClicked
-       
-    }//GEN-LAST:event_menuMostrarCatMouseClicked
-
     private void MenuIngresarCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuIngresarCategoriasActionPerformed
-        
+
     }//GEN-LAST:event_MenuIngresarCategoriasActionPerformed
 
     private void menuCatModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCatModMouseClicked
@@ -266,6 +311,30 @@ public class MainFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuUsuarioModMouseClicked
 
+    private void menuMostrarCatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMostrarCatMouseClicked
+
+    }//GEN-LAST:event_menuMostrarCatMouseClicked
+
+    private void menuConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultasMouseClicked
+
+    }//GEN-LAST:event_menuConsultasMouseClicked
+
+    private void menuAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAgregarMouseClicked
+
+    }//GEN-LAST:event_menuAgregarMouseClicked
+
+    private void MostrarMobimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarMobimientosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MostrarMobimientosActionPerformed
+
+    private void IngresarDineroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarDineroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IngresarDineroActionPerformed
+
+    private void GenerarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerarReportesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GenerarReportesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -274,8 +343,12 @@ public class MainFrm extends javax.swing.JFrame {
         /* Create and display the form */
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton GenerarReportes;
+    public javax.swing.JButton IngresarDinero;
     private javax.swing.JPanel MainPanel;
     public javax.swing.JButton MenuIngresarCategorias;
+    public javax.swing.JButton MostrarMobimientos;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
