@@ -39,15 +39,12 @@ public class FrmGestionarCate extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         TXT_Cat = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TXA_Desc = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        TXT_Cant = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         BTN_Act = new javax.swing.JButton();
         BTN_Eli = new javax.swing.JButton();
@@ -124,9 +121,6 @@ public class FrmGestionarCate extends javax.swing.JDialog {
 
         jPanel2.setBackground(new java.awt.Color(201, 214, 229));
 
-        jLabel2.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
-        jLabel2.setText("Ingresa cantidad a depositar:");
-
         jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel3.setText("Hola Usuario");
 
@@ -139,13 +133,8 @@ public class FrmGestionarCate extends javax.swing.JDialog {
         TXA_Desc.setRows(5);
         jScrollPane1.setViewportView(TXA_Desc);
 
-        jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
-        jLabel5.setText("Tienes un saldo de $1500");
-
         jLabel6.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel6.setText("Ingresa una nueva Categoria:");
-
-        TXT_Cant.addActionListener(this::TXT_CantActionPerformed);
 
         jLabel10.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel10.setText("CATEGORÍA");
@@ -176,17 +165,13 @@ public class FrmGestionarCate extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(TXT_Cant, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TXT_Cat, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel3))))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addComponent(TXT_Cat, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,23 +193,17 @@ public class FrmGestionarCate extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(32, 32, 32)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
+                .addGap(64, 64, 64)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TXT_Cat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TXT_Cant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BTN_Act, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BTN_Eli, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,10 +221,6 @@ public class FrmGestionarCate extends javax.swing.JDialog {
     private void TXT_CatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_CatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TXT_CatActionPerformed
-
-    private void TXT_CantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_CantActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TXT_CantActionPerformed
 
     private void BTN_ActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ActActionPerformed
         // TODO add your handling code here:
@@ -278,14 +253,11 @@ public class FrmGestionarCate extends javax.swing.JDialog {
     public javax.swing.JButton BTN_Eli;
     public javax.swing.JButton BTN_Lim;
     public javax.swing.JTextArea TXA_Desc;
-    public javax.swing.JTextField TXT_Cant;
     public javax.swing.JTextField TXT_Cat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
