@@ -5,6 +5,7 @@ import Models.UsuarioBD;
 import Views.FrmGestionarCate;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static java.lang.Integer.parseInt;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -75,12 +76,11 @@ public class GestionCatController implements ActionListener {
         idSeleccionado = Integer.parseInt(tabla.getValueAt(fila, 0).toString());
         String categoria = tabla.getValueAt(fila, 1).toString();
         String descripcion = tabla.getValueAt(fila, 2).toString();
-        String total = tabla.getValueAt(fila, 3).toString();
+        String id_usuario = tabla.getValueAt(fila, 3).toString();
 
         //Mostrar los datos del usuario
         ventana.TXT_Cat.setText(categoria);
         ventana.TXA_Desc.setText(descripcion);
-        ventana.TXT_Cant.setText(total);
     }
     
      // METODO CREAR TABLA
@@ -91,7 +91,7 @@ public class GestionCatController implements ActionListener {
         modelo.addColumn("ID");
         modelo.addColumn("Categoria");
         modelo.addColumn("Descripción");
-        modelo.addColumn("Total");
+        modelo.addColumn("Id Usuario");
         List<Categoria> listaCat = usuariobd.consultarCategorias();
         
         // Ciclo para recorrer la lista de usuarios
@@ -101,7 +101,7 @@ public class GestionCatController implements ActionListener {
                 categoria.getId(),
                 categoria.getCategoria(),
                 categoria.getDescripcion(),
-                categoria.getTotal()
+                categoria.getId_usuario()
         };
             modelo.addRow(fila);
         }
@@ -122,17 +122,17 @@ public class GestionCatController implements ActionListener {
             }
             
             String categoria = ventana.TXT_Cat.getText().trim();
-            double total = Double.parseDouble(ventana.TXT_Cant.getText().trim());
+            
             String descripcion = ventana.TXA_Desc.getText().trim();
             
-            if (categoria.isEmpty() || descripcion.isEmpty() || total <= 0) {
+            if (categoria.isEmpty() || descripcion.isEmpty()) {
             // Mostrar un mensaje de advertencia al usuario
             JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
                     "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
             return;
         }
             // OBTENER LOS NOMBRES DESDE LA VENTANA
-            Categoria cat = new Categoria(idSeleccionado, categoria, descripcion, total);
+            Categoria cat = new Categoria(idSeleccionado, categoria, descripcion);
             
         // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
             boolean actualizar = usuariobd.actualizarCat(cat);
@@ -180,7 +180,6 @@ public class GestionCatController implements ActionListener {
         idSeleccionado = -1;
         ventana.TXT_Cat.setText("");
         ventana.TXA_Desc.setText("");
-        ventana.TXT_Cant.setText("");
         
         
     }
