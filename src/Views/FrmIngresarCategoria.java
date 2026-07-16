@@ -43,7 +43,6 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         TXT_Cat = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -51,7 +50,6 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
         TXA_Desc = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        TXT_Cant = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         BTN_CAT = new javax.swing.JButton();
 
@@ -125,9 +123,6 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
 
         jPanel2.setBackground(new java.awt.Color(201, 214, 229));
 
-        jLabel2.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
-        jLabel2.setText("Ingresa cantidad a depositar:");
-
         jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel3.setText("Hola Usuario");
 
@@ -145,8 +140,6 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
 
         jLabel6.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel6.setText("Ingresa una nueva Categoria:");
-
-        TXT_Cant.addActionListener(this::TXT_CantActionPerformed);
 
         jLabel10.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         jLabel10.setText("CATEGORÍA");
@@ -172,9 +165,7 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(TXT_Cat, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(TXT_Cant, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(112, 112, 112)
                         .addComponent(jLabel10))
@@ -200,11 +191,7 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TXT_Cant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(83, 83, 83)
                 .addComponent(BTN_CAT, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
@@ -217,10 +204,6 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
     private void TXT_CatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_CatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TXT_CatActionPerformed
-
-    private void TXT_CantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_CantActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TXT_CantActionPerformed
 
     private void BTN_CATActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_CATActionPerformed
         // TODO add your handling code here:
@@ -243,11 +226,9 @@ public class FrmIngresarCategoria extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BTN_CAT;
     public javax.swing.JTextArea TXA_Desc;
-    public javax.swing.JTextField TXT_Cant;
     public javax.swing.JTextField TXT_Cat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
