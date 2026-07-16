@@ -6,14 +6,10 @@ import Views.FrmNuevoUsuario;
 import Models.UsuarioBD;
 import Models.Usuario;
 import Views.FrmConsultarCategorias;
-import Views.FrmGestionUsuarios;
-import Views.FrmGestionarCate;
 import Views.FrmIngresarCategoria;
 import Views.MainFrm;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -32,17 +28,18 @@ public class UserController implements ActionListener{
     private FrmConsultarUsuarios verUsuarios;
     private FrmIngresarCategoria ingresarCategoria;
     private FrmConsultarCategorias consultarCat;
-    
+    private Usuario usuarioLogueado;
     
     
     // Constructor para iniciazar los ojetos}
     public UserController(FrmNuevoUsuario ventana, UsuarioBD usuariobd,FrmConsultarUsuarios verUsuarios, 
-            FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat) {
+            FrmIngresarCategoria ingresarCategoria, FrmConsultarCategorias consultarCat, Usuario usuarioLogueado) {
         this.ventana = ventana;
         this.usuariobd = usuariobd;
         this.verUsuarios = verUsuarios;
         this.ingresarCategoria = ingresarCategoria;
         this.consultarCat = consultarCat;
+        this.usuarioLogueado = usuarioLogueado;
         
         
         // Verifica si el objeto de la ventana de registro existe
@@ -81,6 +78,9 @@ public class UserController implements ActionListener{
        
     }
     
+    public void setUsuarioLogueado(Usuario usuario) {
+        this.usuarioLogueado = usuario;
+    }
     
     //Metodo obligatorio para la clase abstracta
     //Override es sobreescribir el código de un metodo existente (actionPerformed)
@@ -196,34 +196,41 @@ public class UserController implements ActionListener{
     
     // Metodo para guardar la categoria
     private void guardarCategoria(){
-    // Obtener los datos desde la ventana
-        String categoria = ingresarCategoria.TXT_Cat.getText().trim();
-        String descripcion = ingresarCategoria.TXA_Desc.getText().trim();
-        String totalStr = ingresarCategoria.TXT_Cant.getText().trim();
         
-        if (totalStr.isEmpty() || categoria.isEmpty() || descripcion.isEmpty()) {
-            // Mostrar un mensaje de advertencia al usuario
-            JOptionPane.showMessageDialog(ventana, "Por favor, complete todos los campos.", 
+        Usuario usuarioLogueado = Models.SesionAct.getUsuarioActual();
+    // 2. Validamos que haya un usuario logueado en el sistema
+        if (usuarioLogueado == null) {
+            JOptionPane.showMessageDialog(ingresarCategoria, "No hay ninguna sesión activa. Inicie sesión primero.", 
+                    "Error de Sesión", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        int idUsuario = usuarioLogueado.getId();
+        String nombreCat = ingresarCategoria.TXT_Cat.getText().trim();
+        String descripcion = ingresarCategoria.TXA_Desc.getText().trim();
+        
+        if (nombreCat.isEmpty() || descripcion.isEmpty()) {
+            JOptionPane.showMessageDialog(ingresarCategoria, "Por favor, complete todos los campos.", 
                     "Campos Incompletos", JOptionPane.WARNING_MESSAGE);
             return;
         }
-            Double total = Double.parseDouble(totalStr);
-        Categoria cat = new Categoria(categoria, descripcion, total);
-        // Enviar el objeto de usuario antes de guardado para que el modelo lo reciba
+        
+        //Creamos la categoría y le pasamos el ID del usuario logueado
+        Categoria cat = new Categoria(nombreCat, descripcion);
+        cat.setId_usuario(usuarioLogueado.getId()); // Asignamos la llave foránea del usuario actual
+        
         boolean resultado = usuariobd.categorias(cat);
         
-        // Evaluar si el resultado de la insercion fue exitoso
         if (resultado) {
-            JOptionPane.showMessageDialog(ventana, "Registro exitoso");
+            JOptionPane.showMessageDialog(ingresarCategoria, "Categoría registrada con éxito");
             LimpiarCamposCat();
-            
-            // Solo actualiza la tabla si la ventana existe
             if (this.consultarCat != null) {
-            mostrarCtegorias();
-        }
+                mostrarCtegorias();
+            }
         } else {
-            JOptionPane.showMessageDialog(ventana, "Error al registrar");
+            JOptionPane.showMessageDialog(ingresarCategoria, "Error al registrar la categoría");
         }
+    
     }
     
     
@@ -248,7 +255,7 @@ public class UserController implements ActionListener{
                 categoria.getId(),
                 categoria.getCategoria(),
                 categoria.getDescripcion(),
-                categoria.getTotal()
+                categoria.getId_usuario()
                     
             };
             
@@ -278,7 +285,6 @@ public class UserController implements ActionListener{
     private void LimpiarCamposCat(){
         ingresarCategoria.TXT_Cat.setText("");
         ingresarCategoria.TXA_Desc.setText("");
-        ingresarCategoria.TXT_Cant.setText("");
         
         
     }

@@ -1,5 +1,6 @@
 package Controller;
 
+import Models.SesionAct;
 import Models.Usuario;
 import Models.UsuarioBD;
 import Views.FrmInicioSesion;
@@ -49,6 +50,8 @@ public class LoginController implements ActionListener {
         Usuario usuarioValidado = this.usuariobd.login(usuario, pass);
 
         if (usuarioValidado != null) {
+            
+            SesionAct.setUsuarioActual(usuarioValidado);
             JOptionPane.showMessageDialog(vistaLogin, "¡Bienvenido de nuevo, " + usuarioValidado.getUsuario()+ "!");
 
             

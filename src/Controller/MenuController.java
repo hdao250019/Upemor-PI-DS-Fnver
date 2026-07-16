@@ -79,7 +79,7 @@ public class MenuController implements ActionListener, MouseListener {
         FrmNuevoUsuario NewUsuario = new FrmNuevoUsuario();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(NewUsuario, usuariobd, null, null, null);
+        UserController miControlador = new UserController(NewUsuario, usuariobd, null, null, null, null);
         
         NewUsuario.setLocationRelativeTo(null);
         NewUsuario.setVisible(true);
@@ -91,7 +91,7 @@ public class MenuController implements ActionListener, MouseListener {
         FrmConsultarUsuarios verUsuarios = new FrmConsultarUsuarios();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(null, usuariobd, verUsuarios, null, null);
+        UserController miControlador = new UserController(null, usuariobd, verUsuarios, null, null, null);
         
         verUsuarios.setLocationRelativeTo(null);
         verUsuarios.setVisible(true);
@@ -103,7 +103,7 @@ public class MenuController implements ActionListener, MouseListener {
        FrmIngresarCategoria vercat = new FrmIngresarCategoria();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(null, usuariobd, null, vercat, null);
+        UserController miControlador = new UserController(null, usuariobd, null, vercat, null, null);
         
         vercat.setLocationRelativeTo(null);
         vercat.setVisible(true);
@@ -114,7 +114,7 @@ public class MenuController implements ActionListener, MouseListener {
         FrmConsultarCategorias ConsCat = new FrmConsultarCategorias();
         UsuarioBD usuariobd = new UsuarioBD();
         
-        UserController miControlador = new UserController(null, usuariobd, null, null, ConsCat);
+        UserController miControlador = new UserController(null, usuariobd, null, null, ConsCat, null);
         
         ConsCat.setLocationRelativeTo(null);
         ConsCat.setVisible(true);
