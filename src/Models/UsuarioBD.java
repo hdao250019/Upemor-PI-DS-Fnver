@@ -103,7 +103,7 @@ public class UsuarioBD {
     //Metodo para registrar categorias en la BD
     public boolean categorias(Categoria categoria){
          // CREAR SENTENCIA SQL
-        String sql_query = "INSERT INTO categoria(categoria, descripcion, total_ing) VALUES(?, ?, ?)";
+        String sql_query = "INSERT INTO categoria(categoria, descripcion, id) VALUES(?, ?, ?)";
         
         try{
              //Conexion a la BD
@@ -113,7 +113,7 @@ public class UsuarioBD {
             // Enviar los datos del modelo
             stmt.setString(1, categoria.getCategoria());
             stmt.setString(2, categoria.getDescripcion());
-            stmt.setDouble(3, categoria.getTotal());
+            stmt.setDouble(3, categoria.getId_usuario());
             //Ejecutar el query en la DB
             stmt.executeUpdate();
             
@@ -145,10 +145,10 @@ public class UsuarioBD {
                 int id = result.getInt("id_cat");
                 String categoria = result.getString("categoria");
                 String desc = result.getString("descripcion");
-                Double total = result.getDouble("total_ing");
+                int id_usuario = result.getInt("id");
                 
                 // crear objeto usuario y guardarlos en la lista
-                Categoria cat = new Categoria(id, categoria, desc, total);
+                Categoria cat = new Categoria(id, categoria, desc, id_usuario);
                 listaCat.add(cat);
             }
         }catch(SQLException e){
@@ -216,7 +216,7 @@ public class UsuarioBD {
     // METODO PARA ACTUALIZAR CATEGORIAS
     public boolean actualizarCat(Categoria categoria){
         
-        String query_sql = "UPDATE categoria SET categoria = ?, descripcion = ?, total_ing = ? WHERE id_cat = ?";
+        String query_sql = "UPDATE categoria SET categoria = ?, descripcion = ?, id = ? WHERE id_cat = ?";
         
         try{
              //Conexion a la BD
@@ -226,7 +226,7 @@ public class UsuarioBD {
             // Enviar los datos del modelo
             stmt.setString(1, categoria.getCategoria());
             stmt.setString(2, categoria.getDescripcion());
-            stmt.setDouble(3, categoria.getTotal());
+            stmt.setDouble(3, categoria.getId_usuario());
             stmt.setInt(4, categoria.getId());
               
               // Verificar el numero de filas que cambiaron 
@@ -267,5 +267,13 @@ public class UsuarioBD {
         }
             
         }
+    
+    public void guardarId (Usuario usuario){
+        int idUsuario = usuario.getId();
+        
+        String query_sql = "SELECT * FROM usuarios WHERE id = " + idUsuario;
+        
+        
+    }
 }
 

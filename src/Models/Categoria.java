@@ -8,26 +8,38 @@ public class Categoria {
     private int id;
     private String categoria;
     private String descripcion;
-    private double total;
+    private int id_usuario;
     
     // Contructor para la clase vacio
     public Categoria() {
     }
 
     // Contructor para la clase
-    public Categoria(String categoria, String descripcion, double total) {
+    public Categoria(String categoria, String descripcion, int id_usuario) {
         this.categoria = categoria;
         this.descripcion = descripcion;
-        this.total = total;
+        this.id_usuario = id_usuario;
     }
 
     // Contructor para la clase (BD)
-    public Categoria(int id, String categoria, String descripcion, double total) {
+    public Categoria(int id, String categoria, String descripcion, int id_usuario) {
         this.id = id;
         this.categoria = categoria;
         this.descripcion = descripcion;
-        this.total = total;
+        this.id_usuario = id_usuario;
     }
+
+    public Categoria(int id, String categoria, String descripcion) {
+        this.id = id;
+        this.categoria = categoria;
+        this.descripcion = descripcion;
+    }
+
+    public Categoria(String categoria, String descripcion) {
+        this.categoria = categoria;
+        this.descripcion = descripcion;
+    }
+    
     
     // getter and setter para la clase
     
@@ -55,13 +67,15 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-    public double getTotal() {
-        return total;
+    public int getId_usuario() {
+        return id_usuario;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
+    
+    
     
     
 }
