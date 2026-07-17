@@ -4,6 +4,10 @@
  */
 package Views;
 
+import Controller.LoginController;
+import Models.UsuarioBD;
+import finver.FrmMenu;
+
 /**
  *
  * @author Angel H
@@ -14,7 +18,7 @@ public class SplashFrm extends javax.swing.JFrame {
     /**
      * Creates new form SplashFrm
      */
-    public SplashFrm(FrmInicioSesion login) {
+    public SplashFrm(FrmInicioSesion login, UsuarioBD userdb, MainFrm menu) {
         initComponents();
         
         //Simulacion de tiempo de carga :D
@@ -25,7 +29,7 @@ public class SplashFrm extends javax.swing.JFrame {
             Thread.sleep(2000);
 
             java.awt.EventQueue.invokeLater(() -> {
-                login.setLocationRelativeTo(null);
+                LoginController control = new LoginController(login, userdb, menu);
                 login.setVisible(true);
                 dispose();
             });
