@@ -89,6 +89,8 @@ public class FrmConsultarCategorias extends javax.swing.JFrame {
         btnCategorias.setText("Mostrar Categorias");
         btnCategorias.addActionListener(this::btnCategoriasActionPerformed);
 
+        paneCategorias.setBackground(new java.awt.Color(201, 214, 229));
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("AQUI APARECERAN  ");
 
@@ -227,7 +229,7 @@ public class FrmConsultarCategorias extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-categorias-26.png"))); // NOI18N
-        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(11, 31, 59)));
+        jButton6.setBorder(null);
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jButton6.setIconTextGap(10);

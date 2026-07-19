@@ -61,16 +61,16 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         BTN_Lim = new Controles.MenuButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
+        btnMovi = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
+        btnHome = new javax.swing.JButton();
+        btnReport = new javax.swing.JButton();
+        btnCat = new javax.swing.JButton();
+        btnIngresarMon = new javax.swing.JButton();
+        btnGestionUsu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -108,15 +108,20 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
 
+        paneUsuarios.setBackground(new java.awt.Color(201, 214, 229));
+
         BTN_Act.setBackground(new java.awt.Color(11, 31, 59));
+        BTN_Act.setAMouseEnter(new java.awt.Color(51, 0, 51));
         BTN_Act.setATexto("ACTUALIZAR");
         BTN_Act.setATextoIcono("\n");
 
         BTN_Eli.setBackground(new java.awt.Color(11, 31, 59));
+        BTN_Eli.setAMouseEnter(new java.awt.Color(51, 0, 51));
         BTN_Eli.setATexto("ELIMINAR");
         BTN_Eli.setATextoIcono("");
 
         BTN_Lim.setBackground(new java.awt.Color(11, 31, 59));
+        BTN_Lim.setAMouseEnter(new java.awt.Color(51, 0, 51));
         BTN_Lim.setATexto("LIMPIAR");
         BTN_Lim.setATextoIcono("");
 
@@ -211,16 +216,16 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             .addGap(0, 68, Short.MAX_VALUE)
         );
 
-        jButton5.setBackground(new java.awt.Color(11, 31, 59));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-dinero-26.png"))); // NOI18N
-        jButton5.setText("Movimientos");
-        jButton5.setBorder(null);
-        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton5.setIconTextGap(10);
-        jButton5.addActionListener(this::jButton5ActionPerformed);
+        btnMovi.setBackground(new java.awt.Color(11, 31, 59));
+        btnMovi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnMovi.setForeground(new java.awt.Color(255, 255, 255));
+        btnMovi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-dinero-26.png"))); // NOI18N
+        btnMovi.setText("Movimientos");
+        btnMovi.setBorder(null);
+        btnMovi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMovi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnMovi.setIconTextGap(10);
+        btnMovi.addActionListener(this::btnMoviActionPerformed);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -237,54 +242,54 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         jSeparator5.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(11, 31, 59));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-casa-26.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton1.setIconTextGap(10);
-        jButton1.setLabel("Home ");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        btnHome.setBackground(new java.awt.Color(11, 31, 59));
+        btnHome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-casa-26.png"))); // NOI18N
+        btnHome.setBorder(null);
+        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnHome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnHome.setIconTextGap(10);
+        btnHome.setLabel("Home ");
+        btnHome.addActionListener(this::btnHomeActionPerformed);
 
-        jButton2.setBackground(new java.awt.Color(11, 31, 59));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-reporte-de-negocios-26.png"))); // NOI18N
-        jButton2.setText("Reportes");
-        jButton2.setToolTipText("");
-        jButton2.setBorder(null);
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton2.setIconTextGap(10);
+        btnReport.setBackground(new java.awt.Color(11, 31, 59));
+        btnReport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReport.setForeground(new java.awt.Color(255, 255, 255));
+        btnReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-reporte-de-negocios-26.png"))); // NOI18N
+        btnReport.setText("Reportes");
+        btnReport.setToolTipText("");
+        btnReport.setBorder(null);
+        btnReport.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnReport.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnReport.setIconTextGap(10);
 
-        jButton3.setBackground(new java.awt.Color(11, 31, 59));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-categorias-26.png"))); // NOI18N
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(11, 31, 59)));
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton3.setIconTextGap(10);
-        jButton3.setLabel("Categorias");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
+        btnCat.setBackground(new java.awt.Color(11, 31, 59));
+        btnCat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCat.setForeground(new java.awt.Color(255, 255, 255));
+        btnCat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-categorias-26.png"))); // NOI18N
+        btnCat.setBorder(null);
+        btnCat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnCat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnCat.setIconTextGap(10);
+        btnCat.setLabel("Categorias");
+        btnCat.addActionListener(this::btnCatActionPerformed);
 
-        jButton4.setBackground(new java.awt.Color(11, 31, 59));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-billetera-26.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton4.setIconTextGap(10);
-        jButton4.setLabel(" Ingresar Dinero ");
+        btnIngresarMon.setBackground(new java.awt.Color(11, 31, 59));
+        btnIngresarMon.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnIngresarMon.setForeground(new java.awt.Color(255, 255, 255));
+        btnIngresarMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-billetera-26.png"))); // NOI18N
+        btnIngresarMon.setBorder(null);
+        btnIngresarMon.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnIngresarMon.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnIngresarMon.setIconTextGap(10);
+        btnIngresarMon.setLabel(" Ingresar Dinero ");
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-grupo-26.png"))); // NOI18N
-        jLabel11.setText("Gestión Uusarios");
-        jLabel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 204, 255), 5, true));
+        btnGestionUsu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGestionUsu.setForeground(new java.awt.Color(255, 255, 255));
+        btnGestionUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-grupo-26.png"))); // NOI18N
+        btnGestionUsu.setText("Gestión Uusarios");
+        btnGestionUsu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 204, 255), 5, true));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -293,10 +298,10 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMovi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnReport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -306,10 +311,10 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42))
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnIngresarMon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnGestionUsu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(33, 33, 33)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -331,17 +336,17 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCat, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnIngresarMon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnMovi, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGestionUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(149, Short.MAX_VALUE))
         );
 
@@ -374,17 +379,17 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassActActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnMoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnMoviActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnHomeActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnCatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -415,13 +420,13 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     public Controles.MenuButton BTN_Act;
     public Controles.MenuButton BTN_Eli;
     public Controles.MenuButton BTN_Lim;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnCat;
+    private javax.swing.JLabel btnGestionUsu;
+    private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnIngresarMon;
+    private javax.swing.JButton btnMovi;
+    private javax.swing.JButton btnReport;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
