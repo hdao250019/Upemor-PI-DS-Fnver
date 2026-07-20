@@ -25,9 +25,9 @@ public class FrmNuevoUsuario extends javax.swing.JDialog {
         //
         //Ajustar Apariencia Visual
         FlatLightLaf.setup();
-        FlatLaf.updateUI();
         getRootPane().putClientProperty("FlatLaf.fullWindowContent", true); //Extender elementos a toda la ventana
         getRootPane().putClientProperty("JRootPane.titleBarForeground", Color.BLACK);
+        FlatLaf.updateUI();
     }
 
     /**

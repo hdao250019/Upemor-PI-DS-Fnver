@@ -133,7 +133,7 @@ public class MenuButton extends FinverUI.RoundPanel {
     }//GEN-LAST:event_formMouseEntered
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(originBGColor);
+        this.setBackground(null);
     }//GEN-LAST:event_formMouseExited
 
 
