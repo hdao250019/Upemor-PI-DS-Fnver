@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Controles;
+package FinverUI;
 
 import Controller.UserController;
 
@@ -10,7 +10,7 @@ import Controller.UserController;
  *
  * @author Angel H
  */
-public class MenuButton extends Controles.RoundPanel {
+public class MenuButton extends FinverUI.RoundPanel {
     
     private String aTextoIcono;
     public String getATextoIcono(){
@@ -67,8 +67,12 @@ public class MenuButton extends Controles.RoundPanel {
     /**
      * Creates new form MenuButton
      */
+    
+    private java.awt.Color originBGColor;
+    
     public MenuButton() {
         initComponents();
+        originBGColor = this.getBackground();
         this.setACornerRadius(10);
     }
 
@@ -129,7 +133,7 @@ public class MenuButton extends Controles.RoundPanel {
     }//GEN-LAST:event_formMouseEntered
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(null);
+        this.setBackground(originBGColor);
     }//GEN-LAST:event_formMouseExited
 
 

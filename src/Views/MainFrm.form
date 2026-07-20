@@ -184,7 +184,7 @@
                 <Property name="text" type="java.lang.String" value="Gestion de Ahorros"/>
               </Properties>
             </Component>
-            <Component class="Controles.MenuButton" name="menuAgregar">
+            <Component class="FinverUI.MenuButton" name="menuAgregar">
               <Properties>
                 <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="7b" red="68" type="rgb"/>
@@ -200,7 +200,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="Controles.MenuButton" name="menuConsultas">
+            <Component class="FinverUI.MenuButton" name="menuConsultas">
               <Properties>
                 <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="7b" red="68" type="rgb"/>
@@ -215,7 +215,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="Controles.MenuButton" name="menuMostrarCat">
+            <Component class="FinverUI.MenuButton" name="menuMostrarCat">
               <Properties>
                 <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="7b" red="68" type="rgb"/>
@@ -230,7 +230,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="Controles.MenuButton" name="menuUsuarioMod">
+            <Component class="FinverUI.MenuButton" name="menuUsuarioMod">
               <Properties>
                 <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="7b" red="68" type="rgb"/>
@@ -245,7 +245,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="Controles.MenuButton" name="menuCatMod">
+            <Component class="FinverUI.MenuButton" name="menuCatMod">
               <Properties>
                 <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="7b" red="68" type="rgb"/>

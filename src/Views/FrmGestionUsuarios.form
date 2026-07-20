@@ -276,7 +276,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
         </Container>
-        <Component class="Controles.MenuButton" name="BTN_Act">
+        <Component class="FinverUI.MenuButton" name="BTN_Act">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="3b" green="1f" red="b" type="rgb"/>
@@ -291,7 +291,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="Controles.MenuButton" name="BTN_Eli">
+        <Component class="FinverUI.MenuButton" name="BTN_Eli">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="3b" green="1f" red="b" type="rgb"/>
@@ -306,7 +306,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="Controles.MenuButton" name="BTN_Lim">
+        <Component class="FinverUI.MenuButton" name="BTN_Lim">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="3b" green="1f" red="b" type="rgb"/>

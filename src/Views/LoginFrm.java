@@ -39,7 +39,7 @@ public class LoginFrm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        menuButton1 = new Controles.MenuButton();
+        menuButton1 = new FinverUI.MenuButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -128,6 +128,6 @@ public class LoginFrm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private Controles.MenuButton menuButton1;
+    private FinverUI.MenuButton menuButton1;
     // End of variables declaration//GEN-END:variables
 }

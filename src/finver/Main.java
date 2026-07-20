@@ -29,6 +29,9 @@ public class Main {
         UsuarioBD usuariobd = new UsuarioBD();
         SplashFrm inicio = new SplashFrm(loginView);
         MainFrm menu = new MainFrm();
+        inicio.setLocationRelativeTo(null);
+        inicio.setVisible(true);
+        
         FrmConsultarUsuarios verUsuarios = new FrmConsultarUsuarios();
         FrmIngresarCategoria ingresarCategoria = new FrmIngresarCategoria();
         FrmConsultarCategorias consultarCat = new FrmConsultarCategorias();
@@ -44,9 +47,8 @@ public class Main {
         GestionCatController controlCat = new GestionCatController(gesCat, usuariobd);
         
         UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat,usuarioLogeado);
-        
-        inicio.setLocationRelativeTo(null);
-        inicio.setVisible(true);
+        inicio.dispose();
+
     }
   
 }

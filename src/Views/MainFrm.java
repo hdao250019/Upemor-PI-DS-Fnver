@@ -43,11 +43,11 @@ public class MainFrm extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        menuAgregar = new Controles.MenuButton();
-        menuConsultas = new Controles.MenuButton();
-        menuMostrarCat = new Controles.MenuButton();
-        menuUsuarioMod = new Controles.MenuButton();
-        menuCatMod = new Controles.MenuButton();
+        menuAgregar = new FinverUI.MenuButton();
+        menuConsultas = new FinverUI.MenuButton();
+        menuMostrarCat = new FinverUI.MenuButton();
+        menuUsuarioMod = new FinverUI.MenuButton();
+        menuCatMod = new FinverUI.MenuButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         MenuIngresarCategorias = new javax.swing.JButton();
@@ -396,10 +396,10 @@ public class MainFrm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
-    public Controles.MenuButton menuAgregar;
-    public Controles.MenuButton menuCatMod;
-    public Controles.MenuButton menuConsultas;
-    public Controles.MenuButton menuMostrarCat;
-    public Controles.MenuButton menuUsuarioMod;
+    public FinverUI.MenuButton menuAgregar;
+    public FinverUI.MenuButton menuCatMod;
+    public FinverUI.MenuButton menuConsultas;
+    public FinverUI.MenuButton menuMostrarCat;
+    public FinverUI.MenuButton menuUsuarioMod;
     // End of variables declaration//GEN-END:variables
 }

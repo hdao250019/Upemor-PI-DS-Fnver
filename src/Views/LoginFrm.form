@@ -100,7 +100,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="Controles.MenuButton" name="menuButton1">
+                <Component class="FinverUI.MenuButton" name="menuButton1">
                   <Properties>
                     <Property name="AIconSize" type="int" value="69"/>
                     <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

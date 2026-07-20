@@ -56,9 +56,9 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         spnEdadAct = new javax.swing.JSpinner();
         paneUsuarios = new javax.swing.JScrollPane();
-        BTN_Act = new Controles.MenuButton();
-        BTN_Eli = new Controles.MenuButton();
-        BTN_Lim = new Controles.MenuButton();
+        BTN_Act = new FinverUI.MenuButton();
+        BTN_Eli = new FinverUI.MenuButton();
+        BTN_Lim = new FinverUI.MenuButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         btnMovi = new javax.swing.JButton();
@@ -417,9 +417,9 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public Controles.MenuButton BTN_Act;
-    public Controles.MenuButton BTN_Eli;
-    public Controles.MenuButton BTN_Lim;
+    public FinverUI.MenuButton BTN_Act;
+    public FinverUI.MenuButton BTN_Eli;
+    public FinverUI.MenuButton BTN_Lim;
     private javax.swing.JButton btnCat;
     private javax.swing.JLabel btnGestionUsu;
     private javax.swing.JButton btnHome;
