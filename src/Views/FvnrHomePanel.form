@@ -93,14 +93,14 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="55" max="32767" attributes="0"/>
+                  <EmptySpace pref="86" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="ProgresoBar" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -309,11 +309,6 @@
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color type="null"/>
-        </Property>
-      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="3"/>
@@ -433,9 +428,7 @@
               <Color blue="db" green="bb" red="bb" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                <EmptyBorder/>
-              </Border>
+              <Border info="null"/>
             </Property>
           </Properties>
 
@@ -479,7 +472,7 @@
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="320" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
@@ -515,9 +508,7 @@
               <Color blue="db" green="bb" red="bb" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                <EmptyBorder/>
-              </Border>
+              <Border info="null"/>
             </Property>
           </Properties>
 
@@ -536,29 +527,6 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
                 <Property name="axis" type="int" value="1"/>
               </Layout>
-              <SubComponents>
-                <Component class="FinverUI.MovimientoCardSlim" name="movimientoCardSlim1">
-                  <Properties>
-                    <Property name="ATipo" type="FinverUI.MovimientoCardSlim$Tipo" editor="org.netbeans.modules.form.editors.EnumEditor">
-                      <Value id="Gasto"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="FinverUI.MovimientoCardSlim" name="movimientoCardSlim2">
-                  <Properties>
-                    <Property name="ATipo" type="FinverUI.MovimientoCardSlim$Tipo" editor="org.netbeans.modules.form.editors.EnumEditor">
-                      <Value id="Ingreso"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="FinverUI.MovimientoCardSlim" name="movimientoCardSlim3">
-                  <Properties>
-                    <Property name="ATipo" type="FinverUI.MovimientoCardSlim$Tipo" editor="org.netbeans.modules.form.editors.EnumEditor">
-                      <Value id="Ingreso"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
             </Container>
           </SubComponents>
         </Container>

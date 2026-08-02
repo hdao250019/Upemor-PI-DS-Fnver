@@ -54,9 +54,6 @@ public class FvnrHomePanel extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listMov = new javax.swing.JPanel();
-        movimientoCardSlim1 = new FinverUI.MovimientoCardSlim();
-        movimientoCardSlim2 = new FinverUI.MovimientoCardSlim();
-        movimientoCardSlim3 = new FinverUI.MovimientoCardSlim();
 
         setBackground(new java.awt.Color(223, 223, 243));
         setPreferredSize(new java.awt.Dimension(850, 591));
@@ -126,14 +123,14 @@ public class FvnrHomePanel extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addComponent(jLabel8)
                             .addComponent(jLabel6))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ProgresoBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(roundPanel1Layout.createSequentialGroup()
                         .addGroup(roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(roundPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5))
                             .addGroup(roundPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
@@ -180,7 +177,6 @@ public class FvnrHomePanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(20, 36, 62));
         jLabel1.setText("Buenas Tardes");
 
-        jPanel1.setBackground(null);
         jPanel1.setLayout(new java.awt.GridLayout(1, 3, 20, 0));
 
         btnIngreso.setBackground(new java.awt.Color(79, 115, 211));
@@ -220,7 +216,7 @@ public class FvnrHomePanel extends javax.swing.JPanel {
         jLabel12.setText("Resumen Individual");
 
         jScrollPane1.setBackground(new java.awt.Color(187, 187, 219));
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane1.setBorder(null);
 
         IndResumPnl.setBackground(new java.awt.Color(236, 239, 242));
         IndResumPnl.setLayout(new javax.swing.BoxLayout(IndResumPnl, javax.swing.BoxLayout.Y_AXIS));
@@ -257,20 +253,10 @@ public class FvnrHomePanel extends javax.swing.JPanel {
         jLabel13.setText("Ultimos Movimientos");
 
         jScrollPane2.setBackground(new java.awt.Color(187, 187, 219));
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane2.setBorder(null);
 
         listMov.setBackground(new java.awt.Color(236, 239, 242));
         listMov.setLayout(new javax.swing.BoxLayout(listMov, javax.swing.BoxLayout.Y_AXIS));
-
-        movimientoCardSlim1.setATipo(FinverUI.MovimientoCardSlim.Tipo.Gasto);
-        listMov.add(movimientoCardSlim1);
-
-        movimientoCardSlim2.setATipo(FinverUI.MovimientoCardSlim.Tipo.Ingreso);
-        listMov.add(movimientoCardSlim2);
-
-        movimientoCardSlim3.setATipo(FinverUI.MovimientoCardSlim.Tipo.Ingreso);
-        listMov.add(movimientoCardSlim3);
-
         jScrollPane2.setViewportView(listMov);
 
         javax.swing.GroupLayout roundPanel3Layout = new javax.swing.GroupLayout(roundPanel3);
@@ -281,7 +267,7 @@ public class FvnrHomePanel extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addGroup(roundPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         roundPanel3Layout.setVerticalGroup(
@@ -332,7 +318,7 @@ public class FvnrHomePanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel IndResumPnl;
+    public javax.swing.JPanel IndResumPnl;
     public FinverUI.StatusBar ProgresoBar;
     private FinverUI.AccountBtn btnGasto;
     private FinverUI.AccountBtn btnIngreso;
@@ -354,9 +340,6 @@ public class FvnrHomePanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JPanel listMov;
-    private FinverUI.MovimientoCardSlim movimientoCardSlim1;
-    private FinverUI.MovimientoCardSlim movimientoCardSlim2;
-    private FinverUI.MovimientoCardSlim movimientoCardSlim3;
     public javax.swing.JLabel presupTotalLbl;
     private FinverUI.ResumenCard resumenCard2;
     private FinverUI.ResumenCard resumenCard7;

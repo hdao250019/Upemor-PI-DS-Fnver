@@ -42,7 +42,6 @@ public class FvnrMovimientosPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(20, 36, 62));
         jLabel1.setText("Tus movimientos del periodo actual");
 
-        jPanel1.setBackground(null);
         jPanel1.setLayout(new java.awt.GridLayout(1, 3, 20, 0));
 
         btnGasto.setBackground(new java.awt.Color(79, 115, 211));
@@ -72,9 +71,10 @@ public class FvnrMovimientosPanel extends javax.swing.JPanel {
         jLabel13.setText("Ultimos Movimientos");
 
         jScrollPane2.setBackground(new java.awt.Color(187, 187, 219));
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane2.setBorder(null);
 
         listMovimientos.setBackground(new java.awt.Color(236, 239, 242));
+        listMovimientos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         listMovimientos.setLayout(new javax.swing.BoxLayout(listMovimientos, javax.swing.BoxLayout.Y_AXIS));
         jScrollPane2.setViewportView(listMovimientos);
 
