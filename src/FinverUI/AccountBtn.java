@@ -10,7 +10,7 @@ import Controller.UserController;
  *
  * @author Angel H
  */
-public class MenuButton extends FinverUI.RoundPanel {
+public class AccountBtn extends FinverUI.RoundPanel {
     
     private String aTextoIcono;
     public String getATextoIcono(){
@@ -29,7 +29,6 @@ public class MenuButton extends FinverUI.RoundPanel {
     public void setATexto(String texto){
         this.aTextoIcono = texto;
         this.lblInfo.setText(texto);
-        this.lblInfo.setForeground(java.awt.Color.WHITE);
         repaint();
     }
     
@@ -53,12 +52,31 @@ public class MenuButton extends FinverUI.RoundPanel {
         repaint();
     }
     
+    private java.awt.Color aTextColor;
+    public java.awt.Color getATextColor(){
+        return aTextColor;
+    }
+    public void setATextColor(java.awt.Color aTextColor){
+        this.aTextColor = aTextColor;
+        this.lblInfo.setForeground(aTextColor);
+        this.lblIcon.setForeground(aTextColor);
+        repaint();
+    }
+    
     private java.awt.Color aMouseEnter;
     public java.awt.Color getAMouseEnter(){
         return aMouseEnter;
     }
     public void setAMouseEnter(java.awt.Color aMouseEnter){
         this.aMouseEnter = aMouseEnter;
+    }
+    
+     private java.awt.Color aMouseExit;
+    public java.awt.Color getAMouseExit(){
+        return aMouseExit;
+    }
+    public void setAMouseExit(java.awt.Color aMouseExit){
+        this.aMouseExit = aMouseExit;
     }
     
     public void MouseEnterColor(){
@@ -70,7 +88,7 @@ public class MenuButton extends FinverUI.RoundPanel {
     
     private java.awt.Color originBGColor;
     
-    public MenuButton() {
+    public AccountBtn() {
         initComponents();
         originBGColor = this.getBackground();
         this.setACornerRadius(10);
@@ -111,19 +129,19 @@ public class MenuButton extends FinverUI.RoundPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(lblInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -133,7 +151,7 @@ public class MenuButton extends FinverUI.RoundPanel {
     }//GEN-LAST:event_formMouseEntered
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(null);
+        this.setBackground(aMouseExit);
     }//GEN-LAST:event_formMouseExited
 
 

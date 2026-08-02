@@ -1,21 +1,8 @@
 package finver;
 
-import Controller.GestionCatController;
-import Controller.GestionUsuarioController;
-import Controller.LoginController;
-import Controller.MenuController;
-import Controller.UserController;
-import Models.Usuario;
-import Views.FrmConsultarUsuarios;
-import Views.FrmNuevoUsuario;
-import Views.SplashFrm;
-import Models.UsuarioBD;
-import Views.FrmConsultarCategorias;
-import Views.FrmGestionUsuarios;
-import Views.FrmGestionarCate;
-import Views.FrmIngresarCategoria;
-import Views.FrmInicioSesion;
-import Views.MainFrm;
+import Controller.*;
+import Models.*;
+import Views.*;
 /**
  *
  * @author rousc
@@ -24,7 +11,7 @@ import Views.MainFrm;
 
 public class Main {
      public static void main(String[] args) {
-        FrmInicioSesion loginView = new FrmInicioSesion();
+        /*FrmInicioSesion loginView = new FrmInicioSesion();
         FrmNuevoUsuario ventana = new FrmNuevoUsuario();
         UsuarioBD usuariobd = new UsuarioBD();
         SplashFrm inicio = new SplashFrm(loginView);
@@ -47,7 +34,12 @@ public class Main {
         GestionCatController controlCat = new GestionCatController(gesCat, usuariobd);
         
         UserController controlador = new UserController(ventana, usuariobd, verUsuarios, ingresarCategoria, consultarCat,usuarioLogeado);
-        //inicio.dispose();
+        //inicio.dispose();*/
+        
+        FnvrMainFrm main =  new FnvrMainFrm();
+        MovimientoDB movdb = new MovimientoDB();
+        MainController mainCtr =  new MainController(main, movdb);
+        
 
     }
   
