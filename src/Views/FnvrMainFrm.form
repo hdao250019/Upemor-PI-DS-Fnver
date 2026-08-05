@@ -78,7 +78,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnInicio" alignment="1" min="-2" pref="256" max="-2" attributes="0"/>
-                          <Component id="menuButton2" alignment="1" min="-2" pref="256" max="-2" attributes="0"/>
+                          <Component id="cerrarBtn" alignment="1" min="-2" pref="256" max="-2" attributes="0"/>
                           <Component id="btnMovimiento" alignment="1" min="-2" pref="256" max="-2" attributes="0"/>
                           <Component id="btnCateg" alignment="1" min="-2" pref="256" max="-2" attributes="0"/>
                           <Component id="btnReport" alignment="1" min="-2" pref="256" max="-2" attributes="0"/>
@@ -106,14 +106,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnReport" min="-2" pref="53" max="-2" attributes="0"/>
                       <EmptySpace pref="73" max="32767" attributes="0"/>
-                      <Component id="menuButton2" min="-2" pref="56" max="-2" attributes="0"/>
+                      <Component id="cerrarBtn" min="-2" pref="56" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="FinverUI.MenuButton" name="menuButton2">
+            <Component class="FinverUI.MenuButton" name="cerrarBtn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="9f" green="43" red="41" type="rgb"/>
@@ -125,9 +125,12 @@
                 <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="db" green="6d" red="57" type="rgb"/>
                 </Property>
-                <Property name="ATexto" type="java.lang.String" value="Ajustes"/>
-                <Property name="ATextoIcono" type="java.lang.String" value="&#xf8b0;"/>
+                <Property name="ATexto" type="java.lang.String" value="Cerrar Sesion"/>
+                <Property name="ATextoIcono" type="java.lang.String" value="&#xf413;"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="FinverUI.MenuButton" name="btnInicio">
               <Properties>
@@ -324,8 +327,7 @@
                     <Property name="ATextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="a1" green="4b" red="44" type="rgb"/>
                     </Property>
-                    <Property name="ATexto" type="java.lang.String" value="Hola User"/>
-                    <Property name="ATextoIcono" type="java.lang.String" value="&#xea8c;"/>
+                    <Property name="ATexto" type="java.lang.String" value="Mi Perfil"/>
                   </Properties>
                 </Component>
               </SubComponents>

@@ -11,20 +11,48 @@ package Models;
 public class Movimiento {
     private int id;
     private int id_usuario;
+    private String categoria;
     private int id_categoria;
     private double monto;
     private String fecha;
     private String descripcion;
     private String tipo_movimiento;
-
-    public Movimiento(int id_usuario, int id_categoria, double monto, String fecha, String descripcion, String tipo_movimiento) {
+    
+    
+    public Movimiento(){
+        
+    }
+    
+     public Movimiento(int id, int id_usuario, String categoria, double monto, String fecha, String descripcion, String tipo_movimiento) {
+        this.id = id;
         this.id_usuario = id_usuario;
-        this.id_categoria = id_categoria;
+        this.categoria = categoria;
         this.monto = monto;
         this.fecha = fecha;
         this.descripcion = descripcion;
         this.tipo_movimiento = tipo_movimiento;
     }
+   
+    
+
+    public Movimiento(int id_usuario, String categoria, double monto, String fecha, String descripcion, String tipo_movimiento) {
+        this.id_usuario = id_usuario;
+        this.categoria = categoria;
+        this.monto = monto;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+        this.tipo_movimiento = tipo_movimiento;
+    }
+
+    public int getId_categoria() {
+        return id_categoria;
+    }
+
+    public void setId_categoria(int id_categoria) {
+        this.id_categoria = id_categoria;
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -42,12 +70,12 @@ public class Movimiento {
         this.id_usuario = id_usuario;
     }
 
-    public int getId_categoria() {
-        return id_categoria;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public double getMonto() {

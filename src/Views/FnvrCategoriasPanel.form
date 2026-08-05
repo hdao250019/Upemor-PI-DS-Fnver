@@ -27,16 +27,16 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="470" max="32767" attributes="0"/>
+              <EmptySpace pref="566" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               <Component id="roundPanel3" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="511" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="451" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -63,7 +63,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="3e" green="24" red="14" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Tus movimientos del periodo actual"/>
+        <Property name="text" type="java.lang.String" value="Tus categorias personales"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -74,7 +74,7 @@
         <Property name="rows" type="int" value="1"/>
       </Layout>
       <SubComponents>
-        <Component class="FinverUI.AccountBtn" name="btnNuevo">
+        <Component class="FinverUI.AccountBtn" name="btnnNuevo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d3" green="73" red="4f" type="rgb"/>
@@ -90,31 +90,8 @@
             <Property name="AMouseExit" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d3" green="73" red="4f" type="rgb"/>
             </Property>
-            <Property name="ATexto" type="java.lang.String" value="Nuevo Movimiento"/>
-            <Property name="ATextoIcono" type="java.lang.String" value="&#xee49;"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="FinverUI.AccountBtn" name="btnReport">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d3" green="73" red="4f" type="rgb"/>
-            </Property>
-            <Property name="ACornerRadius" type="int" value="20"/>
-            <Property name="AFuente" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="15" style="1"/>
-            </Property>
-            <Property name="AIconSize" type="int" value="34"/>
-            <Property name="AMouseEnter" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="a1" green="4b" red="44" type="rgb"/>
-            </Property>
-            <Property name="AMouseExit" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d3" green="73" red="4f" type="rgb"/>
-            </Property>
-            <Property name="ATexto" type="java.lang.String" value="Reporte"/>
-            <Property name="ATextoIcono" type="java.lang.String" value="&#xe9f9;"/>
+            <Property name="ATexto" type="java.lang.String" value="Ingresar Categoria"/>
+            <Property name="ATextoIcono" type="java.lang.String" value="&#xefda;"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -136,7 +113,7 @@
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="749" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="606" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
@@ -163,7 +140,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c0" green="62" red="4a" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ultimos Movimientos"/>
+            <Property name="text" type="java.lang.String" value="Selecciona para editar una"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -178,7 +155,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="listMovimientos">
+            <Container class="javax.swing.JPanel" name="listCateg">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f2" green="ef" red="ec" type="rgb"/>

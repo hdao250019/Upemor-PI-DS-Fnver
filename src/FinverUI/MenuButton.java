@@ -4,8 +4,6 @@
  */
 package FinverUI;
 
-import Controller.UserController;
-
 /**
  *
  * @author Angel H

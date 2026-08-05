@@ -6,7 +6,7 @@ package Models;
  */
 public class Categoria {
     private int id;
-    private String categoria;
+    private String nombre;
     private String descripcion;
     private int id_usuario;
     
@@ -14,49 +14,40 @@ public class Categoria {
     public Categoria() {
     }
 
-    // Contructor para la clase
-    public Categoria(String categoria, String descripcion, int id_usuario) {
-        this.categoria = categoria;
+    public Categoria(int id, String nombre, String descripcion, int id_usuario) {
+        this.id = id;
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.id_usuario = id_usuario;
     }
 
-    // Contructor para la clase (BD)
-    public Categoria(int id, String categoria, String descripcion, int id_usuario) {
-        this.id = id;
-        this.categoria = categoria;
+    public Categoria(String nombre, String descripcion, int id_usuario) {
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.id_usuario = id_usuario;
     }
 
-    public Categoria(int id, String categoria, String descripcion) {
+    public Categoria(int id, String nombre, String descripcion) {
         this.id = id;
-        this.categoria = categoria;
+        this.nombre = nombre;
         this.descripcion = descripcion;
     }
+    
 
-    public Categoria(String categoria, String descripcion) {
-        this.categoria = categoria;
-        this.descripcion = descripcion;
-    }
-    
-    
-    // getter and setter para la clase
-    
     public int getId() {
         return id;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }
-    
-    public String getCategoria() {
-        return categoria;
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
@@ -78,4 +69,5 @@ public class Categoria {
     
     
     
+   
 }

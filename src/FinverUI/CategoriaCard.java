@@ -41,12 +41,12 @@ public class CategoriaCard extends javax.swing.JPanel {
         jPanel1.setLayout(new java.awt.GridLayout(2, 6, 10, 10));
 
         lblnombre_cate.setFont(new java.awt.Font("Segoe UI", 2, 16)); // NOI18N
-        lblnombre_cate.setForeground(this.txtColor);
+        lblnombre_cate.setForeground(new java.awt.Color(255, 255, 255));
         lblnombre_cate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblnombre_cate);
 
         lblIcon.setFont(new java.awt.Font("Segoe Fluent Icons", 1, 36)); // NOI18N
-        lblIcon.setForeground(this.txtColor);
+        lblIcon.setForeground(new java.awt.Color(255, 255, 255));
         lblIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIcon.setText("");
 
@@ -167,19 +167,19 @@ public class CategoriaCard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_editformMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editformMouseEntered
-        this.setBackground(aMouseEnter);
+        
     }//GEN-LAST:event_btn_editformMouseEntered
 
     private void btn_editformMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editformMouseExited
-        this.setBackground(aMouseExit);
+       
     }//GEN-LAST:event_btn_editformMouseExited
 
     private void btn_borrarformMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_borrarformMouseEntered
-        this.setBackground(aMouseEnter);
+        
     }//GEN-LAST:event_btn_borrarformMouseEntered
 
     private void btn_borrarformMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_borrarformMouseExited
-        this.setBackground(aMouseExit);
+        
     }//GEN-LAST:event_btn_borrarformMouseExited
 
 

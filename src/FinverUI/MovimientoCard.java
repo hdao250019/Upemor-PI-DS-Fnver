@@ -62,11 +62,11 @@ public class MovimientoCard extends RoundPanel{
         initComponents();
     }
     
-    public MovimientoCard(int id_cat, double monto, String fecha, String tipo) {
+    public MovimientoCard(String cat, double monto, String fecha, String tipo) {
         initComponents();
         this.lblTipo.setText(tipo);
         this.lblFecha.setText(fecha);
-        this.lblCate.setText(Integer.toString(id_cat));
+        this.lblCate.setText(cat);
         this.lblCant.setText(Double.toString(monto));
         if(tipo.equals("Ingreso")) this.setATipo(Tipo.Ingreso);
         else if(tipo.equals("Gasto")) this.setATipo(Tipo.Normal);
@@ -95,10 +95,10 @@ public class MovimientoCard extends RoundPanel{
         lblIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(190, 227, 204));
-        setMaximumSize(new java.awt.Dimension(32767, 62));
+        setMaximumSize(new java.awt.Dimension(32767, 78));
 
         jPanel1.setBackground(null);
-        jPanel1.setLayout(new java.awt.GridLayout(2, 6, 10, 10));
+        jPanel1.setLayout(new java.awt.GridLayout(2, 6, 10, 5));
 
         lbl1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         lbl1.setForeground(this.txtColor);
@@ -173,10 +173,12 @@ public class MovimientoCard extends RoundPanel{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(12, 12, 12))
         );
     }// </editor-fold>//GEN-END:initComponents
 

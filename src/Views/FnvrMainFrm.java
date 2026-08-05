@@ -5,6 +5,7 @@
 package Views;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -22,7 +23,7 @@ public class FnvrMainFrm extends javax.swing.JFrame {
     public FnvrMainFrm() {
         initComponents();
         
-         FlatLightLaf.setup();
+        FlatMacLightLaf.setup();
         getRootPane().putClientProperty("FlatLaf.fullWindowContent", true);
         
         
@@ -51,7 +52,7 @@ public class FnvrMainFrm extends javax.swing.JFrame {
 
         MainPanel = new javax.swing.JPanel();
         MainMenu = new FinverUI.RoundPanel();
-        menuButton2 = new FinverUI.MenuButton();
+        cerrarBtn = new FinverUI.MenuButton();
         btnInicio = new FinverUI.MenuButton();
         btnMovimiento = new FinverUI.MenuButton();
         btnCateg = new FinverUI.MenuButton();
@@ -70,12 +71,12 @@ public class FnvrMainFrm extends javax.swing.JFrame {
         MainMenu.setBackground(new java.awt.Color(65, 67, 159));
         MainMenu.setACornerRadius(0);
 
-        menuButton2.setBackground(new java.awt.Color(65, 67, 159));
-        menuButton2.setAFuente(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        menuButton2.setAIconSize(20);
-        menuButton2.setAMouseEnter(new java.awt.Color(87, 109, 219));
-        menuButton2.setATexto("Ajustes");
-        menuButton2.setATextoIcono("");
+        cerrarBtn.setBackground(new java.awt.Color(65, 67, 159));
+        cerrarBtn.setAFuente(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cerrarBtn.setAIconSize(20);
+        cerrarBtn.setAMouseEnter(new java.awt.Color(87, 109, 219));
+        cerrarBtn.setATexto("Cerrar Sesion");
+        cerrarBtn.setATextoIcono("");
 
         btnInicio.setBackground(new java.awt.Color(65, 67, 159));
         btnInicio.setAFuente(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -134,7 +135,7 @@ public class FnvrMainFrm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cerrarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnMovimiento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCateg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -158,7 +159,7 @@ public class FnvrMainFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addComponent(menuButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cerrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
 
@@ -174,8 +175,7 @@ public class FnvrMainFrm extends javax.swing.JFrame {
         accountBtn1.setAMouseEnter(new java.awt.Color(187, 187, 219));
         accountBtn1.setAMouseExit(new java.awt.Color(213, 213, 245));
         accountBtn1.setATextColor(new java.awt.Color(68, 75, 161));
-        accountBtn1.setATexto("Hola User");
-        accountBtn1.setATextoIcono("");
+        accountBtn1.setATexto("Mi Perfil");
 
         javax.swing.GroupLayout TitlePanelLayout = new javax.swing.GroupLayout(TitlePanel);
         TitlePanel.setLayout(TitlePanelLayout);
@@ -285,9 +285,9 @@ public class FnvrMainFrm extends javax.swing.JFrame {
     public FinverUI.MenuButton btnInicio;
     public FinverUI.MenuButton btnMovimiento;
     public FinverUI.MenuButton btnReport;
+    public FinverUI.MenuButton cerrarBtn;
     public FinverUI.RoundPanel contPanel;
     private javax.swing.JLabel jLabel1;
-    private FinverUI.MenuButton menuButton2;
     private FinverUI.RoundPanel roundPanel1;
     // End of variables declaration//GEN-END:variables
 }

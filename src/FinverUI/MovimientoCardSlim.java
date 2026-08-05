@@ -57,10 +57,10 @@ public class MovimientoCardSlim extends RoundPanel{
         initComponents();
     }
     
-    public MovimientoCardSlim(int id_cat, double monto, String tipo) {
+    public MovimientoCardSlim(String cat, double monto, String tipo) {
         initComponents();
         this.lblTipo.setText(tipo);
-        this.lblCat.setText(Integer.toString(id_cat));
+        this.lblCat.setText(cat);
         this.lblCant.setText(Double.toString(monto));
         if(tipo.equals("Ingreso")) this.setATipo(Tipo.Ingreso);
         else if(tipo.equals("Gasto")) this.setATipo(Tipo.Gasto);

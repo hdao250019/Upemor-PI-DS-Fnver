@@ -16,15 +16,13 @@ public class LoginController implements ActionListener {
     
     private FrmInicioSesion vistaLogin;
     private UsuarioBD usuariobd;
-    private MainFrm menu;
     private int contadorLogin = 0;
     
 
     // Constructor
-    public LoginController(FrmInicioSesion vistaLogin, UsuarioBD usuariobd, MainFrm menu) {
+    public LoginController(FrmInicioSesion vistaLogin, UsuarioBD usuariobd) {
         this.vistaLogin = vistaLogin;
         this.usuariobd = usuariobd;
-        this.menu = menu;
         
         this.vistaLogin.btnIni.addActionListener(this);
     }
@@ -53,12 +51,9 @@ public class LoginController implements ActionListener {
             
             SesionAct.setUsuarioActual(usuarioValidado);
             JOptionPane.showMessageDialog(vistaLogin, "¡Bienvenido de nuevo, " + usuarioValidado.getUsuario()+ "!");
-
-            
-            menu.setLocationRelativeTo(null);
-            menu.setVisible(true);
             
             vistaLogin.dispose();
+            
             
         } else {
             contadorLogin++; 

@@ -80,11 +80,11 @@ public class buttonedit extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void roundPanel1formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel1formMouseExited
-        this.setBackground(aMouseExit);
+        
     }//GEN-LAST:event_roundPanel1formMouseExited
 
     private void roundPanel1formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel1formMouseEntered
-        this.setBackground(aMouseEnter);
+        
     }//GEN-LAST:event_roundPanel1formMouseEntered
 
 

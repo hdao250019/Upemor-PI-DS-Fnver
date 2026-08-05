@@ -4,7 +4,6 @@
  */
 package FinverUI;
 
-import Controller.UserController;
 
 /**
  *

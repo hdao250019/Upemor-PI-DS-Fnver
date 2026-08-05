@@ -37,8 +37,14 @@ public class Main {
         //inicio.dispose();*/
         
         FnvrMainFrm main =  new FnvrMainFrm();
+        FrmInicioSesion login =  new FrmInicioSesion();
+        
         MovimientoDB movdb = new MovimientoDB();
-        MainController mainCtr =  new MainController(main, movdb);
+        CategoriaDB catedb = new CategoriaDB();
+        PresupuestoDB predb = new PresupuestoDB();
+        UsuarioBD usrdb = new UsuarioBD();
+        
+        MainController mainCtr =  new MainController(main, login, usrdb, movdb, predb, catedb);
         
 
     }

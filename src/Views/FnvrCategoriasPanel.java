@@ -8,12 +8,12 @@ package Views;
  *
  * @author Angel H
  */
-public class FvnrMovimientosPanel extends javax.swing.JPanel {
+public class FnvrCategoriasPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form FvnrHomePanel
      */
-    public FvnrMovimientosPanel() {
+    public FnvrCategoriasPanel() {
         initComponents();
     }
 
@@ -28,55 +28,44 @@ public class FvnrMovimientosPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        btnNuevo = new FinverUI.AccountBtn();
-        btnReport = new FinverUI.AccountBtn();
+        btnnNuevo = new FinverUI.AccountBtn();
         roundPanel3 = new FinverUI.RoundPanel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        listMovimientos = new javax.swing.JPanel();
+        listCateg = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(223, 223, 243));
         setPreferredSize(new java.awt.Dimension(850, 591));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(20, 36, 62));
-        jLabel1.setText("Tus movimientos del periodo actual");
+        jLabel1.setText("Tus categorias personales");
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 3, 20, 0));
 
-        btnNuevo.setBackground(new java.awt.Color(79, 115, 211));
-        btnNuevo.setACornerRadius(20);
-        btnNuevo.setAFuente(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        btnNuevo.setAIconSize(34);
-        btnNuevo.setAMouseEnter(new java.awt.Color(68, 75, 161));
-        btnNuevo.setAMouseExit(new java.awt.Color(79, 115, 211));
-        btnNuevo.setATexto("Nuevo Movimiento");
-        btnNuevo.setATextoIcono("");
-        jPanel1.add(btnNuevo);
-
-        btnReport.setBackground(new java.awt.Color(79, 115, 211));
-        btnReport.setACornerRadius(20);
-        btnReport.setAFuente(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        btnReport.setAIconSize(34);
-        btnReport.setAMouseEnter(new java.awt.Color(68, 75, 161));
-        btnReport.setAMouseExit(new java.awt.Color(79, 115, 211));
-        btnReport.setATexto("Reporte");
-        btnReport.setATextoIcono("");
-        jPanel1.add(btnReport);
+        btnnNuevo.setBackground(new java.awt.Color(79, 115, 211));
+        btnnNuevo.setACornerRadius(20);
+        btnnNuevo.setAFuente(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        btnnNuevo.setAIconSize(34);
+        btnnNuevo.setAMouseEnter(new java.awt.Color(68, 75, 161));
+        btnnNuevo.setAMouseExit(new java.awt.Color(79, 115, 211));
+        btnnNuevo.setATexto("Ingresar Categoria");
+        btnnNuevo.setATextoIcono("");
+        jPanel1.add(btnnNuevo);
 
         roundPanel3.setBackground(new java.awt.Color(236, 239, 242));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(74, 98, 192));
-        jLabel13.setText("Ultimos Movimientos");
+        jLabel13.setText("Selecciona para editar una");
 
         jScrollPane2.setBackground(new java.awt.Color(187, 187, 219));
         jScrollPane2.setBorder(null);
 
-        listMovimientos.setBackground(new java.awt.Color(236, 239, 242));
-        listMovimientos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        listMovimientos.setLayout(new javax.swing.BoxLayout(listMovimientos, javax.swing.BoxLayout.Y_AXIS));
-        jScrollPane2.setViewportView(listMovimientos);
+        listCateg.setBackground(new java.awt.Color(236, 239, 242));
+        listCateg.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        listCateg.setLayout(new javax.swing.BoxLayout(listCateg, javax.swing.BoxLayout.Y_AXIS));
+        jScrollPane2.setViewportView(listCateg);
 
         javax.swing.GroupLayout roundPanel3Layout = new javax.swing.GroupLayout(roundPanel3);
         roundPanel3.setLayout(roundPanel3Layout);
@@ -86,7 +75,7 @@ public class FvnrMovimientosPanel extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addGroup(roundPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         roundPanel3Layout.setVerticalGroup(
@@ -106,14 +95,14 @@ public class FvnrMovimientosPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addContainerGap(566, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(100, 100, 100)
                 .addComponent(roundPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addGap(100, 100, 100))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -130,13 +119,12 @@ public class FvnrMovimientosPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public FinverUI.AccountBtn btnNuevo;
-    public FinverUI.AccountBtn btnReport;
+    public FinverUI.AccountBtn btnnNuevo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JPanel listMovimientos;
+    public javax.swing.JPanel listCateg;
     private FinverUI.RoundPanel roundPanel3;
     // End of variables declaration//GEN-END:variables
 }

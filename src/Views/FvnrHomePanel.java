@@ -39,7 +39,7 @@ public class FvnrHomePanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        labelSaludo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnIngreso = new FinverUI.AccountBtn();
         btnGasto = new FinverUI.AccountBtn();
@@ -173,9 +173,9 @@ public class FvnrHomePanel extends javax.swing.JPanel {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(20, 36, 62));
-        jLabel1.setText("Buenas Tardes");
+        labelSaludo.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        labelSaludo.setForeground(new java.awt.Color(20, 36, 62));
+        labelSaludo.setText("Buenas Tardes");
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 3, 20, 0));
 
@@ -288,7 +288,7 @@ public class FvnrHomePanel extends javax.swing.JPanel {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(labelSaludo)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -303,7 +303,7 @@ public class FvnrHomePanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(labelSaludo)
                 .addGap(18, 18, 18)
                 .addComponent(roundPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -321,10 +321,9 @@ public class FvnrHomePanel extends javax.swing.JPanel {
     public javax.swing.JPanel IndResumPnl;
     public FinverUI.StatusBar ProgresoBar;
     private FinverUI.AccountBtn btnGasto;
-    private FinverUI.AccountBtn btnIngreso;
+    public FinverUI.AccountBtn btnIngreso;
     private FinverUI.AccountBtn btnReporte;
     public javax.swing.JLabel gastoTotalLbl;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -339,6 +338,7 @@ public class FvnrHomePanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JLabel labelSaludo;
     public javax.swing.JPanel listMov;
     public javax.swing.JLabel presupTotalLbl;
     private FinverUI.ResumenCard resumenCard2;
